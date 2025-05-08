@@ -1,11 +1,9 @@
+import { BusinessOverview } from "@/components/organism"
+
 const Dashboard = () => {
     return (
         <div>
-            <div>Dashboard</div>
-            <div>Dashboard</div>
-            <div>Dashboard</div>
-            <div>Dashboard</div>
-            <div>Dashboard</div>
+            <BusinessOverview />
         </div>
     )
 }
