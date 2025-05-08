@@ -1,0 +1,1 @@
+export { default as NavBar } from "@/components/organism/navbar/NavBar";
