@@ -2,7 +2,7 @@ import { IconInfopOutlinedPurple } from "@/utils/icons"
 
 const CardRiskAssessments = () => {
   return (
-    <div className="flex flex-col bg-violet-100 justify-center items-center p-3 rounded-xl">
+    <div className="flex flex-col bg-violet-100 justify-center items-center py-3 px-6 rounded-xl ">
       <div className="w-7 h-7 bg-white rounded-full flex justify-center items-center">
         <p>I</p>
       </div>

@@ -2,8 +2,8 @@ import { Button } from "@/components/ui/button"
 
 const ChartsLinearHeader = () => {
     return (
-        <div className="flex items-center px-13">
-            <p className="font-semibold text-[16px]">Sales Performance</p>
+        <div className="flex items-center px-13 flex-wrap">
+            <p className="center font-semibold text-[16px]">Sales Performance</p>
 
             <div className="flex items-center ml-5">
                 <div className="bg-violet-50 p-2 flex items-center ml-3">
@@ -22,7 +22,7 @@ const ChartsLinearHeader = () => {
                 </div>
             </div>
 
-            <div className="flex ml-[auto]">
+            <div className="flex ml-[auto] flex-wrap">
                 <div className="flex items-center">
                     <p className="text-xs font-bold mr-1.5">Views:</p>
                     <div className="bg-violet-100 p-2 rounded-md">

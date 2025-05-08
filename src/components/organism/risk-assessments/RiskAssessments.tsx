@@ -2,9 +2,12 @@ import { CardRiskAssessments } from "@/components/molecules"
 
 const RiskAssessments = () => {
     return (
-        <div className=" max-w-[550px] bg-white p-5">
+        <div className=" bg-white p-5 grow-1 w-full">
             <p className="text-lg font-semibold">Risk Assessments</p>
-            <div className="flex flex-row justify-between gap-4 flex-wrap mt-3">
+            <div className="flex flex-row justify-between gap-6 flex-wrap mt-3">
+                <CardRiskAssessments />
+                <CardRiskAssessments />
+                <CardRiskAssessments />
                 <CardRiskAssessments />
                 <CardRiskAssessments />
                 <CardRiskAssessments />
