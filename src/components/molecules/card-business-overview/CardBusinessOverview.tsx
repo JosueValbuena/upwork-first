@@ -6,13 +6,13 @@ const CardBusinessOverview = () => {
             <div className="flex">
                 <div className="bg-white rounded-full w-12 h-12 flex items-center justify-center">I</div>
                 <div className="ml-3">
-                    <div className="flex">
+                    <div className="flex items-center">
                         <p className="text-xl font-semibold">500</p>
-                        <div className="flex items-center ml-2 p-0 bg-white p0">
-                            <div className="bg-purple-600">
+                        <div className="flex items-center ml-2 p-0 bg-white h-3 rounded-xs">
+                            <div className="bg-purple-600 h-3 flex items-center rounded-xs px-1">
                                 <p className="text-[7px] text-white">ROI</p>
                             </div>
-                            <div className="">
+                            <div className="px-1">
                                 <p className="text-[7px]">Profit</p>
                             </div>
                         </div>
