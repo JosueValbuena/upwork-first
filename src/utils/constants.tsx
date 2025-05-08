@@ -35,7 +35,7 @@ export const navigationLinks: NavigationLink[] = [
 
 //mocks
 
-const metrics = [
+export const metrics = [
     {
       value: "435",
       label: "Total Active SKUs",
