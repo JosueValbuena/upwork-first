@@ -2,7 +2,7 @@ import { IconArrowDownBlack, IconInfopOutlinedPurple } from "@/utils/icons"
 
 const CardBusinessOverview = () => {
     return (
-        <div className="bg-violet-50 flex justify-between px-3 py-4 rounded-xl w-[100%] max-w-[270px]">
+        <div className="bg-violet-50 flex justify-between px-3 py-4 rounded-xl w-[100%] max-w-[245px]">
             <div className="flex">
                 <div className="bg-white rounded-full w-12 h-12 flex items-center justify-center">I</div>
                 <div className="ml-3">

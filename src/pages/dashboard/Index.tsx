@@ -1,7 +1,7 @@
 import { BusinessOverview, LinearHorizontalChartSalesOverview } from "@/components/organism"
 const Dashboard = () => {
     return (
-        <div>
+        <div className="bg-gray-50">
             <BusinessOverview />
             <LinearHorizontalChartSalesOverview />
         </div>
