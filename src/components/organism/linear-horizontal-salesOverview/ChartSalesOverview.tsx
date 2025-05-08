@@ -89,7 +89,7 @@ const data = [
 
 export const LinearHorizontalChartSalesOverview = () => {
     return (
-        <div className="max-w-[1536]">
+        <div className="max-w-[1536px] mx-auto my-12">
             <ChartsLinearHeader />
             <ResponsiveContainer
                 width='100%'

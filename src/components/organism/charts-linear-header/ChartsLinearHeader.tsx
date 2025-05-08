@@ -1,6 +1,6 @@
 const ChartsLinearHeader = () => {
     return (
-        <div className="flex items-center">
+        <div className="flex items-center px-13">
             <p className="font-semibold text-[16px]">Sales Performance</p>
 
             <div className="flex items-center ml-5">
