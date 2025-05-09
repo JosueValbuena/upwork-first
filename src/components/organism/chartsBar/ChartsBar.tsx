@@ -1,13 +1,13 @@
 import {
     BarChart,
     Bar,
-    XAxis,
+    /* XAxis, */
     YAxis,
     CartesianGrid,
     Tooltip,
     Legend,
-    AreaChart,
-    Area,
+    /* AreaChart,
+    Area, */
     ResponsiveContainer,
 } from "recharts";
 

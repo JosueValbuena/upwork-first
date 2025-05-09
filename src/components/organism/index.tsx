@@ -1,7 +1,12 @@
 export { default as BusinessOverview } from "./business-overview/BusinessOverview";
 export { default as ChartsBar } from "./chartsBar/ChartsBar";
 export { default as ChartsLinearHeader } from "./charts-linear-header/ChartsLinearHeader";
-export { default as LinearHorizontalChartSalesOverview } from "./linear-horizontal-salesOverview/ChartSalesOverview";
+export { default as ChartsPie } from "./chartsPie/ChartsPie";
 export { default as InventoryAgeAnalysis } from "./inventory-age-analysis/InventoryAgeAnalysis";
+export { default as InventoryAllocation } from "./inventory-allocation/InventoryAllocation";
+export { default as InventoryByBrand } from "./inventory-by-brand/InventoryByBrad";
+export { default as LinearHorizontalChartSalesOverview } from "./linear-horizontal-salesOverview/ChartSalesOverview";
 export { default as NavBar } from "@/components/organism/navbar/NavBar";
 export { default as RiskAssessments } from "./risk-assessments/RiskAssessments";
+export { default as SmartRepricerActivityLog } from "./smart-repricer-activity/SmartRepricerActivityLog";
+export { default as TableCustom } from "./table-custom/TableCustom";
