@@ -2,6 +2,7 @@ export { default as BusinessOverview } from "./business-overview/BusinessOvervie
 export { default as ChartsBar } from "./chartsBar/ChartsBar";
 export { default as ChartsLinearHeader } from "./charts-linear-header/ChartsLinearHeader";
 export { default as ChartsPie } from "./chartsPie/ChartsPie";
+export { default as Footer } from "./footer/Footer";
 export { default as InventoryAgeAnalysis } from "./inventory-age-analysis/InventoryAgeAnalysis";
 export { default as InventoryAllocation } from "./inventory-allocation/InventoryAllocation";
 export { default as InventoryByBrand } from "./inventory-by-brand/InventoryByBrad";
