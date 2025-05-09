@@ -8,60 +8,45 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table"
+import { useMemo } from "react";
 
-const dataTable = [
-    {
-        sku: "BO8S6X211YASIN",
-        title: "Brooks Women's Adrenaline GTS 23 Suooirtuve Running Shoe - Storm Blue/Pink/Aqua - 8 Medium",
-        price_changes: "$12 $15",
-        reason: "Competitor",
-        update_date: "12-02-25 7:12pm"
-    },
-    {
-        sku: "BO8S6X211YASIN",
-        title: "Brooks Women's Adrenaline GTS 23 Suooirtuve Running Shoe",
-        price_changes: "$12 $15",
-        reason: "Competitor",
-        update_date: "12-02-25 7:12pm"
-    },
-    {
-        sku: "BO8S6X211YASIN",
-        title: "Brooks Women's Adrenaline GTS",
-        price_changes: "$12 $15",
-        reason: "Competitor",
-        update_date: "12-02-25 7:12pm"
-    },
-    {
-        sku: "BO8S6X211YASIN",
-        title: "Brooks Women's Adrenaline GTS 23",
-        price_changes: "$12 $15",
-        reason: "Competitor",
-        update_date: "12-02-25 7:12pm"
-    },
-    {
-        sku: "BO8S6X211YASIN",
-        title: "Brooks Women's Adrenaline GTS 23",
-        price_changes: "$12 $15",
-        reason: "Competitor",
-        update_date: "12-02-25 7:12pm"
-    },
-]
 
-const TableCustom = () => {
+const TableCustom = ({dataTable}:any) => {
+
+    const dinamicWidth: Number = useMemo(() => {
+        return 100 / dataTable.length;
+    }, [dataTable]);
+
+    const generateRandomId = () => {
+        return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+    };
+
+    /* const transformData = useMemo(() => {
+        return dataTable.map((dataElement: any) => ({
+            id: generateRandomId(), // Genera el ID y lo asigna a la clave 'id'
+            ...dataElement,       // Incluye todas las propiedades del dataElement
+        }));
+    }, [dataTable]); */
+
     return (
         <Table>
             <TableHeader>
                 <TableRow className="bg-violet-100">
-                    {Object.keys(dataTable[0]).map((dataElement: string) => (
-                        <TableHead className="text-center capitalize">{dataElement.replaceAll("_", " ")}</TableHead>
+                    {Object.keys(dataTable[0])?.map((dataElement: string) => (
+                        <TableHead key={dataElement} className={`text-center whitespace-break-spaces capitalize w-[${dinamicWidth}%]`}>{dataElement.replaceAll("_", " ")}</TableHead>
                     ))}
                 </TableRow>
             </TableHeader>
             <TableBody>
-                {dataTable.map((data, index) => (
+                {dataTable.map((data:any, index:any) => (
                     <TableRow key={data.sku} className={index % 2 === 0 ? '' : 'bg-violet-50'}>
-                        {Object.values(data).map(dataValues => (
-                            <TableCell className="grow-1 whitespace-break-spaces">
+                        {Object.values(data)?.map((dataValues) => (
+                            <TableCell
+                            // @ts-ignore
+                                key={dataValues || generateRandomId()}
+                                className={`whitespace-break-spaces text-center w-[${dinamicWidth}%]`}
+                            >
+                                {/*@ts-ignore */}
                                 {dataValues}
                             </TableCell>
                         ))}
@@ -69,7 +54,7 @@ const TableCustom = () => {
                 ))}
             </TableBody>
         </Table>
-    )
+    );
 };
 
 export default TableCustom;
