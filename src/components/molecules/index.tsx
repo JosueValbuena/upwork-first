@@ -5,5 +5,6 @@ export { default as InputTextLabel } from "./input-text-label/InputTextLabel";
 export { default as InventoryStrategySection } from "./inventory-strategy-section/InventoryStrategySection";
 export { default as NavbarLinks } from "./navbar-links/NavbarLinks";
 export { default as NavBarWidget } from "./nabbar-widget/NavBarWidget";
+export { default as PopoverCustom } from "./pop-over-custom/PopOverCustom";
 export { default as SwitchLabel } from "./switch-label/SwithLabel";
-export { ModeToggle } from "./mote-theme-toggle/mode-toggle";
+/* export { ModeToggle } from "./mote-theme-toggle/mode-toggle"; */
