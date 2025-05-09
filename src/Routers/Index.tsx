@@ -1,3 +1,4 @@
+import AccountSettings from "@/pages/account-settings/AccountSettings";
 import Dashboard from "@/pages/dashboard/Index"
 import NotFoundPage from "@/pages/not-found/NotFoundPage";
 import Settings from "@/pages/settins/Index";
@@ -8,6 +9,7 @@ const Routers = () => {
             <Route path="/" element={<Navigate to="/dashboard" replace />} />
             <Route index path="/dashboard" element={<Dashboard />} />
             <Route path="/settings" element={<Settings />} />
+            <Route path="/account-settings" element={<AccountSettings />} />
             <Route path="*" element={<NotFoundPage />} />
         </Routes>
     )

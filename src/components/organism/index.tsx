@@ -1,7 +1,10 @@
+export { default as AccountSettingsSection } from "./account-settings-section/AccountSettingsSection";
+export { default as BillingAndPlanSection } from "./billing-and-plan-section/BillingAndPlanSection";
 export { default as BusinessOverview } from "./business-overview/BusinessOverview";
 export { default as ChartsBar } from "./chartsBar/ChartsBar";
 export { default as ChartsLinearHeader } from "./charts-linear-header/ChartsLinearHeader";
 export { default as ChartsPie } from "./chartsPie/ChartsPie";
+export { default as ComptiterTragetingSection } from "./comptiter-trageting-section/ComptiterTragetingSection";
 export { default as Footer } from "./footer/Footer";
 export { default as InventoryAgeAnalysis } from "./inventory-age-analysis/InventoryAgeAnalysis";
 export { default as InventoryAllocation } from "./inventory-allocation/InventoryAllocation";
@@ -11,3 +14,4 @@ export { default as NavBar } from "@/components/organism/navbar/NavBar";
 export { default as RiskAssessments } from "./risk-assessments/RiskAssessments";
 export { default as SmartRepricerActivityLog } from "./smart-repricer-activity/SmartRepricerActivityLog";
 export { default as TableCustom } from "./table-custom/TableCustom";
+export { default as UserManagementSection } from "./user-management-section/UserManagementSection";

@@ -6,7 +6,7 @@ const Footer = () => {
     return (
         <div className="bg-white grow-1 p-5 w-full mx-auto">
             <div className="max-w-[1280px] mx-auto">
-                <div className="flex gap-5 justify-center">
+                <div className="flex gap-5 justify-center flex-wrap">
                     {navigationLinks.map(navigationElement => (
                         <Link
                             key={navigationElement.label}
@@ -20,7 +20,7 @@ const Footer = () => {
 
                 <Separator className="my-5" />
 
-                <div className="flex justify-between">
+                <div className="flex justify-between flex-wrap">
                     <p>© 2025. All rights reserved.</p>
 
                     <div className="flex gap-6">
