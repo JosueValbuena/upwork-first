@@ -16,7 +16,7 @@ const InputTextLabel = ({ id, label, placeHolder, type }: InputTextLabel) => {
 
     //configure react hook form later with controller
     return (
-        <div>
+        <div className="md:flex md:justify-between">
             <Label
                 className="text-md font-semibold"
                 htmlFor={id}
@@ -25,7 +25,7 @@ const InputTextLabel = ({ id, label, placeHolder, type }: InputTextLabel) => {
             </Label>
 
             <Input
-                className="mt-1 bg-violet-100"
+                className="mt-1 bg-violet-100 md:max-w-3xs"
                 type={type}
                 id={id}
                 placeholder={placeHolder}

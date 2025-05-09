@@ -1,22 +1,36 @@
 import { InventoryStrategySection } from '@/components/molecules'
-import { AccountSettingsSection, BillingAndPlanSection, ComptiterTragetingSection, UserManagementSection } from '@/components/organism'
+import { AccountSettingsSection, AdvancedSettingsSection, BillingAndPlanSection, ComptiterTragetingCheckSection, ComptiterTragetingSection, NotificationSection, RepricingRulesSection, UserManagementSection } from '@/components/organism'
 
 const AccountSettings = () => {
     return (
-        <div className='max-w-[1280px]'>
+        <div className='max-w-[1280px] w-full mx-auto'>
             <h1 className='text-3xl font-semibold pt-3 pl-3 mb-3'>
                 Account Settings
             </h1>
 
-            <AccountSettingsSection />
+            <div className='md:flex md:gap-3'>
+                <div className='w-full'>
+                    <AccountSettingsSection />
 
-            <InventoryStrategySection />
+                    <InventoryStrategySection />
 
-            <ComptiterTragetingSection />
+                    <ComptiterTragetingSection />
 
-            <BillingAndPlanSection />
+                    <BillingAndPlanSection />
 
-            <UserManagementSection />
+                    <UserManagementSection />
+                </div>
+
+                <div className='w-full'>
+                    <RepricingRulesSection />
+
+                    <ComptiterTragetingCheckSection />
+
+                    <NotificationSection />
+
+                    <AdvancedSettingsSection />
+                </div>
+            </div>
         </div>
     )
 }
