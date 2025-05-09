@@ -48,6 +48,7 @@ const ChartsPie = () => {
                 fill="#8884d8"
                 dataKey="value"
             >
+                {/* @ts-ignore */}
                 {data.map((entry, index) => (
                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                 ))}
