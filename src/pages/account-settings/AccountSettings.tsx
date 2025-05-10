@@ -3,7 +3,7 @@ import { AccountSettingsSection, AdvancedSettingsSection, BillingAndPlanSection,
 
 const AccountSettings = () => {
     return (
-        <div className='max-w-[1280px] w-full mx-auto'>
+        <div className='max-w-[1366px] w-full mx-auto'>
             <h1 className='text-3xl font-semibold pt-3 pl-3 mb-3'>
                 Account Settings
             </h1>

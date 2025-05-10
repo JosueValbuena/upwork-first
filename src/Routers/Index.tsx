@@ -1,7 +1,7 @@
 import AccountSettings from "@/pages/account-settings/AccountSettings";
 import Dashboard from "@/pages/dashboard/Index"
+import Settings from "@/pages/general-settings/Settings";
 import NotFoundPage from "@/pages/not-found/NotFoundPage";
-import Settings from "@/pages/settins/Index";
 import { Navigate, Route, Routes } from "react-router-dom"
 const Routers = () => {
     return (

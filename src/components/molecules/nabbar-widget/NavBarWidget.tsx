@@ -2,6 +2,7 @@ import { Separator } from "@/components/ui/separator"
 import { IconMoonOutlinedGray, IconHelpOutlinedGray, IconGearpOutlinedGray, IconBellpOutlinedGray, IconUserCircleOutlinedGray } from '@/utils/icons';
 import PopoverCustom from "../pop-over-custom/PopOverCustom";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 /* import { ModeToggle } from '../mote-theme-toggle/mode-toggle' */
 const NavBarWidget = () => {
 
@@ -15,7 +16,9 @@ const NavBarWidget = () => {
         <div className='flex items-center justify-center ml-[auto] bg-violet-100 rounded-3xl h-12 px-3'>
             <IconMoonOutlinedGray className="mx-2 cursor-pointer" />
             <IconHelpOutlinedGray className="mx-2 cursor-pointer" />
-            <IconGearpOutlinedGray className="mx-2 cursor-pointer" />
+            <Link to={'/settings'}>
+                <IconGearpOutlinedGray className="mx-2 cursor-pointer" />
+            </Link>
             <IconBellpOutlinedGray className="mx-2 cursor-pointer" />
             <Separator orientation="vertical" className=" mx-3" />
             <PopoverCustom
