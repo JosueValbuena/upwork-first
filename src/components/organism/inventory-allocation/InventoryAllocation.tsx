@@ -33,18 +33,18 @@ const InventoryAllocation = () => {
 
             <div className="flex flex-col items-center lg:flex-row">
 
-                <div className="flex flex-col gap-6">
-                    <div className="flex w-3xs gap-3">
+                <div className="flex flex-col gap-6 w-1/2">
+                    <div className="flex gap-3">
                         <div className="bg-blue-600 w-3 p-3"></div>
                         <p>UNITS 65%</p>
                     </div>
 
-                    <div className="flex w-3xs gap-3">
+                    <div className="flex gap-3">
                         <div className="bg-green-400 w-3 p-3"></div>
                         <p>UNITS 27%</p>
                     </div>
 
-                    <div className="flex w-3xs gap-3">
+                    <div className="flex gap-3">
                         <div className="bg-[#FF8A72] w-3 p-3"></div>
                         <p>UNITS 8%</p>
                     </div>
