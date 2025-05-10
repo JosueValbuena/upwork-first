@@ -13,7 +13,7 @@ const NavBarWidget = () => {
     };
 
     return (
-        <div className='flex items-center justify-center ml-[auto] bg-violet-100 rounded-3xl h-12 px-3'>
+        <div className='flex items-center justify-center bg-violet-100 rounded-3xl h-12 px-3 md:ml-[auto]'>
             <IconMoonOutlinedGray className="mx-2 cursor-pointer" />
             <IconHelpOutlinedGray className="mx-2 cursor-pointer" />
             <Link to={'/settings'}>

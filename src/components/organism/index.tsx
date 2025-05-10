@@ -4,6 +4,7 @@ export { default as AdvancedSettingsSection } from "./advanced-settings-section/
 export { default as BillingAndPlanSection } from "./billing-and-plan-section/BillingAndPlanSection";
 export { default as BusinessOverview } from "./business-overview/BusinessOverview";
 export { default as ChartsBar } from "./chartsBar/ChartsBar";
+export { default as ChartsLinear } from "./chartsLinear/ChartsLinear";
 export { default as ChartsLinearHeader } from "./charts-linear-header/ChartsLinearHeader";
 export { default as ChartsPie } from "./chartsPie/ChartsPie";
 export { default as ComptiterTragetingSection } from "./comptiter-trageting-section/ComptiterTragetingSection";
@@ -17,6 +18,7 @@ export { default as InventoryAllocation } from "./inventory-allocation/Inventory
 export { default as InventoryAndCostIntegrationSection } from "./inventory-and-cost-integration-section/InventoryAndCostIntegrationSection";
 export { default as InventoryByBrand } from "./inventory-by-brand/InventoryByBrad";
 export { default as LinearHorizontalChartSalesOverview } from "./linear-horizontal-salesOverview/ChartSalesOverview";
+export { default as MobileDraweMenu } from "./mobile-drawe-menu/MobileDrawerMenu";
 export { default as NavBar } from "@/components/organism/navbar/NavBar";
 export { default as NotificationSection } from "./notification-section/NotificationSection";
 export { default as RepricingRulesSection } from "./repricing-rules-section/RepricingRulesSection";
