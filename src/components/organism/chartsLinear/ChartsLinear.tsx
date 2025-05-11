@@ -13,7 +13,7 @@ const ChartsLinear = ({ chartData }: any) => {
     return (
         <ResponsiveContainer
             width='100%'
-            height={240}
+            height={300}
         >
             <LineChart
                 data={chartData}
