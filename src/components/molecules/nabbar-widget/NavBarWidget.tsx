@@ -13,7 +13,7 @@ const NavBarWidget = () => {
     };
 
     return (
-        <div className='flex items-center justify-center bg-violet-100 rounded-3xl h-12 px-3 md:ml-[auto]'>
+        <div className='flex items-center justify-center bg-primary-light rounded-3xl h-8 px-3 md:ml-[auto]'>
             <IconMoonOutlinedGray className="mx-2 cursor-pointer" />
             <IconHelpOutlinedGray className="mx-2 cursor-pointer" />
             <Link to={'/settings'}>
@@ -22,7 +22,7 @@ const NavBarWidget = () => {
             <IconBellpOutlinedGray className="mx-2 cursor-pointer" />
             <Separator orientation="vertical" className=" mx-3" />
             <PopoverCustom
-                triggerIcon={<IconUserCircleOutlinedGray className="mx-2 w-6 cursor-pointer" />}
+                triggerIcon={<IconUserCircleOutlinedGray className="mx-2 w-5 cursor-pointer" />}
                 isOpen={isOpen}
                 handleOpenPopOver={handleOpenPopOver}
             />

@@ -25,7 +25,7 @@ const InputTextLabel = ({ id, label, placeHolder, type }: InputTextLabel) => {
             </Label>
 
             <Input
-                className="mt-1 bg-violet-100 md:max-w-3xs"
+                className="mt-1 bg-primary-light md:max-w-3xs"
                 type={type}
                 id={id}
                 placeholder={placeHolder}

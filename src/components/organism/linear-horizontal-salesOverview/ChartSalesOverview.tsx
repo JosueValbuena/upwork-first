@@ -80,7 +80,7 @@ const data = [
 
 export const LinearHorizontalChartSalesOverview = () => {
     return (
-        <div className="bg-white p-2 max-w-[1366px] mx-auto my-8">
+        <div className="bg-white p-2 max-w-[1366px] mx-auto my-3">
             <ChartsLinearHeader />
             <ChartsLinear chartData={data} />
         </div>

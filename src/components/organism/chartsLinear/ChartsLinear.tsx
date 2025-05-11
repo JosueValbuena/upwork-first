@@ -5,7 +5,7 @@ import {
     YAxis,
     CartesianGrid,
     Tooltip,
-    Legend,
+    /* Legend, */
     ResponsiveContainer,
 } from "recharts";
 
@@ -13,14 +13,12 @@ const ChartsLinear = ({ chartData }: any) => {
     return (
         <ResponsiveContainer
             width='100%'
-            height={300}
+            height={200}
         >
             <LineChart
-                width={500}
-                height={300}
                 data={chartData}
                 margin={{
-                    top: 30,
+                    top: 10,
                     right: 30,
                     left: 20,
                     bottom: 5
@@ -31,7 +29,7 @@ const ChartsLinear = ({ chartData }: any) => {
                 <YAxis yAxisId="left" />
                 <YAxis yAxisId="right" orientation="right" />
                 <Tooltip />
-                <Legend />
+                {/* <Legend /> */}
 
                 <Line
                     yAxisId="right"

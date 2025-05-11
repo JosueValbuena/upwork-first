@@ -14,13 +14,13 @@ const Dashboard = () => {
             <BusinessOverview />
             <LinearHorizontalChartSalesOverview />
             <div
-                className="flex justify-between flex-wrap max-w-[1366px] mx-auto gap-3 lg:flex-nowrap"
+                className="flex justify-between flex-wrap max-w-[1360px] mx-auto gap-3 lg:flex-nowrap"
             >
                 <InventoryAgeAnalysis />
                 <RiskAssessments />
             </div>
             <div
-                className="flex justify-between flex-wrap max-w-[1366px] mx-auto gap-3 lg:flex-nowrap mt-3"
+                className="flex justify-between flex-wrap max-w-[1360px] mx-auto gap-3 lg:flex-nowrap mt-3"
             >
                 <InventoryAllocation />
                 <SmartRepricerActivityLog />

@@ -7,7 +7,7 @@ interface CardBusinessOverview {
 
 const CardBusinessOverview = ({ data }: CardBusinessOverview) => {
     return (
-        <div className="bg-violet-50 flex justify-between px-3 py-4 rounded-xl w-[100%] max-w-[250px]">
+        <div className="bg-primary-light flex justify-between px-3 py-3 rounded-xl w-[100%] max-w-[250px]">
             <div className="flex">
 
                 <div className="bg-white rounded-full w-11 h-11 flex items-center justify-center">
@@ -24,11 +24,11 @@ const CardBusinessOverview = ({ data }: CardBusinessOverview) => {
                             <div className="flex items-center ml-2 p-0 bg-white h-3 rounded-xs">
 
                                 <div className="bg-purple-600 h-3 flex items-center rounded-xs px-1">
-                                    <p className="text-[7px] text-white">ROI</p>
+                                    <p className="text-[8px] text-white">ROI</p>
                                 </div>
 
                                 <div className="px-1">
-                                    <p className="text-[7px]">Profit</p>
+                                    <p className="text-[8px]">Profit</p>
                                 </div>
 
                             </div>
@@ -37,7 +37,7 @@ const CardBusinessOverview = ({ data }: CardBusinessOverview) => {
                     </div>
 
                     <div className="flex">
-                        <p className="text-xs font-medium">{data.label}</p>
+                        <p className="text-[10px] font-medium">{data.label}</p>
                         <IconInfopOutlinedPurple className="ml-1" />
                     </div>
 
@@ -54,7 +54,7 @@ const CardBusinessOverview = ({ data }: CardBusinessOverview) => {
 
             {data?.timeframe && (
                 <div className="flex">
-                    <p className="text-xs font-semibold">30 days</p>
+                    <p className="text-[11px] font-semibold">30 days</p>
                     <IconArrowDownBlack />
                 </div>
             )}

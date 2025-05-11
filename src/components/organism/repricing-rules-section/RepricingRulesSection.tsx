@@ -38,7 +38,7 @@ const RepricingRulesSection = () => {
             <div className="flex justify-between items-center">
                 <p className="text-md font-semibold">Create new rule</p>
                 <div>
-                    <Button className="bg-violet-100 text-black px-7 font-bold mr-3 hover:bg-violet-400">Add</Button>
+                    <Button className="bg-primary-light text-black px-7 font-bold mr-3 hover:bg-violet-400">Add</Button>
                     <Button className="bg-violet-700 font-bold px-7 hover:bg-violet-400">Delete</Button>
                 </div>
             </div>

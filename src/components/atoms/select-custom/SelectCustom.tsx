@@ -18,7 +18,7 @@ interface SelectList {
 const SelectCustom = ({ selectList }: SelectList) => {
   return (
     <Select defaultValue={selectList[0].value}>
-      <SelectTrigger className="w-full bg-violet-100 font-semibold">
+      <SelectTrigger className="w-full bg-primary-light font-semibold">
         <SelectValue placeholder="Select" />
       </SelectTrigger>
       <SelectContent>

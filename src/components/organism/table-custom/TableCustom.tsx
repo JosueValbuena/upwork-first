@@ -31,7 +31,7 @@ const TableCustom = ({dataTable}:any) => {
     return (
         <Table>
             <TableHeader>
-                <TableRow className="bg-violet-100">
+                <TableRow className="bg-primary-light">
                     {Object.keys(dataTable[0])?.map((dataElement: string) => (
                         <TableHead key={dataElement} className={`text-center whitespace-break-spaces capitalize w-[${dinamicWidth}%]`}>{dataElement.replaceAll("_", " ")}</TableHead>
                     ))}

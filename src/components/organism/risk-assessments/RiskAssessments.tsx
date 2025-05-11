@@ -3,9 +3,9 @@ import { riskdData } from "@/utils/constants"
 
 const RiskAssessments = () => {
     return (
-        <div className=" bg-white p-5 grow-1 w-full">
+        <div className=" bg-white px-4 py-3 grow-1 w-full">
             <p className="text-lg font-semibold">Risk Assessments</p>
-            <div className="flex flex-row justify-between gap-5 flex-wrap mt-3">
+            <div className="flex flex-row justify-between gap-y-3 gap-x-0 flex-wrap mt-1">
                 {riskdData.map(riskItem => (
                 <CardRiskAssessments 
                 key={riskItem.label}

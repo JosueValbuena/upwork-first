@@ -6,19 +6,19 @@ const ActiveMarketplacesSection = () => {
             <p className="text-xl font-semibold">Active Marketplaces</p>
 
             <div className="flex gap-1">
-                <Button className="bg-violet-100 text-black font-semibold text-md hover:text-white">
+                <Button className="bg-primary-light text-black font-semibold text-md hover:text-white">
                     UK
                 </Button>
 
-                <Button className="bg-violet-100 text-black font-semibold text-md hover:text-white">
+                <Button className="bg-primary-light text-black font-semibold text-md hover:text-white">
                     US
                 </Button>
 
-                <Button className="bg-violet-100 text-black font-semibold text-md hover:text-white">
+                <Button className="bg-primary-light text-black font-semibold text-md hover:text-white">
                     DE
                 </Button>
 
-                <Button className="bg-violet-100 text-black font-semibold text-md hover:text-white">
+                <Button className="bg-primary-light text-black font-semibold text-md hover:text-white">
                     CA
                 </Button>
             </div>

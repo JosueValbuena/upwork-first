@@ -73,8 +73,8 @@ const ChartsBar = () => {
                 <YAxis />
                 <Tooltip />
                 <Legend />
-                <Bar dataKey="pv" stackId="a" fill="#8884d8" />
-                <Bar dataKey="uv" stackId="a" fill="#82ca9d" />
+                <Bar dataKey="pv" stackId="a" fill="#FF8A72" />
+                <Bar dataKey="uv" stackId="a" fill="#6F4AFF" />
             </BarChart>
         </ResponsiveContainer>
     );

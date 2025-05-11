@@ -38,16 +38,16 @@ const ChartsLinearHeader = () => {
             <div className="flex flex-wrap gap-3 xl:ml-[auto]">
                 <div className="flex items-center">
                     <p className="text-xs font-bold mr-1.5">Views:</p>
-                    <div className="bg-violet-100 p-2 rounded-md">
-                        <Button className="text-xs  bg-purple-500 px-2 mx-2">By Day</Button>
-                        <Button className="text-xs text-black bg-purple-200 px-2 mx-2 hover:text-white">By Month</Button>
-                        <Button className="text-xs text-black bg-purple-200 px-2 mx-2 hover:text-white">By Year</Button>
+                    <div className="bg-primary-light p-2 rounded-md">
+                        <Button className="text-xs px-2 h-6 mx-2 bg-purple-500 ">By Day</Button>
+                        <Button className="text-xs px-2 mx-2 h-6 text-black bg-purple-200  hover:text-white">By Month</Button>
+                        <Button className="text-xs px-2 mx-2 h-6 text-black bg-purple-200  hover:text-white">By Year</Button>
                     </div>
                 </div>
 
                 <div className="flex ml-3 items-center">
-                    <Button className="text-xs text-black font-bold bg-violet-100 w-30 py-6 mx-2 hover:text-white">By Brand</Button>
-                    <Button className="text-xs text-black font-bold bg-violet-100 w-30 py-6 mx-2 hover:text-white">Past 30 Days</Button>
+                    <Button className="text-xs text-black font-bold bg-primary-light w-30 py-5 mx-2 hover:text-white">By Brand</Button>
+                    <Button className="text-xs text-black font-bold bg-primary-light w-30 py-5 mx-2 hover:text-white">Past 30 Days</Button>
                 </div>
             </div>
 

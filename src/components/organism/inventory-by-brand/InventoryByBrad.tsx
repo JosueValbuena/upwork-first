@@ -60,10 +60,10 @@ const InventoryByBrand = () => {
                 <p className="text-lg font-semibold ml-5">Inventory by brand</p>
 
                 <div className="flex ml-auto gap-3">
-                    <div className="bg-violet-100 py-1 px-5">
+                    <div className="bg-primary-light py-1 px-5">
                         <p>Past 30 Days</p>
                     </div>
-                    <div className="bg-violet-100 py-1 px-5">
+                    <div className="bg-primary-light py-1 px-5">
                         <p>By Category</p>
                     </div>
                 </div>
