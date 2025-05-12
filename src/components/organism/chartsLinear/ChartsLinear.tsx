@@ -1,62 +1,73 @@
-import {
-    LineChart,
-    Line,
-    XAxis,
-    YAxis,
-    CartesianGrid,
-    Tooltip,
-    /* Legend, */
-    ResponsiveContainer,
-} from "recharts";
+import ReactApexChart from "react-apexcharts";
 
-const ChartsLinear = ({ chartData }: any) => {
+const ChartsLinear = () => {
+    const series = [
+        {
+            name: 'TEAM A',
+            type: 'area',
+            data: [44, 55, 31, 47, 31, 43, 26, 41, 31, 47, 33]
+        },
+        {
+            name: 'TEAM B',
+            type: 'line',
+            data: [55, 69, 45, 61, 43, 54, 37, 52, 44, 61, 43]
+        }
+    ];
+
+    const options = {
+        chart: {
+            height: 350,
+            type: 'line',
+        },
+        stroke: {
+            curve: 'smooth',
+        },
+        fill: {
+            type: 'solid',
+            opacity: [0.35, 1],
+        },
+        labels: [
+            'Dec 01', 'Dec 02', 'Dec 03', 'Dec 04', 'Dec 05',
+            'Dec 06', 'Dec 07', 'Dec 08', 'Dec 09', 'Dec 10', 'Dec 11'
+        ],
+        markers: {
+            size: 0,
+        },
+        yaxis: [
+            {
+                title: {
+                    text: 'Series A',
+                },
+            },
+            {
+                opposite: true,
+                title: {
+                    text: 'Series B',
+                },
+            },
+        ],
+        tooltip: {
+            shared: true,
+            intersect: false,
+            y: {
+                formatter: function (y: number | undefined) {
+                    return typeof y !== "undefined" ? `${y.toFixed(0)} points` : y;
+                }
+            }
+        }
+    };
+
     return (
-        <ResponsiveContainer
-            width='100%'
-            height={375}
-        >
-            <LineChart
-                data={chartData}
-                margin={{
-                    top: 10,
-                    right: 30,
-                    left: 20,
-                    bottom: 5
-                }}
-            >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="month" />
-                <YAxis yAxisId="left" />
-                <YAxis yAxisId="right" orientation="right" />
-                <Tooltip />
-                {/* <Legend /> */}
+        <div>
+            <ReactApexChart
+                /* @ts-ignore */
+                options={options}
+                series={series}
+                type="line"
+                height={350}
+            />
+        </div>
+    );
+};
 
-                <Line
-                    yAxisId="right"
-                    type="monotone"
-                    dataKey="units_sold"
-                    stroke="#8884d8"
-                    activeDot={{ r: 8 }}
-                />
-
-                <Line
-                    yAxisId="right"
-                    type="monotone"
-                    dataKey="total_sales"
-                    stroke="#2d2d2d"
-                    activeDot={{ r: 8 }}
-                />
-
-                <Line
-                    yAxisId="left"
-                    type="monotone"
-                    dataKey="profit"
-                    stroke="#82ca9d"
-                />
-
-            </LineChart>
-        </ResponsiveContainer>
-    )
-}
-
-export default ChartsLinear
+export default ChartsLinear;

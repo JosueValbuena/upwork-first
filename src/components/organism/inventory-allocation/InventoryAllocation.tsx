@@ -1,4 +1,5 @@
-import ChartsPie from "../chartsPie/ChartsPie"
+import ChartsBarSecond from "../charts-bar-second/ChartsBarSecond"
+/* import ChartsPie from "../chartsPie/ChartsPie" */
 
 const InventoryAllocation = () => {
     return (
@@ -31,7 +32,7 @@ const InventoryAllocation = () => {
                 </div>
             </div>
 
-            <div className="flex flex-col items-center lg:flex-row">
+            {/* <div className="flex flex-col items-center lg:flex-row">
 
                 <div className="flex flex-col gap-6 w-1/2">
                     <div className="flex gap-3">
@@ -51,7 +52,9 @@ const InventoryAllocation = () => {
                 </div>
 
                 <ChartsPie />
-            </div>
+            </div> */}
+
+            <ChartsBarSecond />
         </div>
     )
 }

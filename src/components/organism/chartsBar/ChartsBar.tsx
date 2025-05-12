@@ -1,77 +1,89 @@
-import {
-    BarChart,
-    Bar,
-    XAxis,
-    YAxis,
-    /* CartesianGrid, */
-    Tooltip,
-    /* Legend, */
-    /* AreaChart,
-    Area, */
-    ResponsiveContainer,
-} from "recharts";
-
-const data = [
-    {
-        name: "0-30 Days",
-        uv: 4000,
-        pv: 2400,
-        amt: 2400,
-    },
-    {
-        name: "31-60 Days",
-        uv: 3000,
-        pv: 1398,
-        amt: 2210,
-    },
-    {
-        name: "61-90 Days",
-        uv: 2000,
-        pv: 9800,
-        amt: 2290,
-    },
-    {
-        name: "91-180 Days",
-        uv: 2780,
-        pv: 3908,
-        amt: 2000,
-    },
-    {
-        name: "181+ Days",
-        uv: 1890,
-        pv: 4800,
-        amt: 2181,
-    },
-    {
-        name: "365+ Days",
-        uv: 2390,
-        pv: 3800,
-        amt: 2500,
-    },
-];
+import ReactApexChart from "react-apexcharts";
 
 const ChartsBar = () => {
 
+    const series = [{
+        name: 'TEAM A',
+        type: 'column',
+        data: [23, 11, 22, 27, 13, 22, 37, 21, 44, 22, 30]
+    }, {
+        name: 'TEAM B',
+        type: 'area',
+        data: [44, 55, 41, 67, 22, 43, 21, 41, 56, 27, 43]
+    }, {
+        name: 'TEAM C',
+        type: 'line',
+        data: [30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39]
+    }];
+
+    const options = {
+        chart: {
+            height: 350,
+            type: 'line',
+            stacked: false,
+        },
+        stroke: {
+            width: [0, 2, 5],
+            curve: 'smooth'
+        },
+        plotOptions: {
+            bar: {
+                columnWidth: '50%'
+            }
+        },
+
+        fill: {
+            opacity: [0.85, 0.25, 1],
+            gradient: {
+                inverseColors: false,
+                shade: 'light',
+                type: "vertical",
+                opacityFrom: 0.85,
+                opacityTo: 0.55,
+                stops: [0, 100, 100, 100]
+            }
+        },
+        labels: ['01/01/2003', '02/01/2003', '03/01/2003', '04/01/2003', '05/01/2003', '06/01/2003', '07/01/2003',
+            '08/01/2003', '09/01/2003', '10/01/2003', '11/01/2003'
+        ],
+        markers: {
+            size: 0
+        },
+        xaxis: {
+            type: 'datetime'
+        },
+        yaxis: {
+            title: {
+                text: 'Points',
+            }
+        },
+        tooltip: {
+            shared: true,
+            intersect: false,
+            y: {
+                formatter: function (y: any) {
+                    if (typeof y !== "undefined") {
+                        return y.toFixed(0) + " points";
+                    }
+                    return y;
+
+                }
+            }
+        }
+    };
+
     return (
-        <ResponsiveContainer width={"100%"} height={380}>
-            <BarChart
-                data={data}
-                margin={{
-                    top: 20,
-                    right: 10,
-                    left: 10,
-                    bottom: 5,
-                }}
-            >
-                <YAxis yAxisId="left" orientation="left" />
-
-                <XAxis dataKey="name" />
-                <Tooltip />
-
-                <Bar dataKey="pv" stackId="a" fill="#FF8A72" barSize={35} yAxisId="left" />
-                <Bar dataKey="uv" stackId="a" fill="#6F4AFF" barSize={35} yAxisId="left" />
-            </BarChart>
-        </ResponsiveContainer>
+        <div>
+            <div id="chart">
+                <ReactApexChart
+                    // @ts-ignore
+                    options={options}
+                    series={series}
+                    type="line"
+                    height={350} />
+            </div>
+            <div id="html-dist"></div>
+        </div>
     );
 }
 

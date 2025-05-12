@@ -4,6 +4,7 @@ export { default as AdvancedSettingsSection } from "./advanced-settings-section/
 export { default as BillingAndPlanSection } from "./billing-and-plan-section/BillingAndPlanSection";
 export { default as BusinessOverview } from "./business-overview/BusinessOverview";
 export { default as ChartsBar } from "./chartsBar/ChartsBar";
+export { default as ChartsBarSecond } from "./charts-bar-second/ChartsBarSecond";
 export { default as ChartsLinear } from "./chartsLinear/ChartsLinear";
 export { default as ChartsLinearHeader } from "./charts-linear-header/ChartsLinearHeader";
 export { default as ChartsPie } from "./chartsPie/ChartsPie";
