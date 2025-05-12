@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import {
     Table,
     TableBody,
@@ -7,8 +8,13 @@ import {
     TableHead,
     TableHeader,
     TableRow,
-} from "@/components/ui/table"
-import { useMemo } from "react";
+} from "@/components/ui/table";
+import {
+    Tooltip,
+    TooltipContent,
+    TooltipProvider,
+    TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 
 const TableCustom = ({ dataTable }: any) => {
@@ -47,8 +53,21 @@ const TableCustom = ({ dataTable }: any) => {
                                 className={` 
                                     max-w-[10rem]`}
                             >
-                                {/*@ts-ignore */}
-                                <p className="whitespace-nowrap overflow-hidden text-ellipsis text-center w-full">{dataValues}</p>
+                                <TooltipProvider>
+                                    <Tooltip >
+                                        <TooltipTrigger className="max-w-[10rem]">
+                                            <p className="whitespace-nowrap overflow-hidden text-ellipsis text-center w-full">
+                                                {/*@ts-ignore */}
+                                                {dataValues}
+                                            </p>
+                                        </TooltipTrigger>
+
+                                        <TooltipContent>
+                                            {/*@ts-ignore */}
+                                            <p>{dataValues}</p>
+                                        </TooltipContent>
+                                    </Tooltip>
+                                </TooltipProvider>
                             </TableCell>
                         ))}
                     </TableRow>
