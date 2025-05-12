@@ -1,24 +1,29 @@
-import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
+import {
+    PieChart,
+    Pie,
+    Cell,
+    ResponsiveContainer,
+    /* Label,
+    Sector */
+} from "recharts";
 
 const data = [
-    { name: "Group A", value: 65 },
-    { name: "Group B", value: 27 },
-    { name: "Group C", value: 8 },
+    { name: "UNITS 1", value: 65 },
+    { name: "COST VALUE 2", value: 27 },
+    { name: "RETAIL VALUE 3", value: 8 },
 ];
 
-const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
+const COLORS = ["#6F4AFF", "#4CD964", "#FF8A72"];
 
 const RADIAN = Math.PI / 180;
 const renderCustomizedLabel = ({
     cx,
     cy,
     midAngle,
-    innerRadius,
     outerRadius,
     percent,
-    /* index */
 }: any) => {
-    const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
+    const radius = outerRadius + 20;
     const x = cx + radius * Math.cos(-midAngle * RADIAN);
     const y = cy + radius * Math.sin(-midAngle * RADIAN);
 
@@ -26,7 +31,8 @@ const renderCustomizedLabel = ({
         <text
             x={x}
             y={y}
-            fill="white"
+            fill="#000"
+            fontWeight="bold"
             textAnchor={x > cx ? "start" : "end"}
             dominantBaseline="central"
         >
@@ -34,26 +40,27 @@ const renderCustomizedLabel = ({
         </text>
     );
 };
+
 const ChartsPie = () => {
     return (
-        <ResponsiveContainer
-            width='100%'
-            height={300}
-        >
-            <PieChart width={400} height={400}>
+        <ResponsiveContainer width="100%" height={300}>
+            <PieChart>
                 <Pie
                     data={data}
-                    cx={200}
-                    cy={200}
-                    labelLine={false}
-                    label={renderCustomizedLabel}
+                    cx="50%"
+                    cy="50%"
                     outerRadius={80}
                     fill="#8884d8"
                     dataKey="value"
+                    labelLine={true}
+                    label={renderCustomizedLabel}
                 >
                     {/* @ts-ignore */}
                     {data.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                        <Cell
+                            key={`cell-${index}`}
+                            fill={COLORS[index % COLORS.length]}
+                        />
                     ))}
                 </Pie>
             </PieChart>
