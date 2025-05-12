@@ -1,70 +1,39 @@
-import {
-    PieChart,
-    Pie,
-    Cell,
-    ResponsiveContainer,
-    /* Label,
-    Sector */
-} from "recharts";
-
-const data = [
-    { name: "UNITS 1", value: 65 },
-    { name: "COST VALUE 2", value: 27 },
-    { name: "RETAIL VALUE 3", value: 8 },
-];
-
-const COLORS = ["#6F4AFF", "#4CD964", "#FF8A72"];
-
-const RADIAN = Math.PI / 180;
-const renderCustomizedLabel = ({
-    cx,
-    cy,
-    midAngle,
-    outerRadius,
-    percent,
-}: any) => {
-    const radius = outerRadius + 20;
-    const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-    return (
-        <text
-            x={x}
-            y={y}
-            fill="#000"
-            fontWeight="bold"
-            textAnchor={x > cx ? "start" : "end"}
-            dominantBaseline="central"
-        >
-            {`${(percent * 100).toFixed(0)}%`}
-        </text>
-    );
-};
+import ReactApexChart from "react-apexcharts";
 
 const ChartsPie = () => {
+
+    const series = [44, 55, 13, 43, 22];
+    const options = {
+        chart: {
+            width: 380,
+            type: 'pie',
+        },
+        labels: ['Team A', 'Team B', 'Team C', 'Team D', 'Team E'],
+        responsive: [{
+            breakpoint: 480,
+            options: {
+                chart: {
+                    width: 200
+                },
+                legend: {
+                    position: 'bottom'
+                }
+            }
+        }]
+    }
+
     return (
-        <ResponsiveContainer width="100%" height={300}>
-            <PieChart>
-                <Pie
-                    data={data}
-                    cx="50%"
-                    cy="50%"
-                    outerRadius={80}
-                    fill="#8884d8"
-                    dataKey="value"
-                    labelLine={true}
-                    label={renderCustomizedLabel}
-                >
-                    {/* @ts-ignore */}
-                    {data.map((entry, index) => (
-                        <Cell
-                            key={`cell-${index}`}
-                            fill={COLORS[index % COLORS.length]}
-                        />
-                    ))}
-                </Pie>
-            </PieChart>
-        </ResponsiveContainer>
+        <div>
+            <div id="chart">
+                <ReactApexChart
+                    /* @ts-ignore */
+                    options={options}
+                    series={series}
+                    type="pie"
+                    width={450} />
+            </div>
+            <div id="html-dist"></div>
+        </div>
     );
 };
 

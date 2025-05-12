@@ -1,71 +1,116 @@
 import ReactApexChart from "react-apexcharts";
 
 const ChartsLinear = () => {
-    const series = [
-        {
-            name: 'TEAM A',
-            type: 'area',
-            data: [44, 55, 31, 47, 31, 43, 26, 41, 31, 47, 33]
-        },
-        {
-            name: 'TEAM B',
-            type: 'line',
-            data: [55, 69, 45, 61, 43, 54, 37, 52, 44, 61, 43]
-        }
-    ];
+
+    const series = [{
+        name: 'Income',
+        type: 'area',
+        data: [1.4, 2, 2.5, 1.5, 2.5, 2.8, 3.8, 4.6]
+    }, {
+        name: 'Cashflow',
+        type: 'area',
+        data: [1.1, 3, 3.1, 4, 4.1, 4.9, 6.5, 8.5]
+    }, {
+        name: 'Revenue',
+        type: 'area',
+        data: [20, 29, 37, 36, 44, 45, 50, 58]
+    }];
 
     const options = {
         chart: {
             height: 350,
-            type: 'line',
+            type: 'area',
+            stacked: false
+        },
+        dataLabels: {
+            enabled: false
         },
         stroke: {
-            curve: 'smooth',
+            width: [4, 4, 4]
         },
-        fill: {
-            type: 'solid',
-            opacity: [0.35, 1],
-        },
-        labels: [
-            'Dec 01', 'Dec 02', 'Dec 03', 'Dec 04', 'Dec 05',
-            'Dec 06', 'Dec 07', 'Dec 08', 'Dec 09', 'Dec 10', 'Dec 11'
-        ],
-        markers: {
-            size: 0,
+        /* title: {
+            text: 'XYZ - Stock Analysis (2009 - 2016)',
+            align: 'left',
+            offsetX: 110
+        }, */
+        xaxis: {
+            categories: [2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016],
         },
         yaxis: [
             {
-                title: {
-                    text: 'Series A',
+                seriesName: 'Income',
+                axisTicks: {
+                    show: true,
                 },
+                axisBorder: {
+                    show: true,
+                    color: '#008FFB'
+                },
+                labels: {
+                    style: {
+                        colors: '#008FFB',
+                    }
+                },
+                title: {
+                    text: "Income (thousand crores)",
+                    style: {
+                        color: '#008FFB',
+                    }
+                },
+                tooltip: {
+                    enabled: true
+                }
             },
             {
+                seriesName: 'Cashflow',
                 opposite: true,
-                title: {
-                    text: 'Series B',
+                axisTicks: {
+                    show: true,
                 },
-            },
+                axisBorder: {
+                    show: true,
+                    color: '#00E396'
+                },
+                labels: {
+                    style: {
+                        colors: '#00E396',
+                    }
+                },
+                title: {
+                    text: "Operating Cashflow (thousand crores)",
+                    style: {
+                        color: '#00E396',
+                    }
+                },
+            }
         ],
         tooltip: {
-            shared: true,
-            intersect: false,
-            y: {
-                formatter: function (y: number | undefined) {
-                    return typeof y !== "undefined" ? `${y.toFixed(0)} points` : y;
-                }
-            }
+            fixed: {
+                enabled: true,
+                position: 'topLeft', // topRight, topLeft, bottomRight, bottomLeft
+                offsetY: 30,
+                offsetX: 60
+            },
+        },
+        legend: {
+            horizontalAlign: 'left',
+            offsetX: 40
         }
     };
 
+
     return (
         <div>
-            <ReactApexChart
-                /* @ts-ignore */
-                options={options}
-                series={series}
-                type="line"
-                height={350}
-            />
+            <div id="chart">
+                <ReactApexChart
+                    //@ts-ignore
+                    options={options}
+                    series={series}
+                    type="area"
+                    height={350}
+                />
+            </div>
+            <div id="html-dist"></div>
         </div>
     );
 };

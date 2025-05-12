@@ -1,4 +1,5 @@
-import ChartsBarSecond from "../charts-bar-second/ChartsBarSecond"
+/* import ChartsBarSecond from "../charts-bar-second/ChartsBarSecond" */
+import ChartsPie from "../chartsPie/ChartsPie";
 /* import ChartsPie from "../chartsPie/ChartsPie" */
 
 const InventoryAllocation = () => {
@@ -54,7 +55,10 @@ const InventoryAllocation = () => {
                 <ChartsPie />
             </div> */}
 
-            <ChartsBarSecond />
+            {/* <ChartsBarSecond /> */}
+            <div className="flex justify-center items-center h-full">
+                <ChartsPie />
+            </div>
         </div>
     )
 }
