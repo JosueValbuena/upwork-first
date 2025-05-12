@@ -1,7 +1,7 @@
 import ChartsLinearHeader from "../charts-linear-header/ChartsLinearHeader";
 import ChartsLinear from "../chartsLinear/ChartsLinear";
 
-const data = [
+/* const data = [
     {
         month: "Jan",
         units_sold: 20,
@@ -74,7 +74,7 @@ const data = [
         total_sales: 50,
         profit: 30,
     },
-];
+]; */
 
 /* Total sales profit units sold */
 
@@ -82,7 +82,7 @@ export const LinearHorizontalChartSalesOverview = () => {
     return (
         <div className="bg-white p-2 max-w-[1366px] mx-auto my-3">
             <ChartsLinearHeader />
-            <ChartsLinear chartData={data} />
+            <ChartsLinear /* chartData={data} */ />
         </div>
     );
 };
