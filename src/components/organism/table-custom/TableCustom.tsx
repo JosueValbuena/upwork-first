@@ -51,7 +51,7 @@ const TableCustom = ({ dataTable }: any) => {
                                 // @ts-ignore
                                 key={dataValues || generateRandomId()}
                                 className={` 
-                                    max-w-[10rem]`}
+                                    max-w-[10rem] text-center`}
                             >
                                 <TooltipProvider>
                                     <Tooltip >
