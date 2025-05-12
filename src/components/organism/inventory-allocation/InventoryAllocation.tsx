@@ -33,32 +33,32 @@ const InventoryAllocation = () => {
                 </div>
             </div>
 
-            {/* <div className="flex flex-col items-center lg:flex-row">
+            <div className="flex flex-col items-center lg:flex-row">
 
                 <div className="flex flex-col gap-6 w-1/2">
                     <div className="flex gap-3">
-                        <div className="bg-[#6F4AFF] w-3 p-3"></div>
+                        <div className="bg-[#6F4AFF] w-3 p-3 rounded-sm"></div>
                         <p>UNITS 65%</p>
                     </div>
 
                     <div className="flex gap-3">
-                        <div className="bg-[#75FF00] w-3 p-3"></div>
-                        <p>UNITS 27%</p>
+                        <div className="bg-[#75FF00] w-3 p-3 rounded-sm"></div>
+                        <p>COST VALUE 27%</p>
                     </div>
 
                     <div className="flex gap-3">
-                        <div className="bg-[#FF8A72] w-3 p-3"></div>
-                        <p>UNITS 8%</p>
+                        <div className="bg-[#FF8A72] w-3 p-3 rounded-sm"></div>
+                        <p>RETAIL VALUE 8%</p>
                     </div>
                 </div>
 
                 <ChartsPie />
-            </div> */}
+            </div>
 
             {/* <ChartsBarSecond /> */}
-            <div className="flex justify-center items-center h-full">
+            {/* <div className="flex justify-center items-center h-full">
                 <ChartsPie />
-            </div>
+            </div> */}
         </div>
     )
 }

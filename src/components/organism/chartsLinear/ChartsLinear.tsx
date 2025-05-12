@@ -44,19 +44,19 @@ const ChartsLinear = () => {
                 },
                 axisBorder: {
                     show: true,
-                    color: '#008FFB'
+                    color: '#000'
                 },
-                labels: {
+                /* labels: {
                     style: {
                         colors: '#008FFB',
                     }
-                },
-                title: {
+                }, */
+                /* title: {
                     text: "Income (thousand crores)",
                     style: {
                         color: '#008FFB',
                     }
-                },
+                }, */
                 tooltip: {
                     enabled: true
                 }
@@ -69,19 +69,19 @@ const ChartsLinear = () => {
                 },
                 axisBorder: {
                     show: true,
-                    color: '#00E396'
+                    color: '#000'
                 },
-                labels: {
+                /* labels: {
                     style: {
                         colors: '#00E396',
                     }
-                },
-                title: {
+                }, */
+                /* title: {
                     text: "Operating Cashflow (thousand crores)",
                     style: {
                         color: '#00E396',
                     }
-                },
+                }, */
             }
         ],
         tooltip: {
@@ -93,8 +93,7 @@ const ChartsLinear = () => {
             },
         },
         legend: {
-            horizontalAlign: 'left',
-            offsetX: 40
+            show: false,
         }
     };
 

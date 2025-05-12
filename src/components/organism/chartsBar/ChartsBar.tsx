@@ -60,8 +60,8 @@ const ChartsBar = () => {
                 },
                 axisBorder: {
                     show: true,
-                    color: '#008FFB'
-                },
+                    color: '#000'
+                },/* 
                 labels: {
                     style: {
                         colors: '#008FFB',
@@ -72,7 +72,7 @@ const ChartsBar = () => {
                     style: {
                         color: '#008FFB',
                     }
-                },
+                }, */
                 tooltip: {
                     enabled: true
                 }
@@ -85,8 +85,8 @@ const ChartsBar = () => {
                 },
                 axisBorder: {
                     show: true,
-                    color: '#00E396'
-                },
+                    color: '#000'
+                },/* 
                 labels: {
                     style: {
                         colors: '#00E396',
@@ -97,7 +97,7 @@ const ChartsBar = () => {
                     style: {
                         color: '#00E396',
                     }
-                },
+                }, */
             },
             /*{
                title: {
@@ -117,6 +117,9 @@ const ChartsBar = () => {
 
                 }
             }
+        },
+        legend: {
+            show: false
         }
     };
 
