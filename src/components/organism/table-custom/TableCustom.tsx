@@ -11,7 +11,7 @@ import {
 import { useMemo } from "react";
 
 
-const TableCustom = ({dataTable}:any) => {
+const TableCustom = ({ dataTable }: any) => {
 
     const dinamicWidth: Number = useMemo(() => {
         return 100 / dataTable.length;
@@ -33,21 +33,22 @@ const TableCustom = ({dataTable}:any) => {
             <TableHeader>
                 <TableRow className="bg-primary-light">
                     {Object.keys(dataTable[0])?.map((dataElement: string) => (
-                        <TableHead key={dataElement} className={`text-center whitespace-break-spaces capitalize w-[${dinamicWidth}%]`}>{dataElement.replaceAll("_", " ")}</TableHead>
+                        <TableHead key={dataElement} className={`text-center whitespace-break-spaces capitalize max-w-[${dinamicWidth}%]`}>{dataElement.replaceAll("_", " ")}</TableHead>
                     ))}
                 </TableRow>
             </TableHeader>
             <TableBody>
-                {dataTable.map((data:any, index:any) => (
+                {dataTable.map((data: any, index: any) => (
                     <TableRow key={data.sku} className={index % 2 === 0 ? '' : 'bg-violet-50'}>
                         {Object.values(data)?.map((dataValues) => (
                             <TableCell
-                            // @ts-ignore
+                                // @ts-ignore
                                 key={dataValues || generateRandomId()}
-                                className={`whitespace-break-spaces text-center w-[${dinamicWidth}%]`}
+                                className={` 
+                                    max-w-[10rem]`}
                             >
                                 {/*@ts-ignore */}
-                                {dataValues}
+                                <p className="whitespace-nowrap overflow-hidden text-ellipsis text-center w-full">{dataValues}</p>
                             </TableCell>
                         ))}
                     </TableRow>
