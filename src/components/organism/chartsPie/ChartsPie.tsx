@@ -9,6 +9,20 @@ const ChartsPie = () => {
             type: 'pie',
         },
         labels: ['Units', 'Cost Value', 'Retail Value'],
+        /* colors: ['#fff', '#fff', '#fff'], // <- COLORES PERSONALIZADOS AQUÍ */
+        fill: {
+            type: 'gradient',
+            gradient: {
+                shade: 'light',
+                type: 'radial',
+                shadeIntensity: 0.5,
+                /* gradientToColors: ['#000000', '#000000', '#000000'], */ // Final color: negro
+                inverseColors: true,
+                opacityFrom: 1,
+                opacityTo: 1,
+                stops: [0, 100],
+            }
+        },
         legend: {
             show: false, // Para mostrar u ocultar la leyenda (por defecto: true)
             position: 'left', // 'top', 'bottom', 'left', 'right' (por defecto: 'bottom')
@@ -18,7 +32,7 @@ const ChartsPie = () => {
             fontSize: '14px',
             fontWeight: 600,
         },
-        markers: {
+        /* markers: {
             width: 0,
             height: '5rem',
             strokeWidth: 0,
@@ -30,7 +44,7 @@ const ChartsPie = () => {
             customHTML: undefined,
             onClick: undefined,
             onDblClick: undefined
-        },
+        }, */
         responsive: [{
             breakpoint: 480,
             options: {

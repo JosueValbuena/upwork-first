@@ -1,10 +1,8 @@
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
     Table,
     TableBody,
-    /* TableCaption, */
     TableCell,
-    /* TableFooter, */
     TableHead,
     TableHeader,
     TableRow,
@@ -15,55 +13,101 @@ import {
     TooltipProvider,
     TooltipTrigger,
 } from "@/components/ui/tooltip";
-
+import { IconArrowDownBlack } from "@/utils/icons";
 
 const TableCustom = ({ dataTable }: any) => {
 
+    const [dataSorted, setDataSorted] = useState([...dataTable]);
+    const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('asc');
+    const [sortKey, setSortKey] = useState<string | null>(null);
+
     const dinamicWidth: Number = useMemo(() => {
-        return 100 / dataTable.length;
+        return 100 / (dataTable[0] ? Object.keys(dataTable[0]).length : 1);
     }, [dataTable]);
 
-    const generateRandomId = () => {
-        return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+    const onSortData = (newSortKey: string) => {
+        if (newSortKey === sortKey) {
+            setSortDirection(prevDirection => (prevDirection === 'asc' ? 'desc' : 'asc'));
+        } else {
+            setSortKey(newSortKey);
+            setSortDirection('asc');
+        }
     };
 
-    /* const transformData = useMemo(() => {
-        return dataTable.map((dataElement: any) => ({
-            id: generateRandomId(), // Genera el ID y lo asigna a la clave 'id'
-            ...dataElement,       // Incluye todas las propiedades del dataElement
-        }));
-    }, [dataTable]); */
+    useEffect(() => {
+        if (sortKey) {
+            const sorted = [...dataTable].sort((a:any, b:any): number => {
+                const valueA = a[sortKey];
+                const valueB = b[sortKey];
+
+                let result;
+
+                if (sortDirection === 'asc') {
+                    if (typeof valueA === 'string' && typeof valueB === 'string') {
+                        result =  valueA.localeCompare(valueB)
+                    };
+
+                    if (typeof valueA === 'number' && typeof valueB === 'number') {
+                        result = valueA - valueB
+                    }
+                };
+
+                if (sortDirection === 'desc') {
+                    if (typeof valueA === 'string' && typeof valueB === 'string') {
+                        result = valueB.localeCompare(valueA)
+                    };
+
+                    if (typeof valueA === 'number' && typeof valueB === 'number') {
+                        result = valueB - valueA
+                    };
+                };
+                return Number(result)
+            });
+            setDataSorted(sorted);
+        } else {
+            setDataSorted([...dataTable]);
+        }
+    }, [sortKey, sortDirection, dataTable]);
 
     return (
         <Table>
             <TableHeader>
                 <TableRow className="bg-primary-light">
-                    {Object.keys(dataTable[0])?.map((dataElement: string) => (
-                        <TableHead key={dataElement} className={`text-center whitespace-break-spaces capitalize max-w-[${dinamicWidth}%]`}>{dataElement.replaceAll("_", " ")}</TableHead>
+                    {Object.keys(dataTable[0] || {}).map((dataElement: string) => (
+                        <TableHead
+                            key={dataElement}
+                            className={`text-center whitespace-break-spaces capitalize max-w-[${dinamicWidth}%]`}
+                            onClick={() => onSortData(dataElement)}
+                            style={{ cursor: 'pointer' }}
+                        >
+                            <div className="flex items-center justify-center">
+                                {dataElement.replaceAll("_", " ")}
+                                <IconArrowDownBlack
+                                    className={`ml-2 ${sortKey === dataElement ? (sortDirection === 'asc' ? '' : 'rotate-180') : 'opacity-50'}`}
+                                />
+                            </div>
+                        </TableHead>
                     ))}
                 </TableRow>
             </TableHeader>
             <TableBody>
-                {dataTable.map((data: any, index: any) => (
-                    <TableRow key={data.sku} className={index % 2 === 0 ? '' : 'bg-violet-50'}>
-                        {Object.values(data)?.map((dataValues) => (
+                {dataSorted.map((data: any, index: any) => (
+                    <TableRow key={index} className={index % 2 === 0 ? '' : 'bg-violet-50'}>
+                        {Object.values(data)?.map((dataValues, cellIndex) => (
                             <TableCell
-                                // @ts-ignore
-                                key={dataValues || generateRandomId()}
-                                className={` 
-                                    max-w-[10rem] text-center`}
+                                key={cellIndex}
+                                className={`max-w-[10rem] text-center`}
                             >
                                 <TooltipProvider>
                                     <Tooltip >
                                         <TooltipTrigger className="max-w-[10rem]">
                                             <p className="whitespace-nowrap overflow-hidden text-ellipsis text-center w-full">
-                                                {/*@ts-ignore */}
+                                                {/* @ts-ignore */}
                                                 {dataValues}
                                             </p>
                                         </TooltipTrigger>
-
                                         <TooltipContent>
-                                            {/*@ts-ignore */}
+                                            {/* @ts-ignore */}
                                             <p>{dataValues}</p>
                                         </TooltipContent>
                                     </Tooltip>
