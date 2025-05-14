@@ -7,27 +7,91 @@ import {
     RiskAssessments,
     SmartRepricerActivityLog
 } from "@/components/organism";
+/* @ts-ignore */
+import { closestCenter, DndContext, DragEndEvent } from "@dnd-kit/core";
+import {
+    SortableContext,
+    verticalListSortingStrategy,
+    useSortable,
+    arrayMove
+} from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
+import { useState } from "react";
+
+const SortableItem = ({ id, children }: { id: string, children: React.ReactNode }) => {
+    const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id });
+
+    const style = {
+        transform: CSS.Transform.toString(transform),
+        transition,
+    };
+
+    return (
+        <div ref={setNodeRef} style={style} {...attributes} {...listeners}>
+            {children}
+        </div>
+    );
+};
 
 const Dashboard = () => {
-    return (
-        <div className="bg-background-primary-customized">
-            <BusinessOverview />
-            <LinearHorizontalChartSalesOverview />
-            <div
-                className="flex justify-between flex-wrap max-w-[1360px] mx-auto gap-3 lg:flex-nowrap"
-            >
+    /* @ts-ignore */
+    const componentsMap: Record<string, JSX.Element> = {
+        BusinessOverview: <BusinessOverview />,
+        SalesOverview: <LinearHorizontalChartSalesOverview />,
+        InventoryGroup1: (
+            <div className="flex justify-between flex-wrap max-w-[1360px] mx-auto gap-3 lg:flex-nowrap">
                 <InventoryAgeAnalysis />
                 <RiskAssessments />
             </div>
-            <div
-                className="flex justify-between flex-wrap max-w-[1360px] mx-auto gap-3 lg:flex-nowrap mt-3"
-            >
+        ),
+        InventoryGroup2: (
+            <div className="flex justify-between flex-wrap max-w-[1360px] mx-auto gap-3 lg:flex-nowrap mt-3">
                 <InventoryAllocation />
                 <SmartRepricerActivityLog />
             </div>
-            <InventoryByBrand />
-        </div>
-    )
-}
+        ),
+        InventoryByBrand: <InventoryByBrand />
+    };
 
-export default Dashboard
+    const [componentOrder, setComponentOrder] = useState<string[]>([
+        "BusinessOverview",
+        "SalesOverview",
+        "InventoryGroup1",
+        "InventoryGroup2",
+        "InventoryByBrand"
+    ]);
+
+    const handleDragEnd = (event: DragEndEvent) => {
+        const { active, over } = event;
+
+        if (active.id !== over?.id) {
+            setComponentOrder((prev) => {
+                const oldIndex = prev.indexOf(active.id as string);
+                const newIndex = prev.indexOf(over?.id as string);
+                return arrayMove(prev, oldIndex, newIndex);
+            });
+        }
+    };
+
+    return (
+        <div className="bg-background-primary-customized">
+            <DndContext
+                collisionDetection={closestCenter}
+                onDragEnd={handleDragEnd}
+            >
+                <SortableContext
+                    items={componentOrder}
+                    strategy={verticalListSortingStrategy}
+                >
+                    {componentOrder.map((id) => (
+                        <SortableItem key={id} id={id}>
+                            {componentsMap[id]}
+                        </SortableItem>
+                    ))}
+                </SortableContext>
+            </DndContext>
+        </div>
+    );
+};
+
+export default Dashboard;
