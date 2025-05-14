@@ -10,7 +10,7 @@ const CardBusinessOverview = ({ data }: CardBusinessOverview) => {
         <div className="bg-primary-light flex justify-between px-3 py-3 rounded-xl w-[100%] max-w-[250px]">
             <div className="flex">
 
-                <div className="bg-white rounded-full w-11 h-11 flex items-center justify-center">
+                <div className="bg-background-secondary-customized rounded-full w-11 h-11 flex items-center justify-center">
                     {data.icon}
                 </div>
 
@@ -21,10 +21,10 @@ const CardBusinessOverview = ({ data }: CardBusinessOverview) => {
                         <p className="text-xl font-semibold">{data.value}</p>
 
                         {data?.metrics && (
-                            <div className="flex items-center ml-2 p-0 bg-white h-3 rounded-xs">
+                            <div className="flex items-center ml-2 p-0 bg-background-secondary-customized h-3 rounded-xs">
 
                                 <div className="bg-purple-600 h-3 flex items-center rounded-xs px-1">
-                                    <p className="text-[8px] text-white">ROI</p>
+                                    <p className="text-[8px] text-background-secondary-customized">ROI</p>
                                 </div>
 
                                 <div className="px-1">

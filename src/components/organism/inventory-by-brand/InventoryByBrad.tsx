@@ -171,7 +171,7 @@ const InventoryByBrand = () => {
     };
 
     return (
-        <div className="bg-white grow-1 p-5 w-full max-w-[1366px] mx-auto mt-3">
+        <div className="bg-background-secondary-customized grow-1 p-5 w-full max-w-[1366px] mx-auto mt-3">
             <div className="flex">
                 <p className="text-lg font-semibold ml-5">Inventory by brand</p>
 
@@ -190,14 +190,14 @@ const InventoryByBrand = () => {
             <div className="mt-3 flex flex-col">
                 <TableCustom dataTable={resultsToShow} />
                 <Button
-                    className="mt-3 bg-primary-light text-black mx-auto hover:text-white "
+                    className="mt-3 bg-primary-light text-foreground mx-auto hover:text-white "
                     onClick={onLoadingData}
                 >
                     Load More
                 </Button>
                 {resultsToShow.length > 5 && (
                     <Button
-                        className="mt-3 bg-primary-light text-black mx-auto hover:text-white "
+                        className="mt-3 bg-primary-light text-foreground mx-auto hover:text-white "
                         onClick={onResetData}
                     >
                         Reset

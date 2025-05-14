@@ -10,7 +10,7 @@ import {
 
 const Dashboard = () => {
     return (
-        <div className="bg-gray-50">
+        <div className="bg-background-primary-customized">
             <BusinessOverview />
             <LinearHorizontalChartSalesOverview />
             <div

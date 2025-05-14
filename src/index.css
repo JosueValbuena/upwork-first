@@ -4,7 +4,11 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --color-primary-light: #F1EFFC
+  --color-primary-light: #F1EFFC;
+  --color-primary-xlight: #F8F7FF;
+  --color-text-button-dark: #fff;
+  --color-background-primary-customized: #f9fafb;
+  --color-background-secondary-customized: #fff;
 }
 
 @theme inline {
@@ -84,6 +88,10 @@
 }
 
 .dark {
+  --color-primary-light: #51508b;
+  --color-primary-xlight: #23325a;
+  --color-background-primary-customized: #030712;
+  --color-background-secondary-customized: #111827;
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
@@ -123,6 +131,6 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background-primary-customized text-foreground;
   }
 }

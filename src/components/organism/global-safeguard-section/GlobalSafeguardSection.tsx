@@ -4,7 +4,7 @@ import { currencyList } from "@/utils/constants"
 
 const GlobalSafeguardSection = () => {
     return (
-        <div className="p-3 flex flex-col gap-3 bg-white mt-3">
+        <div className="p-3 flex flex-col gap-3 background-secondary-customizedwhite mt-3">
             <p className="text-xl font-semibold">Global Safeguard</p>
 
             <div className="flex flex-col gap-3">

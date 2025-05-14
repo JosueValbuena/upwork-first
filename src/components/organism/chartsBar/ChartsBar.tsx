@@ -1,6 +1,9 @@
+import { useTheme } from "@/styles/theme-provider";
 import ReactApexChart from "react-apexcharts";
 
 const ChartsBar = () => {
+
+    const { theme } = useTheme();
 
     const series = [{
         name: 'TEAM A',
@@ -50,7 +53,12 @@ const ChartsBar = () => {
             size: 0
         },
         xaxis: {
-            type: 'datetime'
+            type: 'datetime',
+            labels: {
+                style: {
+                    colors: theme === 'light' ? '#000' : '#fff',
+                }
+            },
         },
         yaxis: [
             {
@@ -61,18 +69,18 @@ const ChartsBar = () => {
                 axisBorder: {
                     show: true,
                     color: '#000'
-                },/* 
+                },
                 labels: {
                     style: {
-                        colors: '#008FFB',
+                        colors: theme === 'light' ? '#000' : '#fff',
                     }
                 },
-                title: {
+                /* title: {
                     text: "Income (thousand crores)",
                     style: {
                         color: '#008FFB',
                     }
-                }, */
+                },  */
                 tooltip: {
                     enabled: true
                 }
@@ -86,13 +94,13 @@ const ChartsBar = () => {
                 axisBorder: {
                     show: true,
                     color: '#000'
-                },/* 
+                },
                 labels: {
                     style: {
-                        colors: '#00E396',
+                        colors: theme === 'light' ? '#000' : '#fff',
                     }
                 },
-                title: {
+                /* title: {
                     text: "Operating Cashflow (thousand crores)",
                     style: {
                         color: '#00E396',

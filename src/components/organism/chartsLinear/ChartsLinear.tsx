@@ -1,6 +1,9 @@
+import { useTheme } from "@/styles/theme-provider";
 import ReactApexChart from "react-apexcharts";
 
 const ChartsLinear = () => {
+
+    const { theme } = useTheme();
 
     const series = [{
         name: 'Income',
@@ -35,6 +38,11 @@ const ChartsLinear = () => {
         }, */
         xaxis: {
             categories: [2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016],
+            labels: {
+                style: {
+                    colors: theme === 'light' ? '#000' : '#fff',
+                }
+            }
         },
         yaxis: [
             {
@@ -46,11 +54,11 @@ const ChartsLinear = () => {
                     show: true,
                     color: '#000'
                 },
-                /* labels: {
+                labels: {
                     style: {
-                        colors: '#008FFB',
+                        colors: theme === 'light' ? '#000' : '#fff',
                     }
-                }, */
+                },
                 /* title: {
                     text: "Income (thousand crores)",
                     style: {
@@ -71,11 +79,11 @@ const ChartsLinear = () => {
                     show: true,
                     color: '#000'
                 },
-                /* labels: {
+                labels: {
                     style: {
-                        colors: '#00E396',
+                        colors: theme === 'light' ? '#000' : '#fff',
                     }
-                }, */
+                },
                 /* title: {
                     text: "Operating Cashflow (thousand crores)",
                     style: {

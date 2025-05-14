@@ -4,7 +4,7 @@ import ChartsPie from "../chartsPie/ChartsPie";
 
 const InventoryAllocation = () => {
     return (
-        <div className="bg-white grow-1 p-5 w-full">
+        <div className="bg-background-secondary-customized grow-1 p-5 w-full">
             <div className="flex flex-col justify-center items-center mx-auto md:flex-row md:justify-start md:items-center">
                 <p className="font-semibold text-md text-center">Inventory Allocation</p>
 
@@ -19,7 +19,7 @@ const InventoryAllocation = () => {
 
                 <div className="mt-3 flex items-center md:ml-2">
                     <p className="text-xs font-bold mr-1">View:</p>
-                    <div className="bg-gray-100 p-2 flex rounded-md items-center">
+                    <div className="bg-background-primary-customized p-2 flex rounded-md items-center">
                         <div className="bg-purple-500 p-1 mx-1 text-xs cursor-pointer text-white rounded-md hover:bg-black hover:text-white">
                             <p>Units</p>
                         </div>

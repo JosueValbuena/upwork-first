@@ -92,7 +92,7 @@ const TableCustom = ({ dataTable }: any) => {
             </TableHeader>
             <TableBody>
                 {dataSorted.map((data: any, index: any) => (
-                    <TableRow key={index} className={index % 2 === 0 ? '' : 'bg-violet-50'}>
+                    <TableRow key={index} className={index % 2 === 0 ? '' : 'bg-primary-xlight'}>
                         {Object.values(data)?.map((dataValues, cellIndex) => (
                             <TableCell
                                 key={cellIndex}

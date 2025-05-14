@@ -12,7 +12,7 @@ const NavBar = () => {
     };
 
     return (
-        <nav className="flex justify-between flex-row h-10 mx-auto items-center bg-white px-10 w-full lg:justify-center">
+        <nav className="flex justify-between flex-row h-10 mx-auto items-center bg-background-secondary-customized px-10 w-full lg:justify-center">
             <div className="text-xl font-semibold">Logo</div>
 
             <div className="hidden lg:contents">

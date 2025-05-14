@@ -11,7 +11,7 @@ const InventoryAgeAnalysis = () => {
     };
 
     return (
-        <div className="bg-white p-5 w-full grow-1">
+        <div className="bg-background-secondary-customized p-5 w-full grow-1">
             <div className="flex flex-row items-center justify-between">
                 <p className="font-semibold text-lg">Inventory Age Analysis</p>
                 <div className="bg-primary-light flex items-center rounded-xl">

@@ -13,7 +13,7 @@ const CardRiskAssessments = ({ riskData }: CardRiskAssessments) => {
     rounded-xl w-full max-w-[16rem] lg:w-full lg:max-w-[10rem] xl:max-w[12rem]
     mx-auto">
       {/*  md:max-w-3xs lg:max-w-[11.25rem] w-full max-w-[9.65rem]*/}
-      <div className="w-9 h-9 bg-white rounded-full flex justify-center items-center">
+      <div className="w-9 h-9 bg-background-secondary-customized rounded-full flex justify-center items-center">
         {riskData.icon}
       </div>
 

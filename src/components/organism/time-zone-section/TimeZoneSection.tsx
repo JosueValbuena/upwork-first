@@ -15,7 +15,7 @@ const selectList: SelectOption[] = [
 
 const TimeZoneSection = () => {
     return (
-        <div className="p-3 flex flex-col gap-3 bg-white mt-3">
+        <div className="p-3 flex flex-col gap-3 bg-background-secondary-customized mt-3">
             <p className="text-xl font-semibold">Timezone</p>
 
             <SelectCustom selectList={selectList} />

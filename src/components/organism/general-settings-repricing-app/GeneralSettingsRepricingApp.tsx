@@ -4,7 +4,7 @@ import { currencyList } from "@/utils/constants";
 
 const GeneralSettingsRepricingApp = () => {
     return (
-        <div className="p-3 flex flex-col gap-3 bg-white mt-3">
+        <div className="p-3 flex flex-col gap-3 bg-background-secondary-customized mt-3">
 
             <p className="text-xl font-semibold">General Settings - Repricing App</p>
 

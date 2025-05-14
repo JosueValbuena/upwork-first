@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 
 const Footer = () => {
     return (
-        <div className="bg-white grow-1 p-5 w-full mx-auto">
+        <div className="bg-background-secondary-customized grow-1 p-5 w-full mx-auto">
             <div className="max-w-[1366px] mx-auto">
                 <div className="flex gap-5 justify-center flex-wrap">
                     {navigationLinks.map(navigationElement => (

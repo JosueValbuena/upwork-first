@@ -33,3 +33,5 @@ export { ReactComponent as IconWarningContainedRed } from '@/assets/icons/icon-w
 export { ReactComponent as IconWarningContainedYellow } from '@/assets/icons/icon-warning-yellow-contained.svg';
 export { ReactComponent as IconArrowRiseContainedGreen } from '@/assets/icons/icon-arrowRise-green-contained.svg';
 export { ReactComponent as IconArrowDownContainedRed } from '@/assets/icons/icon-arrowDecrease-red-contained.svg';
+export { ReactComponent as IconSunContainedWhite } from '@/assets/icons/icon-sun-white-contained.svg';
+export { ReactComponent as IconSunContainedBlack } from '@/assets/icons/icon-sun-black-contained.svg';

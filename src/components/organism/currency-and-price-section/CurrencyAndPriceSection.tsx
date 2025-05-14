@@ -24,7 +24,7 @@ const selectList: SelectOption[] = [
 
 const CurrencyAndPriceSection = () => {
   return (
-    <div className="p-3 flex flex-col gap-3 bg-white mt-3">
+    <div className="p-3 flex flex-col gap-3 bg-background-secondary-customized mt-3">
       <p className="text-xl font-semibold">Currency & Price</p>
 
       <SelectCustom selectList={selectList}/>

@@ -80,7 +80,7 @@ import ChartsLinear from "../chartsLinear/ChartsLinear";
 
 export const LinearHorizontalChartSalesOverview = () => {
     return (
-        <div className="bg-white p-2 max-w-[1366px] mx-auto my-3">
+        <div className="bg-background-secondary-customized p-2 max-w-[1366px] mx-auto my-3">
             <ChartsLinearHeader />
             <ChartsLinear /* chartData={data} */ />
         </div>

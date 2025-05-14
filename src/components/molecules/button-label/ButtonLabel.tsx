@@ -16,7 +16,7 @@ const ButtonLabel = ({ buttonText, label }: ButtonLabel) => {
             </Label>
 
             <Button
-                className="bg-violet-700 font-semibold px-8 hover:bg-violet-950 cursor-pointer"
+                className="bg-violet-700 text-text-button-dark font-semibold px-8 hover:bg-violet-950 cursor-pointer"
             >
                 {buttonText}
             </Button>
