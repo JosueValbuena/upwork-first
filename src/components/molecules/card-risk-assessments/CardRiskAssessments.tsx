@@ -10,7 +10,7 @@ const CardRiskAssessments = ({ riskData }: CardRiskAssessments) => {
     <div className="
     flex flex-col bg-primary-light 
     justify-center items-center py-3 px-2 
-    rounded-xl w-full max-w-[16rem] lg:w-full lg:max-w-[10rem] xl:max-w[12rem]
+    rounded-xl w-[10rem] md:w-[12.1rem]
     mx-auto">
       {/*  md:max-w-3xs lg:max-w-[11.25rem] w-full max-w-[9.65rem]*/}
       <div className="w-9 h-9 bg-background-secondary-customized rounded-full flex justify-center items-center">

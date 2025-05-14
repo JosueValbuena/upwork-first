@@ -7,7 +7,7 @@ interface CardBusinessOverview {
 
 const CardBusinessOverview = ({ data }: CardBusinessOverview) => {
     return (
-        <div className="bg-primary-light flex justify-between px-3 py-3 rounded-xl w-[100%] max-w-[250px]">
+        <div className="bg-primary-light flex justify-between px-3 py-3 rounded-xl w-[16rem]">
             <div className="flex">
 
                 <div className="bg-background-secondary-customized rounded-full w-11 h-11 flex items-center justify-center">

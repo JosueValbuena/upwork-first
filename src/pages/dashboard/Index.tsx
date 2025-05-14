@@ -45,7 +45,7 @@ const Dashboard = () => {
             </div>
         ),
         InventoryGroup2: (
-            <div className="flex justify-between flex-wrap max-w-[1360px] mx-auto gap-3 lg:flex-nowrap mt-3">
+            <div className="flex justify-between flex-wrap max-w-[1360px] mx-auto gap-3 xl:flex-nowrap mt-3">
                 <InventoryAllocation />
                 <SmartRepricerActivityLog />
             </div>
