@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button"
+/* import { Button } from "@/components/ui/button" */
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -6,7 +6,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { useTheme } from "@/styles/theme-provider"
-import { IconMoonOutlinedGray, IconSunContainedBlack } from "@/utils/icons"
+import { IconMoonOutlinedGray, /* IconSunContainedBlack */ } from "@/utils/icons"
 
 export function ModeToggle() {
   const { setTheme, theme } = useTheme();
@@ -14,7 +14,13 @@ export function ModeToggle() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon" className="none">
+
+        <IconMoonOutlinedGray
+          className="mx-2 cursor-pointer"
+          {...(theme === 'dark' ? { stroke: '#fff' } : {})}
+        />
+
+        {/* <Button variant="outline" size="icon" className="none">
           {theme === 'light' ? (
             <IconMoonOutlinedGray 
             className="mx-2 cursor-pointer" 
@@ -25,8 +31,7 @@ export function ModeToggle() {
             stroke={theme === 'dark' ? '#fff' : ''}
             />
           )}
-          {/* <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" /> */}
-        </Button>
+        </Button> */}
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuItem onClick={() => setTheme("light")}>
