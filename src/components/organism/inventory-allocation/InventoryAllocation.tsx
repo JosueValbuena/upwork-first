@@ -4,7 +4,7 @@ import ChartsPie from "../chartsPie/ChartsPie";
 
 const InventoryAllocation = () => {
     return (
-        <div className="bg-background-secondary-customized grow-1 p-5 w-full">
+        <div className="bg-background-secondary-customized grow-1 p-5 w-full h-full">
             <div className="flex flex-col justify-center items-center mx-auto md:flex-row md:justify-start md:items-center">
                 <p className="font-semibold text-md text-center">Inventory Allocation</p>
 

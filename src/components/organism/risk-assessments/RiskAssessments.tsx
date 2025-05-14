@@ -44,7 +44,7 @@ const RiskAssessments = () => {
     };
 
     return (
-        <div className="bg-background-secondary-customized px-4 py-3 grow-1 w-full pt-5">
+        <div className="bg-background-secondary-customized px-4 py-3 grow-1 w-full h-full pt-5">
             <p className="text-lg font-semibold">Risk Assessments</p>
             <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
                 <SortableContext items={orderedItems} strategy={rectSortingStrategy}>

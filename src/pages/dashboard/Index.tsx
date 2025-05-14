@@ -1,11 +1,7 @@
 import {
     BusinessOverview,
-    InventoryAgeAnalysis,
-    InventoryAllocation,
     InventoryByBrand,
     LinearHorizontalChartSalesOverview,
-    RiskAssessments,
-    SmartRepricerActivityLog
 } from "@/components/organism";
 /* @ts-ignore */
 import { closestCenter, DndContext, DragEndEvent } from "@dnd-kit/core";
@@ -17,6 +13,8 @@ import {
 } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import { useState } from "react";
+import DashboardSectionOne from './sections-one/SectionOne';
+import DashboardSectionTwo from './sections-two/SectionTwo';
 
 const SortableItem = ({ id, children }: { id: string, children: React.ReactNode }) => {
     const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id });
@@ -38,18 +36,8 @@ const Dashboard = () => {
     const componentsMap: Record<string, JSX.Element> = {
         BusinessOverview: <BusinessOverview />,
         SalesOverview: <LinearHorizontalChartSalesOverview />,
-        InventoryGroup1: (
-            <div className="flex justify-between flex-wrap max-w-[1360px] mx-auto gap-3 lg:flex-nowrap">
-                <InventoryAgeAnalysis />
-                <RiskAssessments />
-            </div>
-        ),
-        InventoryGroup2: (
-            <div className="flex justify-between flex-wrap max-w-[1360px] mx-auto gap-3 xl:flex-nowrap mt-3">
-                <InventoryAllocation />
-                <SmartRepricerActivityLog />
-            </div>
-        ),
+        InventoryGroup1: <DashboardSectionOne />,
+        InventoryGroup2: <DashboardSectionTwo />,
         InventoryByBrand: <InventoryByBrand />
     };
 
