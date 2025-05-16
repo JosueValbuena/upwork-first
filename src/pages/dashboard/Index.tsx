@@ -12,11 +12,13 @@ import {
     arrayMove
 } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DashboardSectionOne from './sections-one/SectionOne';
 import DashboardSectionTwo from './sections-two/SectionTwo';
+import { ModalCustom } from "@/components/molecules";
 
 const SortableItem = ({ id, children }: { id: string, children: React.ReactNode }) => {
+
     const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id });
 
     const style = {
@@ -32,6 +34,13 @@ const SortableItem = ({ id, children }: { id: string, children: React.ReactNode 
 };
 
 const Dashboard = () => {
+
+    const [isOpenModalInformavtive, setIsOpenModalInformative] = useState({
+        isOpen: false,
+        title: '',
+        message: 'You can drag and rearrange the tiles on your dashboard.'
+    });
+
     /* @ts-ignore */
     const componentsMap: Record<string, JSX.Element> = {
         BusinessOverview: <BusinessOverview />,
@@ -61,8 +70,32 @@ const Dashboard = () => {
         }
     };
 
+    const handleCloseModal = () => {
+        setIsOpenModalInformative({
+            isOpen: false,
+            title: '',
+            message: ''
+        });
+
+        localStorage.setItem('dragInfoModal', JSON.stringify(true));
+    };
+
+    useEffect(() => {
+        const isModalShowd = localStorage.getItem('dragInfoModal');
+
+        if (!isModalShowd) {
+            setIsOpenModalInformative({
+                isOpen: true,
+                title: 'Tip',
+                message: 'You can drag and rearrange the tiles on your dashboard.'
+            });
+        };
+
+    }, []);
+
     return (
         <div className="bg-background-primary-customized">
+            <ModalCustom modalInfo={isOpenModalInformavtive} onAccept={handleCloseModal} />
             <DndContext
                 collisionDetection={closestCenter}
                 onDragEnd={handleDragEnd}

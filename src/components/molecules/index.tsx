@@ -4,6 +4,7 @@ export { default as CardRiskAssessments } from "./card-risk-assessments/CardRisk
 export { default as CheckBoxLabel } from "./checkbox-label/CheckBoxLabel";
 export { default as InputTextLabel } from "./input-text-label/InputTextLabel";
 export { default as InventoryStrategySection } from "./inventory-strategy-section/InventoryStrategySection";
+export { default as ModalCustom } from "./modal-custom/ModalCustom";
 export { default as NavbarLinks } from "./navbar-links/NavbarLinks";
 export { default as NavBarWidget } from "./nabbar-widget/NavBarWidget";
 export { default as PopoverCustom } from "./pop-over-custom/PopOverCustom";
