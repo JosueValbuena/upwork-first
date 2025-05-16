@@ -16,6 +16,7 @@ import { useEffect, useState } from "react";
 import DashboardSectionOne from './sections-one/SectionOne';
 import DashboardSectionTwo from './sections-two/SectionTwo';
 import { ModalCustom } from "@/components/molecules";
+import IMG from "@/assets/img/9u8edp.gif"
 
 const SortableItem = ({ id, children }: { id: string, children: React.ReactNode }) => {
 
@@ -38,7 +39,8 @@ const Dashboard = () => {
     const [isOpenModalInformavtive, setIsOpenModalInformative] = useState({
         isOpen: false,
         title: '',
-        message: 'You can drag and rearrange the tiles on your dashboard.'
+        message: '',
+        img: ''
     });
 
     /* @ts-ignore */
@@ -74,7 +76,8 @@ const Dashboard = () => {
         setIsOpenModalInformative({
             isOpen: false,
             title: '',
-            message: ''
+            message: '',
+            img: ''
         });
 
         localStorage.setItem('dragInfoModal', JSON.stringify(true));
@@ -87,7 +90,8 @@ const Dashboard = () => {
             setIsOpenModalInformative({
                 isOpen: true,
                 title: 'Tip',
-                message: 'You can drag and rearrange the tiles on your dashboard.'
+                message: 'You can drag and rearrange the tiles on your dashboard.',
+                img: IMG
             });
         };
 

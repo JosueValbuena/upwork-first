@@ -13,7 +13,8 @@ import {
 interface ModalInfo {
   isOpen: boolean,
   title: string,
-  message: string
+  message: string,
+  img: string
 }
 
 interface ModalCustom {
@@ -30,6 +31,11 @@ const ModalCustom = ({ modalInfo, onAccept }: ModalCustom) => {
           <AlertDialogTitle>{modalInfo.title}</AlertDialogTitle>
           <AlertDialogDescription>
             {modalInfo.message}
+            {modalInfo?.img && (
+              <div>
+                <img src={modalInfo.img} alt="img" className="text-center mx-auto my-3" />
+              </div>
+            )}
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
