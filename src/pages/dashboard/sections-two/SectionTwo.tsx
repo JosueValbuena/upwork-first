@@ -8,7 +8,7 @@ import {
     arrayMove
 } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const SortableItem = ({ id, children }: { id: string; children: React.ReactNode }) => {
     const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id });
@@ -26,7 +26,7 @@ const SortableItem = ({ id, children }: { id: string; children: React.ReactNode 
 };
 
 const DashboardSectionTwo = () => {
-    const [order, setOrder] = useState<string[]>(["InventoryAllocation", "SmartRepricerActivityLog"]);
+    const [componentOrder, setComponentOrder] = useState<string[]>([]);
 
     /* @ts-ignore */
     const map: Record<string, JSX.Element> = {
@@ -37,7 +37,7 @@ const DashboardSectionTwo = () => {
     const handleDragEnd = (event: DragEndEvent) => {
         const { active, over } = event;
         if (active.id !== over?.id) {
-            setOrder((prev) => {
+            setComponentOrder((prev) => {
                 const oldIndex = prev.indexOf(active.id as string);
                 const newIndex = prev.indexOf(over?.id as string);
                 return arrayMove(prev, oldIndex, newIndex);
@@ -45,11 +45,41 @@ const DashboardSectionTwo = () => {
         }
     };
 
+    useEffect(() => {
+        const storedValue = localStorage.getItem('draggedUserPreference');
+        const draggedUserPreferences = storedValue ? JSON.parse(storedValue) : {};
+        if (draggedUserPreferences?.dashboardSectionTwoLayout) {
+            setComponentOrder(draggedUserPreferences?.dashboardSectionTwoLayout);
+            return
+        };
+
+        if (!draggedUserPreferences?.dashboardSectionTwoLayout) {
+            setComponentOrder([
+                "InventoryAllocation",
+                "SmartRepricerActivityLog"
+            ]);
+        };
+    }, []);
+
+    useEffect(() => {
+        if (componentOrder.length > 1) {
+
+            const storedValue = localStorage.getItem('draggedUserPreference');
+            const draggedUserPreferences = storedValue ? JSON.parse(storedValue) : {};
+            let newDraggedUserPreferences = {
+                ...draggedUserPreferences,
+                dashboardSectionTwoLayout: componentOrder
+            };
+
+            localStorage.setItem('draggedUserPreference', JSON.stringify(newDraggedUserPreferences));
+        }
+    }, [componentOrder]);
+
     return (
         <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
-            <SortableContext items={order} strategy={verticalListSortingStrategy}>
+            <SortableContext items={componentOrder} strategy={verticalListSortingStrategy}>
                 <div className="flex justify-between flex-wrap max-w-[1360px] mx-auto gap-3 lg:flex-nowrap mt-3">
-                    {order.map((id) => (
+                    {componentOrder.map((id) => (
                         <SortableItem key={id} id={id}>
                             {map[id]}
                         </SortableItem>

@@ -52,13 +52,7 @@ const Dashboard = () => {
         InventoryByBrand: <InventoryByBrand />
     };
 
-    const [componentOrder, setComponentOrder] = useState<string[]>([
-        "BusinessOverview",
-        "SalesOverview",
-        "InventoryGroup1",
-        "InventoryGroup2",
-        "InventoryByBrand"
-    ]);
+    const [componentOrder, setComponentOrder] = useState<string[]>([]);
 
     const handleDragEnd = (event: DragEndEvent) => {
         const { active, over } = event;
@@ -69,7 +63,7 @@ const Dashboard = () => {
                 const newIndex = prev.indexOf(over?.id as string);
                 return arrayMove(prev, oldIndex, newIndex);
             });
-        }
+        };
     };
 
     const handleCloseModal = () => {
@@ -84,9 +78,10 @@ const Dashboard = () => {
     };
 
     useEffect(() => {
-        const isModalShowd = localStorage.getItem('dragInfoModal');
+        const storedValue = localStorage.getItem('dragInfoModal');
+        const isModalShowed: boolean = storedValue ? JSON.parse(storedValue) : false;
 
-        if (!isModalShowd) {
+        if (!isModalShowed) {
             setIsOpenModalInformative({
                 isOpen: true,
                 title: 'Tip',
@@ -96,6 +91,40 @@ const Dashboard = () => {
         };
 
     }, []);
+
+    useEffect(() => {
+        const storedValue = localStorage.getItem('draggedUserPreference');
+        const draggedUserPreferences = storedValue ? JSON.parse(storedValue) : {};
+        console.log({ draggedUserPreferences })
+        if (draggedUserPreferences?.dashboardGeneralLayout) {
+            setComponentOrder(draggedUserPreferences?.dashboardGeneralLayout);
+            return
+        };
+
+        if (!draggedUserPreferences?.dashboardGeneralLayout) {
+            setComponentOrder([
+                "BusinessOverview",
+                "SalesOverview",
+                "InventoryGroup1",
+                "InventoryGroup2",
+                "InventoryByBrand"
+            ])
+        };
+    }, []);
+
+    useEffect(() => {
+        if (componentOrder.length > 1) {
+
+            const storedValue = localStorage.getItem('draggedUserPreference');
+            const draggedUserPreferences = storedValue ? JSON.parse(storedValue) : {};
+            let newDraggedUserPreferences = {
+                ...draggedUserPreferences,
+                dashboardGeneralLayout: componentOrder
+            };
+
+            localStorage.setItem('draggedUserPreference', JSON.stringify(newDraggedUserPreferences));
+        }
+    }, [componentOrder]);
 
     return (
         <div className="bg-background-primary-customized">

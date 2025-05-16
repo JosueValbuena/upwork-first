@@ -10,6 +10,14 @@ const ChartsPie = () => {
         },
         labels: ['Units', 'Cost Value', 'Retail Value'],
         /* colors: ['#fff', '#fff', '#fff'], // <- COLORES PERSONALIZADOS AQUÍ */
+        dataLabels: {
+            enable: true,
+            style: {
+                colors: ['#000'], // Cambia '#000' al color que desees (ej: '#fff' para blanco)
+                fontSize: '17px', // Opcional: cambiar el tamaño de la fuente
+                fontWeight: 'bold', // Opcional: cambiar el peso de la fuente
+            },
+        },
         fill: {
             type: 'gradient',
             gradient: {

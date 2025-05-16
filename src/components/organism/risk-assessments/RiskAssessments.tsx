@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CardRiskAssessments } from "@/components/molecules";
 import { riskdData } from "@/utils/constants";
 /* @ts-ignore */
@@ -28,7 +28,7 @@ const SortableCard = ({ id, children }: { id: string; children: React.ReactNode 
 };
 
 const RiskAssessments = () => {
-    const [orderedItems, setOrderedItems] = useState(riskdData.map(item => item.label));
+    const [orderedItems, setOrderedItems] = useState<string[]>([]);
 
     const handleDragEnd = (event: DragEndEvent) => {
         const { active, over } = event;
@@ -42,6 +42,32 @@ const RiskAssessments = () => {
             });
         }
     };
+
+    useEffect(() => {
+        const storedValue = localStorage.getItem('draggedUserPreference');
+        const draggedUserPreferences = storedValue ? JSON.parse(storedValue) : {};
+        if (draggedUserPreferences?.dashboardRiskAssessmentsLayout) {
+            setOrderedItems(draggedUserPreferences?.dashboardRiskAssessmentsLayout);
+            return
+        };
+
+        if (!draggedUserPreferences?.dashboardRiskAssessmentsLayout) {
+            setOrderedItems(riskdData.map(item => item.label))
+        };
+    }, []);
+
+    useEffect(() => {
+        if (orderedItems.length > 1) {
+            const storedValue = localStorage.getItem('draggedUserPreference');
+            const draggedUserPreferences = storedValue ? JSON.parse(storedValue) : {};
+            let newDraggedUserPreferences = {
+                ...draggedUserPreferences,
+                dashboardRiskAssessmentsLayout: orderedItems
+            };
+
+            localStorage.setItem('draggedUserPreference', JSON.stringify(newDraggedUserPreferences));
+        }
+    }, [orderedItems]);
 
     return (
         <div className="bg-background-secondary-customized px-4 py-3 grow-1 w-full h-full pt-5">

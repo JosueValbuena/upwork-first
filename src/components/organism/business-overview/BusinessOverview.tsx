@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CardBusinessOverview } from "@/components/molecules";
 import { metrics as metricsData } from "@/utils/constants";
 /* @ts-ignore */
@@ -28,8 +28,7 @@ const SortableCard = ({ id, children }: { id: string; children: React.ReactNode 
 };
 
 const BusinessOverview = () => {
-    // Usamos el label como ID para ordenarlas
-    const [orderedMetrics, setOrderedMetrics] = useState(metricsData.map((m) => m.label));
+    const [orderedMetrics, setOrderedMetrics] = useState<string[]>([]);
 
     const handleDragEnd = (event: DragEndEvent) => {
         const { active, over } = event;
@@ -44,12 +43,38 @@ const BusinessOverview = () => {
         }
     };
 
+    useEffect(() => {
+        const storedValue = localStorage.getItem('draggedUserPreference');
+        const draggedUserPreferences = storedValue ? JSON.parse(storedValue) : {};
+        if (draggedUserPreferences?.dashboardBusinessOverviewLayout) {
+            setOrderedMetrics(draggedUserPreferences?.dashboardBusinessOverviewLayout);
+            return
+        };
+
+        if (!draggedUserPreferences?.dashboardBusinessOverviewLayout) {
+            setOrderedMetrics(metricsData.map((m) => m.label))
+        };
+    }, []);
+
+    useEffect(() => {
+        if (orderedMetrics.length > 1) {
+            const storedValue = localStorage.getItem('draggedUserPreference');
+            const draggedUserPreferences = storedValue ? JSON.parse(storedValue) : {};
+            let newDraggedUserPreferences = {
+                ...draggedUserPreferences,
+                dashboardBusinessOverviewLayout: orderedMetrics
+            };
+
+            localStorage.setItem('draggedUserPreference', JSON.stringify(newDraggedUserPreferences));
+        }
+    }, [orderedMetrics]);
+
     return (
         <div className="my-3 flex justify-center">
             <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
                 <SortableContext items={orderedMetrics} strategy={rectSortingStrategy}>
                     <div className="flex gap-y-1 gap-x-1 flex-wrap justify-center max-w-[1300px] mx-auto">
-                        {orderedMetrics.map((label) => {
+                        {orderedMetrics?.map((label) => {
                             const metric = metricsData.find((m) => m.label === label);
                             if (!metric) return null;
 
