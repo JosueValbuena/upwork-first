@@ -15,8 +15,6 @@ import { CSS } from "@dnd-kit/utilities";
 import React, { useEffect, useState } from "react";
 import DashboardSectionOne from './sections-one/SectionOne';
 import DashboardSectionTwo from './sections-two/SectionTwo';
-import { ModalCustom } from "@/components/molecules";
-import IMG from "@/assets/img/9u8edp.gif"
 import { useAppSelector } from "@/store/hooks";
 
 const SortableItem = ({ id, children }: { id: string, children: React.ReactNode }) => {
@@ -37,12 +35,6 @@ const SortableItem = ({ id, children }: { id: string, children: React.ReactNode 
 
 const Dashboard = () => {
 
-    const [isOpenModalInformavtive, setIsOpenModalInformative] = useState({
-        isOpen: false,
-        title: '',
-        message: '',
-        img: ''
-    });
     const { value: isSortMode } = useAppSelector(state => state.sortMode);
 
     /* @ts-ignore */
@@ -67,32 +59,6 @@ const Dashboard = () => {
             });
         };
     };
-
-    const handleCloseModal = () => {
-        setIsOpenModalInformative({
-            isOpen: false,
-            title: '',
-            message: '',
-            img: ''
-        });
-
-        localStorage.setItem('dragInfoModal', JSON.stringify(true));
-    };
-
-    useEffect(() => {
-        const storedValue = localStorage.getItem('dragInfoModal');
-        const isModalShowed: boolean = storedValue ? JSON.parse(storedValue) : false;
-
-        if (!isModalShowed) {
-            setIsOpenModalInformative({
-                isOpen: true,
-                title: 'Tip',
-                message: 'You can drag and rearrange the tiles on your dashboard.',
-                img: IMG
-            });
-        };
-
-    }, []);
 
     useEffect(() => {
         const storedValue = localStorage.getItem('draggedUserPreference');
@@ -130,7 +96,7 @@ const Dashboard = () => {
 
     return (
         <div className="bg-background-primary-customized">
-            <ModalCustom modalInfo={isOpenModalInformavtive} onAccept={handleCloseModal} />
+            
             {isSortMode ? (
                 <DndContext
                     collisionDetection={closestCenter}
