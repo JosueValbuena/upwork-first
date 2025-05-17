@@ -26,6 +26,31 @@ const SortModeToggler = () => {
         isSortMode ? dispatch(setSortMode(false)) : dispatch(setSortMode(true));
     };
 
+    const handleOpenModal = () => {
+        const storedValue = localStorage.getItem('dragInfoModal');
+        const isModalShowed: boolean = storedValue ? JSON.parse(storedValue) : false;
+
+        if (!isModalShowed) {
+            setIsOpenModalInformative({
+                isOpen: true,
+                title: 'Tip',
+                message: 'You can drag and rearrange the tiles on your dashboard.',
+                img: IMG
+            });
+        };
+    };
+
+    const handleCloseModal = () => {
+        setIsOpenModalInformative({
+            isOpen: false,
+            title: '',
+            message: '',
+            img: ''
+        });
+
+        localStorage.setItem('dragInfoModal', JSON.stringify(true));
+    };
+
     const handleOpenPopOver = () => {
         isOpen ? handleClosePopOver() : changePopOverIsOpen(true)
     };
@@ -33,12 +58,8 @@ const SortModeToggler = () => {
     const handleClosePopOver = () => {
         changePopOverIsOpen(false);
         localStorage.setItem('dragInfoButton', JSON.stringify(true));
-        setIsOpenModalInformative({
-            isOpen: true,
-            title: 'Tip',
-            message: 'You can drag and rearrange the tiles on your dashboard.',
-            img: IMG
-        });
+
+        handleOpenModal();
     };
 
     const RenderComponente = () => {
@@ -50,17 +71,6 @@ const SortModeToggler = () => {
                 </div>
             </div>
         )
-    };
-
-    const handleCloseModal = () => {
-        setIsOpenModalInformative({
-            isOpen: false,
-            title: '',
-            message: '',
-            img: ''
-        });
-
-        /* localStorage.setItem('dragInfoModal', JSON.stringify(true)); */
     };
 
     useEffect(() => {
@@ -91,21 +101,6 @@ const SortModeToggler = () => {
 
         return () => clearTimeout(timeout);
     }, []);
-
-    /* useEffect(() => {
-        const storedValue = localStorage.getItem('dragInfoModal');
-        const isModalShowed: boolean = storedValue ? JSON.parse(storedValue) : false;
-
-        if (!isModalShowed) {
-            setIsOpenModalInformative({
-                isOpen: true,
-                title: 'Tip',
-                message: 'You can drag and rearrange the tiles on your dashboard.',
-                img: IMG
-            });
-        };
-
-    }, []); */
 
     return (
         <div>

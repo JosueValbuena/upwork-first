@@ -178,11 +178,11 @@ const InventoryByBrand = () => {
                 <div className="flex ml-auto gap-3">
                     <div className="bg-primary-light py-1 px-5 flex items-center">
                         <p>Past 30 Days</p>
-                        <IconArrowDownBlack className="ml-2 cursor-pointer"/>
+                        <IconArrowDownBlack className="ml-2 cursor-pointer" />
                     </div>
                     <div className="bg-primary-light py-1 px-5 flex items-center">
                         <p>By Category</p>
-                        <IconArrowDownBlack className="ml-2 cursor-pointer"/>
+                        <IconArrowDownBlack className="ml-2 cursor-pointer" />
                     </div>
                 </div>
             </div>
@@ -191,6 +191,7 @@ const InventoryByBrand = () => {
                 <TableCustom dataTable={resultsToShow} />
                 <Button
                     className="mt-3 bg-primary-light text-foreground mx-auto hover:text-white "
+                    onPointerDown={(e) => e.stopPropagation()}
                     onClick={onLoadingData}
                 >
                     Load More
@@ -198,6 +199,7 @@ const InventoryByBrand = () => {
                 {resultsToShow.length > 5 && (
                     <Button
                         className="mt-3 bg-primary-light text-foreground mx-auto hover:text-white "
+                        onPointerDown={(e) => e.stopPropagation()}
                         onClick={onResetData}
                     >
                         Reset

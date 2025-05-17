@@ -163,6 +163,7 @@ const SmartRepricerActivityLog = () => {
                 <TableCustom dataTable={resultsToShow} />
                 <Button
                     className="mt-3 bg-primary-light text-foreground mx-auto hover:text-white "
+                    onPointerDown={(e) => e.stopPropagation()}
                     onClick={onLoadingData}
                 >
                     Load More
@@ -170,6 +171,7 @@ const SmartRepricerActivityLog = () => {
                 {resultsToShow.length > 5 && (
                     <Button
                         className="mt-3 bg-primary-light text-foreground mx-auto hover:text-white "
+                        onPointerDown={(e) => e.stopPropagation()}
                         onClick={onResetData}
                     >
                         Reset
