@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CardBusinessOverview } from "@/components/molecules";
 import { metrics as metricsData } from "@/utils/constants";
 /* @ts-ignore */
@@ -10,6 +10,7 @@ import {
     rectSortingStrategy,
 } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
+import { useAppSelector } from "@/store/hooks";
 
 // Componente contenedor sortable para cada tarjeta
 const SortableCard = ({ id, children }: { id: string; children: React.ReactNode }) => {
@@ -29,6 +30,7 @@ const SortableCard = ({ id, children }: { id: string; children: React.ReactNode 
 
 const BusinessOverview = () => {
     const [orderedMetrics, setOrderedMetrics] = useState<string[]>([]);
+    const { value: isSortMode } = useAppSelector(state => state.sortMode);
 
     const handleDragEnd = (event: DragEndEvent) => {
         const { active, over } = event;
@@ -71,22 +73,38 @@ const BusinessOverview = () => {
 
     return (
         <div className="my-3 flex justify-center">
-            <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
-                <SortableContext items={orderedMetrics} strategy={rectSortingStrategy}>
-                    <div className="flex gap-y-1 gap-x-1 flex-wrap justify-center max-w-[1300px] mx-auto">
-                        {orderedMetrics?.map((label) => {
-                            const metric = metricsData.find((m) => m.label === label);
-                            if (!metric) return null;
+            {isSortMode ? (
+                <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
+                    <SortableContext items={orderedMetrics} strategy={rectSortingStrategy}>
+                        <div className="flex gap-y-1 gap-x-1 flex-wrap justify-center max-w-[1300px] mx-auto">
+                            {orderedMetrics?.map((label) => {
+                                const metric = metricsData.find((m) => m.label === label);
+                                if (!metric) return null;
 
-                            return (
-                                <SortableCard key={label} id={label}>
-                                    <CardBusinessOverview data={metric} />
-                                </SortableCard>
-                            );
-                        })}
-                    </div>
-                </SortableContext>
-            </DndContext>
+                                return (
+                                    <SortableCard key={label} id={label}>
+                                        <CardBusinessOverview data={metric} />
+                                    </SortableCard>
+                                );
+                            })}
+                        </div>
+                    </SortableContext>
+                </DndContext>
+            ) : (
+                <div className="flex gap-y-1 gap-x-1 flex-wrap justify-center max-w-[1300px] mx-auto">
+                    {orderedMetrics?.map((label) => {
+                        const metric = metricsData.find((m) => m.label === label);
+                        if (!metric) return null;
+
+                        return (
+                            <React.Fragment key={label}>
+                                <CardBusinessOverview data={metric} />
+                            </React.Fragment>
+                        );
+                    })}
+                </div>
+            )}
+
         </div>
     );
 };

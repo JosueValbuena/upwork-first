@@ -36,3 +36,5 @@ export { ReactComponent as IconArrowDownContainedRed } from '@/assets/icons/icon
 export { ReactComponent as IconSunContainedWhite } from '@/assets/icons/icon-sun-white-contained.svg';
 export { ReactComponent as IconSunContainedBlack } from '@/assets/icons/icon-sun-black-contained.svg';
 export { ReactComponent as IconThemeModeOutlinedBlack } from '@/assets/icons/icon-thememode-outlined-black.svg';
+export { ReactComponent as IconSortableOutlinedBlack } from '@/assets/icons/sort-vertical-svgrepo-outlined.svg';
+export { ReactComponent as IconSortableNotAllowedOutlinedBlack } from '@/assets/icons/sort-vertical-notallowed-outlined.svg';

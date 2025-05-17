@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CardRiskAssessments } from "@/components/molecules";
 import { riskdData } from "@/utils/constants";
 /* @ts-ignore */
@@ -10,6 +10,7 @@ import {
     rectSortingStrategy,
 } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
+import { useAppSelector } from "@/store/hooks";
 
 // Componente individual sortable
 const SortableCard = ({ id, children }: { id: string; children: React.ReactNode }) => {
@@ -29,6 +30,7 @@ const SortableCard = ({ id, children }: { id: string; children: React.ReactNode 
 
 const RiskAssessments = () => {
     const [orderedItems, setOrderedItems] = useState<string[]>([]);
+    const { value: isSortMode } = useAppSelector(state => state.sortMode);
 
     const handleDragEnd = (event: DragEndEvent) => {
         const { active, over } = event;
@@ -72,22 +74,37 @@ const RiskAssessments = () => {
     return (
         <div className="bg-background-secondary-customized px-4 py-3 grow-1 w-full h-full pt-5">
             <p className="text-lg font-semibold">Risk Assessments</p>
-            <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
-                <SortableContext items={orderedItems} strategy={rectSortingStrategy}>
-                    <div className="flex flex-row justify-between gap-y-3 gap-x-0 flex-wrap mt-1">
-                        {orderedItems.map(label => {
-                            const item = riskdData.find(i => i.label === label);
-                            if (!item) return null;
+            {isSortMode ? (
+                <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
+                    <SortableContext items={orderedItems} strategy={rectSortingStrategy}>
+                        <div className="flex flex-row justify-between gap-y-3 gap-x-0 flex-wrap mt-1">
+                            {orderedItems.map(label => {
+                                const item = riskdData.find(i => i.label === label);
+                                if (!item) return null;
 
-                            return (
-                                <SortableCard key={label} id={label}>
-                                    <CardRiskAssessments riskData={item} />
-                                </SortableCard>
-                            );
-                        })}
-                    </div>
-                </SortableContext>
-            </DndContext>
+                                return (
+                                    <SortableCard key={label} id={label}>
+                                        <CardRiskAssessments riskData={item} />
+                                    </SortableCard>
+                                );
+                            })}
+                        </div>
+                    </SortableContext>
+                </DndContext>
+            ) : (
+                <div className="flex flex-row justify-between gap-y-3 gap-x-0 flex-wrap mt-1">
+                    {orderedItems.map(label => {
+                        const item = riskdData.find(i => i.label === label);
+                        if (!item) return null;
+
+                        return (
+                            <React.Fragment key={label}>
+                                <CardRiskAssessments riskData={item} />
+                            </React.Fragment>
+                        );
+                    })}
+                </div>
+            )}
         </div>
     );
 };

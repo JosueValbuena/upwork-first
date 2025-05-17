@@ -12,11 +12,12 @@ import {
     arrayMove
 } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import DashboardSectionOne from './sections-one/SectionOne';
 import DashboardSectionTwo from './sections-two/SectionTwo';
 import { ModalCustom } from "@/components/molecules";
 import IMG from "@/assets/img/9u8edp.gif"
+import { useAppSelector } from "@/store/hooks";
 
 const SortableItem = ({ id, children }: { id: string, children: React.ReactNode }) => {
 
@@ -42,6 +43,7 @@ const Dashboard = () => {
         message: '',
         img: ''
     });
+    const { value: isSortMode } = useAppSelector(state => state.sortMode);
 
     /* @ts-ignore */
     const componentsMap: Record<string, JSX.Element> = {
@@ -129,21 +131,31 @@ const Dashboard = () => {
     return (
         <div className="bg-background-primary-customized">
             <ModalCustom modalInfo={isOpenModalInformavtive} onAccept={handleCloseModal} />
-            <DndContext
-                collisionDetection={closestCenter}
-                onDragEnd={handleDragEnd}
-            >
-                <SortableContext
-                    items={componentOrder}
-                    strategy={verticalListSortingStrategy}
+            {isSortMode ? (
+                <DndContext
+                    collisionDetection={closestCenter}
+                    onDragEnd={handleDragEnd}
                 >
+                    <SortableContext
+                        items={componentOrder}
+                        strategy={verticalListSortingStrategy}
+                    >
+                        {componentOrder.map((id) => (
+                            <SortableItem key={id} id={id}>
+                                {componentsMap[id]}
+                            </SortableItem>
+                        ))}
+                    </SortableContext>
+                </DndContext>
+            ) : (
+                <>
                     {componentOrder.map((id) => (
-                        <SortableItem key={id} id={id}>
+                        <React.Fragment key={id}>
                             {componentsMap[id]}
-                        </SortableItem>
+                        </React.Fragment>
                     ))}
-                </SortableContext>
-            </DndContext>
+                </>
+            )}
         </div>
     );
 };

@@ -1,4 +1,5 @@
 import { InventoryAgeAnalysis, RiskAssessments } from "@/components/organism";
+import { useAppSelector } from "@/store/hooks";
 /* @ts-ignore */
 import { DndContext, closestCenter, DragEndEvent } from "@dnd-kit/core";
 import {
@@ -8,7 +9,7 @@ import {
     arrayMove
 } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const SortableItem = ({ id, children }: { id: string; children: React.ReactNode }) => {
     const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id });
@@ -19,7 +20,7 @@ const SortableItem = ({ id, children }: { id: string; children: React.ReactNode 
     };
 
     return (
-        <div ref={setNodeRef} style={style} {...attributes} {...listeners}  className="w-full lg:w-1/2" >
+        <div ref={setNodeRef} style={style} {...attributes} {...listeners} className="w-full lg:w-1/2" >
             {children}
         </div>
     );
@@ -27,6 +28,7 @@ const SortableItem = ({ id, children }: { id: string; children: React.ReactNode 
 
 const DashboardSectionOne = () => {
     const [componentOrder, setComponentOrder] = useState<string[]>([]);
+    const { value: isSortMode } = useAppSelector(state => state.sortMode);
 
     /* @ts-ignore */
     const map: Record<string, JSX.Element> = {
@@ -56,7 +58,7 @@ const DashboardSectionOne = () => {
         if (!draggedUserPreferences?.dashboardSectionOneLayout) {
             setComponentOrder([
                 "InventoryAgeAnalysis",
-                 "RiskAssessments"
+                "RiskAssessments"
             ])
         };
     }, []);
@@ -75,17 +77,29 @@ const DashboardSectionOne = () => {
     }, [componentOrder]);
 
     return (
-        <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
-            <SortableContext items={componentOrder} strategy={verticalListSortingStrategy}>
+        <>
+            {isSortMode ? (
+                <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
+                    <SortableContext items={componentOrder} strategy={verticalListSortingStrategy}>
+                        <div className="flex justify-between flex-wrap max-w-[1360px] mx-auto gap-3 lg:flex-nowrap mt-3">
+                            {componentOrder.map((id) => (
+                                <SortableItem key={id} id={id}>
+                                    {map[id]}
+                                </SortableItem>
+                            ))}
+                        </div>
+                    </SortableContext>
+                </DndContext>
+            ) : (
                 <div className="flex justify-between flex-wrap max-w-[1360px] mx-auto gap-3 lg:flex-nowrap mt-3">
                     {componentOrder.map((id) => (
-                        <SortableItem key={id} id={id}>
+                        <React.Fragment key={id}>
                             {map[id]}
-                        </SortableItem>
+                        </React.Fragment>
                     ))}
                 </div>
-            </SortableContext>
-        </DndContext>
+            )}
+        </>
     );
 };
 

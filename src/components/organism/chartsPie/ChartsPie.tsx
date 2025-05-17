@@ -14,8 +14,8 @@ const ChartsPie = () => {
             enable: true,
             style: {
                 colors: ['#000'], // Cambia '#000' al color que desees (ej: '#fff' para blanco)
-                fontSize: '17px', // Opcional: cambiar el tamaño de la fuente
-                fontWeight: 'bold', // Opcional: cambiar el peso de la fuente
+                fontSize: '14px', // Opcional: cambiar el tamaño de la fuente
+                //fontWeight: 'bold', // Opcional: cambiar el peso de la fuente
             },
         },
         fill: {

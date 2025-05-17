@@ -1,10 +1,12 @@
 import { Separator } from "@/components/ui/separator"
-import { IconHelpOutlinedGray, IconGearpOutlinedGray, IconBellpOutlinedGray, IconUserCircleOutlinedGray } from '@/utils/icons';
+import { IconHelpOutlinedGray, IconGearpOutlinedGray, IconBellpOutlinedGray,
+     IconUserCircleOutlinedGray } from '@/utils/icons';
 import PopoverCustom from "../pop-over-custom/PopOverCustom";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ModeToggle } from '../mote-theme-toggle/mode-toggle'
 import { useTheme } from "@/styles/theme-provider";
+import SortModeToggler from "../sort-mode-toggler/SortModeToggler";
 const NavBarWidget = () => {
 
     const [isOpen, changePopOverIsOpen] = useState(false);
@@ -16,6 +18,9 @@ const NavBarWidget = () => {
 
     return (
         <div className='flex items-center justify-center bg-primary-light rounded-3xl h-8 px-3 md:ml-[auto]'>
+
+            <SortModeToggler />
+            
             <ModeToggle />
             <IconHelpOutlinedGray
                 className="mx-2 cursor-pointer text-foreground"
