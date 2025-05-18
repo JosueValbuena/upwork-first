@@ -1,9 +1,18 @@
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { setSortMode } from "@/store/features/sort-mode/sortModeSlice";
+import { useEffect, useState } from "react";
+
 import { useTheme } from "@/styles/theme-provider";
 
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { setSortMode } from "@/store/features/sort-mode/sortModeSlice";
+
+import {
+    Tooltip,
+    TooltipContent,
+    TooltipProvider,
+    TooltipTrigger,
+} from "@/components/ui/tooltip";
+
 import { IconSortableNotAllowedOutlinedBlack, IconSortableOutlinedBlack } from '@/utils/icons'
-import { useEffect, useState } from "react";
 import PopoverCustom from "../pop-over-custom/PopOverCustom";
 import { Button } from "@/components/ui/button";
 import { ModalCustom } from "@/components/molecules";
@@ -103,42 +112,73 @@ const SortModeToggler = () => {
     return (
         <div>
             <ModalCustom modalInfo={isOpenModalInformavtive} onAccept={handleCloseModal} />
+
+
             {isSortMode && (
                 isOpen ? (
-                    <PopoverCustom
-                        triggerIcon={
-                            <IconSortableOutlinedBlack
-                                id="sort-toggle"
-                                className="mx-2 w-6 cursor-pointer text-foreground h-fit sort-toggle"
-                                stroke={theme === 'dark' ? '#fff' : ''}
-                                {...(theme === 'dark' ? { fill: '#fff' } : {})}
-                                onClick={onToggleSortMode}
-                            />
-                        }
-                        handleOpenPopOver={handleOpenPopOver}
-                        isOpen={isOpen}
-                        Render={RenderComponente}
-                        sideX={'left'}
-                        sideY={'end'}
-                    />
+                    <TooltipProvider>
+                        <Tooltip>
+                            <TooltipTrigger asChild>
+                                <PopoverCustom
+                                    triggerIcon={
+                                        <IconSortableOutlinedBlack
+                                            id="sort-toggle"
+                                            className="mx-2 w-6 cursor-pointer text-foreground h-fit sort-toggle"
+                                            stroke={theme === 'dark' ? '#fff' : ''}
+                                            {...(theme === 'dark' ? { fill: '#fff' } : {})}
+                                            onClick={onToggleSortMode}
+                                        />
+                                    }
+                                    handleOpenPopOver={handleOpenPopOver}
+                                    isOpen={isOpen}
+                                    Render={RenderComponente}
+                                    sideX={'left'}
+                                    sideY={'end'}
+                                />
+                            </TooltipTrigger>
+                            <TooltipContent>
+                                <p>Customize layout</p>
+                            </TooltipContent>
+                        </Tooltip>
+                    </TooltipProvider>
                 ) : (
-                    <IconSortableOutlinedBlack
-                        id="sort-toggle"
-                        className="mx-2 w-6 cursor-pointer text-foreground h-fit sort-toggle"
-                        stroke={theme === 'dark' ? '#fff' : ''}
-                        {...(theme === 'dark' ? { fill: '#fff' } : {})}
-                        onClick={onToggleSortMode}
-                    />
+                    <TooltipProvider>
+                        <Tooltip>
+                            <TooltipTrigger asChild>
+                                <IconSortableOutlinedBlack
+                                    id="sort-toggle"
+                                    className="mx-2 w-6 cursor-pointer text-foreground h-fit sort-toggle"
+                                    stroke={theme === 'dark' ? '#fff' : ''}
+                                    {...(theme === 'dark' ? { fill: '#fff' } : {})}
+                                    onClick={onToggleSortMode}
+                                />
+                            </TooltipTrigger>
+                            <TooltipContent>
+                                <p>Customize layout</p>
+                            </TooltipContent>
+                        </Tooltip>
+                    </TooltipProvider>
                 )
             )}
 
             {!isSortMode && (
-                <IconSortableNotAllowedOutlinedBlack
-                    className="mx-2 w-6 cursor-pointer text-foreground"
-                    stroke={theme === 'dark' ? '#fff' : ''}
-                    onClick={onToggleSortMode}
-                />
+
+                <TooltipProvider>
+                    <Tooltip>
+                        <TooltipTrigger asChild>
+                            <IconSortableNotAllowedOutlinedBlack
+                                className="mx-2 w-6 cursor-pointer text-foreground h-fit"
+                                stroke={theme === 'dark' ? '#fff' : ''}
+                                onClick={onToggleSortMode}
+                            />
+                        </TooltipTrigger>
+                        <TooltipContent>
+                            <p>Customize layout</p>
+                        </TooltipContent>
+                    </Tooltip>
+                </TooltipProvider>
             )}
+
         </div>
     )
 }
