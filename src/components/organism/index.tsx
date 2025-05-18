@@ -8,6 +8,7 @@ export { default as ChartsBarSecond } from "./charts-bar-second/ChartsBarSecond"
 export { default as ChartsLinear } from "./chartsLinear/ChartsLinear";
 export { default as ChartsLinearHeader } from "./charts-linear-header/ChartsLinearHeader";
 export { default as ChartsPie } from "./chartsPie/ChartsPie";
+export { default as ChartsPieTwo } from "./charts-pie-2/ChartsPieTwo";
 export { default as ComptiterTragetingSection } from "./comptiter-trageting-section/ComptiterTragetingSection";
 export { default as ComptiterTragetingCheckSection } from "./comptiter-trageting-check-section/ComptiterTragetingCheckSection";
 export { default as CurrencyAndPriceSection } from "./currency-and-price-section/CurrencyAndPriceSection";

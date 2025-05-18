@@ -13,7 +13,7 @@ const ChartsPie = () => {
         dataLabels: {
             enable: true,
             style: {
-                colors: ['#000'], // Cambia '#000' al color que desees (ej: '#fff' para blanco)
+                colors: ['#fff'], // Cambia '#000' al color que desees (ej: '#fff' para blanco)
                 fontSize: '14px', // Opcional: cambiar el tamaño de la fuente
                 //fontWeight: 'bold', // Opcional: cambiar el peso de la fuente
             },

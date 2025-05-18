@@ -63,7 +63,6 @@ const Dashboard = () => {
     useEffect(() => {
         const storedValue = localStorage.getItem('draggedUserPreference');
         const draggedUserPreferences = storedValue ? JSON.parse(storedValue) : {};
-        console.log({ draggedUserPreferences })
         if (draggedUserPreferences?.dashboardGeneralLayout) {
             setComponentOrder(draggedUserPreferences?.dashboardGeneralLayout);
             return

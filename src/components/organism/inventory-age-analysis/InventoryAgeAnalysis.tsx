@@ -1,6 +1,7 @@
 import { useState } from "react"
 import ChartsBar from "../chartsBar/ChartsBar"
 import ChartsPie from "../chartsPie/ChartsPie";
+/* import ChartsPieTwo from "../charts-pie-2/ChartsPieTwo"; */
 
 const InventoryAgeAnalysis = () => {
 
@@ -45,7 +46,10 @@ const InventoryAgeAnalysis = () => {
 
             {activeChart === 'pie' && (
                 <div className="flex items-center justify-center h-full">
-                    <ChartsPie />
+                    <>
+                        <ChartsPie />
+                        {/* <ChartsPieTwo /> */}
+                    </>
                 </div>
             )}
         </div>

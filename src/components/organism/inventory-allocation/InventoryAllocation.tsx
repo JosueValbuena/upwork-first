@@ -1,5 +1,6 @@
 /* import ChartsBarSecond from "../charts-bar-second/ChartsBarSecond" */
-import ChartsPie from "../chartsPie/ChartsPie";
+import ChartsPieTwo from "../charts-pie-2/ChartsPieTwo";
+/* import ChartsPie from "../chartsPie/ChartsPie"; */
 /* import ChartsPie from "../chartsPie/ChartsPie" */
 
 const InventoryAllocation = () => {
@@ -52,7 +53,8 @@ const InventoryAllocation = () => {
                     </div>
                 </div>
 
-                <ChartsPie />
+               {/*  <ChartsPie /> */}
+               <ChartsPieTwo />
             </div>
 
             {/* <ChartsBarSecond /> */}

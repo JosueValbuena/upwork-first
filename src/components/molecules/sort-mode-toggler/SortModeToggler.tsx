@@ -76,7 +76,6 @@ const SortModeToggler = () => {
     useEffect(() => {
         const storedValue = localStorage.getItem('dragInfoButton');
         const dragInfoButton = storedValue ? JSON.parse(storedValue) : false;
-        console.log(dragInfoButton)
         if (!dragInfoButton) {
             changePopOverIsOpen(true);
         }
@@ -86,7 +85,6 @@ const SortModeToggler = () => {
     useEffect(() => {
         const storedValue = localStorage.getItem('draggedUserPreference');
         const draggedUserPreferences = storedValue ? JSON.parse(storedValue) : {};
-        console.log({ draggedUserPreferences })
         let newDraggedUserPreferences = {
             ...draggedUserPreferences,
             isActive: isSortMode
