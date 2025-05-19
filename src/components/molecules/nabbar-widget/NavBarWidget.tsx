@@ -1,20 +1,22 @@
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
+import { useAppSelector } from "@/store/hooks";
+import { Link } from "react-router-dom";
+
 import { Separator } from "@/components/ui/separator"
 import {
     IconHelpOutlinedGray, IconGearpOutlinedGray, IconBellpOutlinedGray,
     IconUserCircleOutlinedGray
 } from '@/utils/icons';
+
 import PopoverCustom from "../pop-over-custom/PopOverCustom";
-import { useState } from "react";
-import { Link } from "react-router-dom";
 import { ModeToggle } from '../mote-theme-toggle/mode-toggle'
-import { useTheme } from "@/styles/theme-provider";
 import SortModeToggler from "../sort-mode-toggler/SortModeToggler";
-import { NavLink } from "react-router-dom";
 
 const NavBarWidget = () => {
 
     const [isOpen, changePopOverIsOpen] = useState(false);
-    const { theme } = useTheme();
+    const { theme } = useAppSelector(state => state.themeMode);
 
     const handleOpenPopOver = () => {
         isOpen ? changePopOverIsOpen(false) : changePopOverIsOpen(true)

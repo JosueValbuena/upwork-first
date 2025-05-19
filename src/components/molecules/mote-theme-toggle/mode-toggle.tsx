@@ -1,4 +1,5 @@
-import { useTheme } from "@/styles/theme-provider";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { setThemeMode } from "@/store/features/theme-mode/themeModeSlice";
 
 import {
   Tooltip,
@@ -10,11 +11,12 @@ import {
 import { IconMoonOutlinedGray } from "@/utils/icons";
 
 export function ModeToggle() {
-  const { setTheme, theme } = useTheme();
+  const { theme } = useAppSelector(state => state.themeMode);
+  const dispatch = useAppDispatch();
 
   const onDarkModeClick = () => {
-    theme === 'dark' && setTheme("light");
-    theme === 'light' && setTheme("dark");
+    theme === 'dark' && dispatch(setThemeMode('light'));
+    theme === 'light' && dispatch(setThemeMode('dark'));
   };
 
   return (

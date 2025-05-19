@@ -1,9 +1,9 @@
-import { useTheme } from "@/styles/theme-provider";
+import { useAppSelector } from "@/store/hooks";
 import ReactApexChart from "react-apexcharts";
 
 const ChartsBar = () => {
 
-    const { theme } = useTheme();
+    const { theme } = useAppSelector(state => state.themeMode);
 
     const series = [{
         name: 'TEAM A',

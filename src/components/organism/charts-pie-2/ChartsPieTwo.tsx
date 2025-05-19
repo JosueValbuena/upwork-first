@@ -1,4 +1,4 @@
-import { useTheme } from "@/styles/theme-provider";
+import { useAppSelector } from "@/store/hooks";
 import {
     PieChart,
     Pie,
@@ -21,7 +21,7 @@ const GRADIENTS = [
 const RADIAN = Math.PI / 180;
 
 const ChartsPieTwo = () => {
-    const { theme } = useTheme();
+    const { theme } = useAppSelector(state => state.themeMode);
 
     const renderCustomizedLabel = ({
         cx,

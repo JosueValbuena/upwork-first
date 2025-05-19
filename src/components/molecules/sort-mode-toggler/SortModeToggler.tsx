@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 
-import { useTheme } from "@/styles/theme-provider";
-
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { setSortMode } from "@/store/features/sort-mode/sortModeSlice";
 
@@ -29,7 +27,7 @@ const SortModeToggler = () => {
     });
     const { value: isSortMode } = useAppSelector(state => state.sortMode);
     const dispatch = useAppDispatch();
-    const { theme } = useTheme();
+    const { theme } = useAppSelector(state => state.themeMode);
 
     const onToggleSortMode = () => {
         isSortMode ? dispatch(setSortMode(false)) : dispatch(setSortMode(true));
