@@ -1,39 +1,39 @@
+import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 import type { RootState } from "@/store/store";
-import { createSlice } from "@reduxjs/toolkit";
-import type { PayloadAction } from '@reduxjs/toolkit';
 
-interface ThemeModeSlice {
-    theme: string
+export type Theme = "dark" | "light" | "system";
+const STORAGE_KEY = "themeMode";
+
+const getInitialTheme = (): Theme => {
+    const stored = localStorage.getItem(STORAGE_KEY);
+
+    if (stored === "dark" || stored === "light" || stored === "system") {
+        return stored;
+      };
+
+      localStorage.setItem(STORAGE_KEY, "light");
+      return "light";
 };
 
-const getInitialThemeMode = (): string => {
-    try {
-        const stored = localStorage.getItem('themeMode');
-        if (!stored) {
-            localStorage.setItem('themeMode', JSON.stringify('light'))
-            return 'light';
-        }
-        const parsed = JSON.parse(stored);
-        return parsed
-    } catch {
-        return 'light'
-    };
+interface ThemeModeState {
+    theme: Theme;
+}
+
+const initialState: ThemeModeState = {
+    theme: getInitialTheme(),
 };
 
-const initialState: ThemeModeSlice = {
-    theme: getInitialThemeMode(),
-};
-
-export const themeModeSlice = createSlice({
-    name: 'themeMode',
+const themeModeSlice = createSlice({
+    name: "themeMode",
     initialState,
     reducers: {
-        setThemeMode: (state, action: PayloadAction<string>) => {
+        setThemeMode(state, action: PayloadAction<Theme>) {
             state.theme = action.payload;
+            localStorage.setItem(STORAGE_KEY, action.payload);
         },
     },
 });
 
 export const { setThemeMode } = themeModeSlice.actions;
-export const selectThemeSlice = (state: RootState) => state.themeMode;
+export const selectTheme = (state: RootState) => state.themeMode;
 export default themeModeSlice.reducer;
