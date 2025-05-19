@@ -88,15 +88,6 @@ const DashboardSectionOne = () => {
 
     return (
         <div>
-            {/* {isSortMode && (
-                <div
-                    className={
-                        `fixed inset-0 z-10 h-[30%] w-[30%] bg-black/10
-                     ${isSortMode ? 'hover:hidden' : ''}      
-                     `
-                    }
-                />
-            )} */}
             {isSortMode ? (
                 <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
                     <SortableContext items={componentOrder} strategy={verticalListSortingStrategy}>

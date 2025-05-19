@@ -20,5 +20,5 @@ const NavbarLinks = () => {
     </div>
   )
 }
-/* pb-[1rem] */
-export default NavbarLinks
+
+export default NavbarLinks;
