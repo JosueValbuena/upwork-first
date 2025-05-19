@@ -15,6 +15,7 @@ import { useAppSelector } from "@/store/hooks";
 // Componente contenedor sortable para cada tarjeta
 const SortableCard = ({ id, children }: { id: string; children: React.ReactNode }) => {
     const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id });
+    const { value: isSortMode } = useAppSelector(state => state.sortMode);
 
     const style = {
         transform: CSS.Transform.toString(transform),
@@ -22,7 +23,15 @@ const SortableCard = ({ id, children }: { id: string; children: React.ReactNode 
     };
 
     return (
-        <div ref={setNodeRef} style={style} {...attributes} {...listeners}>
+        <div
+            ref={setNodeRef}
+            style={style}
+            {...attributes}
+            {...listeners}
+            className={`
+    ${isSortMode ? 'cursor-grab' : ''}        
+            `}
+        >
             {children}
         </div>
     );
@@ -72,7 +81,7 @@ const BusinessOverview = () => {
     }, [orderedMetrics]);
 
     return (
-        <div className="my-3 flex justify-center">
+        <div className={`my-3 flex justify-center ${isSortMode ? 'z-110' : ''}`}>
             {isSortMode ? (
                 <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
                     <SortableContext items={orderedMetrics} strategy={rectSortingStrategy}>

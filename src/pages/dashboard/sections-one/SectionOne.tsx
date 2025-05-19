@@ -13,6 +13,7 @@ import React, { useEffect, useState } from "react";
 
 const SortableItem = ({ id, children }: { id: string; children: React.ReactNode }) => {
     const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id });
+    const { value: isSortMode } = useAppSelector(state => state.sortMode);
 
     const style = {
         transform: CSS.Transform.toString(transform),
@@ -20,7 +21,16 @@ const SortableItem = ({ id, children }: { id: string; children: React.ReactNode 
     };
 
     return (
-        <div ref={setNodeRef} style={style} {...attributes} {...listeners} className="w-full lg:w-1/2" >
+        <div
+            ref={setNodeRef}
+            style={style}
+            {...attributes}
+            {...listeners}
+            className={`
+            w-full lg:w-1/2
+    ${isSortMode ? 'cursor-grab' : ''}        
+            `}
+        >
             {children}
         </div>
     );
@@ -77,7 +87,16 @@ const DashboardSectionOne = () => {
     }, [componentOrder]);
 
     return (
-        <>
+        <div>
+            {/* {isSortMode && (
+                <div
+                    className={
+                        `fixed inset-0 z-10 h-[30%] w-[30%] bg-black/10
+                     ${isSortMode ? 'hover:hidden' : ''}      
+                     `
+                    }
+                />
+            )} */}
             {isSortMode ? (
                 <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
                     <SortableContext items={componentOrder} strategy={verticalListSortingStrategy}>
@@ -99,7 +118,7 @@ const DashboardSectionOne = () => {
                     ))}
                 </div>
             )}
-        </>
+        </div>
     );
 };
 

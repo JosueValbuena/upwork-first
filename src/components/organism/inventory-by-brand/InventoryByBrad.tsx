@@ -2,6 +2,7 @@ import { useState } from "react";
 import TableCustom from "../table-custom/TableCustom"
 import { Button } from "@/components/ui/button";
 import { IconArrowDownBlack } from "@/utils/icons";
+import { useAppSelector } from "@/store/hooks";
 
 const dataTable = [
     {
@@ -159,6 +160,7 @@ const dataTable = [
 const InventoryByBrand = () => {
 
     const [tableResults, setTableResults] = useState(5);
+    const { value: isSortMode } = useAppSelector(state => state.sortMode);
 
     const resultsToShow = dataTable.slice(0, tableResults) ?? [];
 
@@ -171,7 +173,11 @@ const InventoryByBrand = () => {
     };
 
     return (
-        <div className="bg-background-secondary-customized grow-1 p-5 w-full max-w-[1366px] mx-auto mt-3">
+        <div className={
+            `bg-background-secondary-customized grow-1 p-5 w-full max-w-[1366px] mx-auto mt-3
+            ${isSortMode ? 'cursor-grab' : ''}
+            `}
+        >
             <div className="flex">
                 <p className="text-lg font-semibold ml-5">Inventory by brand</p>
 

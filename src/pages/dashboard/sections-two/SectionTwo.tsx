@@ -13,6 +13,7 @@ import React, { useEffect, useState } from "react";
 
 const SortableItem = ({ id, children }: { id: string; children: React.ReactNode }) => {
     const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id });
+    const { value: isSortMode } = useAppSelector(state => state.sortMode);
 
     const style = {
         transform: CSS.Transform.toString(transform),
@@ -20,7 +21,16 @@ const SortableItem = ({ id, children }: { id: string; children: React.ReactNode 
     };
 
     return (
-        <div ref={setNodeRef} style={style} {...attributes} {...listeners} className="w-full lg:w-1/2" >
+        <div
+            ref={setNodeRef}
+            style={style}
+            {...attributes}
+            {...listeners}
+            className={`
+            w-full lg:w-1/2
+            ${isSortMode ? 'cursor-grab' : ''}
+        `}
+        >
             {children}
         </div>
     );

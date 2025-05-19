@@ -20,6 +20,7 @@ import { useAppSelector } from "@/store/hooks";
 const SortableItem = ({ id, children }: { id: string, children: React.ReactNode }) => {
 
     const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id });
+    const { value: isSortMode } = useAppSelector(state => state.sortMode);
 
     const style = {
         transform: CSS.Transform.toString(transform),
@@ -27,7 +28,14 @@ const SortableItem = ({ id, children }: { id: string, children: React.ReactNode 
     };
 
     return (
-        <div ref={setNodeRef} style={style} {...attributes} {...listeners}>
+        <div
+            ref={setNodeRef}
+            style={style}
+            {...attributes}
+            {...listeners}
+            className={` z-0 ${isSortMode ? ' hover:z-30 hover:' : ''}`}
+        >
+            {/* relative z-10 group  */}
             {children}
         </div>
     );
@@ -94,8 +102,16 @@ const Dashboard = () => {
     }, [componentOrder]);
 
     return (
-        <div className="bg-background-primary-customized">
-            
+        <div className={`
+        bg-background-primary-customized
+        ${isSortMode ? 'bg-black/20 z-50' : ''}
+        `}>
+            {/* {isSortMode && (
+                <div
+                    className="fixed inset-0 z-10 h-screen w-screen bg-black/20"
+                />
+            )} */}
+
             {isSortMode ? (
                 <DndContext
                     collisionDetection={closestCenter}
