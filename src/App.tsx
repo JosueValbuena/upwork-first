@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
-import { NavBar, Footer } from "./components/organism";
+/* import { NavBar, Footer } from "./components/organism"; */
 import Routers from "./Routers/Index";
 import { selectTheme } from "./store/features/theme-mode/themeModeSlice";
 
@@ -16,10 +16,10 @@ function App() {
   }, [theme]);
 
   return (
-    <div className="flex flex-col min-h-screen bg-white dark:bg-neutral-900">
-      <NavBar />
+    <div className="">
+      {/* <NavBar /> */}
       <Routers />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

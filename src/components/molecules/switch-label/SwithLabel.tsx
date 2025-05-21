@@ -3,12 +3,13 @@ import { Switch } from "@/components/ui/switch"
 
 interface SwitchLabel {
     id: string,
-    label: string
+    label: string,
+    switchFirst?: boolean
 };
 
-const SwitchLabel = ({ id, label }: SwitchLabel) => {
+const SwitchLabel = ({ id, label, switchFirst }: SwitchLabel) => {
     return (
-        <div className="flex items-center justify-between mt-1">
+        <div className={`flex items-center justify-between mt-1 ${switchFirst ? 'flex-row-reverse' : ''}`}>
             <Label
                 className="text-md font-semibold"
                 htmlFor={id}

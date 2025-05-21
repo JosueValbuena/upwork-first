@@ -6,7 +6,9 @@
 @theme {
   --color-primary-light: #F1EFFC;
   --color-primary-xlight: #F8F7FF;
+  --color-primary-dark: #775DDE;
   --color-text-button-dark: #fff;
+  --color-text-medium-customized: #7E7E7E;
   --color-background-primary-customized: #f9fafb;
   --color-background-secondary-customized: #fff;
 }
@@ -90,6 +92,7 @@
 .dark {
   --color-primary-light: #51508b;
   --color-primary-xlight: #23325a;
+  --color-text-medium-customized: #fff;
   --color-background-primary-customized: #030712;
   --color-background-secondary-customized: #111827;
   --background: oklch(0.145 0 0);

@@ -38,3 +38,4 @@ export { ReactComponent as IconSunContainedBlack } from '@/assets/icons/icon-sun
 export { ReactComponent as IconThemeModeOutlinedBlack } from '@/assets/icons/icon-thememode-outlined-black.svg';
 export { ReactComponent as IconSortableOutlinedBlack } from '@/assets/icons/sort-vertical-svgrepo-outlined.svg';
 export { ReactComponent as IconSortableNotAllowedOutlinedBlack } from '@/assets/icons/sort-vertical-notallowed-outlined.svg';
+export { ReactComponent as IconGoogleOutlinedNormal } from '@/assets/icons/icon-google-normal-outlined.svg';
