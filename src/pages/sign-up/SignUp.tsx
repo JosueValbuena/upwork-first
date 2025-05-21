@@ -51,10 +51,10 @@ const SignUp = () => {
             style={{ backgroundImage: `url(${BGIMG})` }}
         >
 
-            <p className="text-center pr-10 pt-3 text-lg xl:text-end">Have an account? <Link to='/login'><span className="text-primary-dark text-lg font-bold">Log in!</span></Link></p>
+            <p className="text-start pl-3 pr-10 pt-3 text-lg xl:text-end">Have an account? <Link to='/login'><span className="text-primary-dark text-lg font-bold">Log in!</span></Link></p>
 
             <div className='p-5 flex flex-col gap-3 max-w-[1366px]
-            md:flex-row md:justify-center md:items-center md:h-[90%] md:gap-30'>
+            md:flex-row md:justify-center md:items-center md:h-[90%] md:gap-30 mx-auto'>
                 <div>
                     <h1 className='text-5xl font-bold text-foreground
                     md:max-w-[450px]
