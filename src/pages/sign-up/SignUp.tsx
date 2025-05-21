@@ -4,7 +4,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import BGIMG from '@/assets/img/bg-one.avif';
-import { FormFieldInputPassword, FormFieldInputText, SwitchLabel } from '@/components/molecules';
+import { FormFieldInputPassword, FormFieldInputText } from '@/components/molecules';
 import { Button } from '@/components/ui/button';
 import { IconGoogleOutlinedNormal } from '@/utils/icons';
 import { Form } from "@/components/ui/form";
@@ -22,20 +22,22 @@ const formSchema = z.object({
         .min(6, {
             message: "Password must be at least 6 characters.",
         }),
-    rememberMe: z.boolean()
-    /* .default(false), */
+    passwordConfirm: z.string()
+        .min(6, {
+            message: "Password must be at least 6 characters.",
+        }),
 });
 
 type Inputs = z.infer<typeof formSchema>;
 
-const LogIn = () => {
+const SignUp = () => {
 
     const form = useForm<Inputs>({
         resolver: zodResolver(formSchema),
         defaultValues: {
             email: "",
             password: "",
-            rememberMe: false,
+            passwordConfirm: "",
         },
     });
 
@@ -49,7 +51,7 @@ const LogIn = () => {
             style={{ backgroundImage: `url(${BGIMG})` }}
         >
 
-            <p className="text-center pr-10 pt-3 text-lg xl:text-end">Don't have an account? <Link to="/signup"><span className="text-primary-dark text-lg font-bold">Sign Up!</span></Link></p>
+            <p className="text-center pr-10 pt-3 text-lg xl:text-end">Have an account? <Link to='/login'><span className="text-primary-dark text-lg font-bold">Log in!</span></Link></p>
 
             <div className='p-5 flex flex-col gap-3 max-w-[1366px]
             md:flex-row md:justify-center md:items-center md:h-[90%] md:gap-30'>
@@ -62,8 +64,8 @@ const LogIn = () => {
                 </div>
 
                 <div className='flex flex-col justify-center md:max-w-[450px]'>
-                    <h2 className='text-center text-4xl font-semibold'>Welcome Back</h2>
-                    <p className='text-center text-2xl font-normal text-text-medium-customized my-3'>Login into your account</p>
+                    <h2 className='text-center text-4xl font-semibold'>Get Started With MAKER</h2>
+                    <p className='text-center text-2xl font-normal text-text-medium-customized my-3'>Getting started is easy</p>
                     <Button className='bg-white border-violet-600 border-1 text-black font-medium text-md py-8 rounded-2xl hover:text-white'>
                         <IconGoogleOutlinedNormal className='overflow-visible mr-3 mb-2' />Google
                     </Button>
@@ -91,25 +93,18 @@ const LogIn = () => {
                                 customizedInput={'bg-white py-7 mt-5'}
                             />
 
-                            <div className='flex items-center justify-between my-3'>
-
-                                <div className='w-[9.5rem]'>
-                                    <SwitchLabel
-                                        id={'remember-me'}
-                                        label={'Remenber me'}
-                                        switchFirst={true}
-                                    />
-                                </div>
-
-                                <p className='text-red-500 text-sm font-semibold'>Recover password</p>
-
-                            </div>
+                            <FormFieldInputPassword
+                                id={'passwordConfirm'}
+                                form={form}
+                                placeHolder={'Confirm Password'}
+                                customizedInput={'bg-white py-7 mt-5'}
+                            />
 
                             <Button
-                                className='w-full my-3 py-8 rounded-2xl bg-primary-dark text-lg font-bold'
+                                className='w-full my-3 py-8 rounded-2xl bg-primary-dark text-lg font-bold mt-7'
                                 type="submit"
                             >
-                                Login
+                                Create account
                             </Button>
                         </form>
                     </Form>
@@ -125,4 +120,4 @@ const LogIn = () => {
     )
 }
 
-export default LogIn
+export default SignUp
