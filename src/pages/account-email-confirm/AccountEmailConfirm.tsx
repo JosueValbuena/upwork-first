@@ -10,7 +10,7 @@ const AccountEmailConfirm: React.FC = (): JSX.Element => {
             className='bg-cover bg-center bg-no-repeat h-dvh p-2'
             style={{ backgroundImage: `url(${BGIMG})` }}
         >
-            <div className='max-w-[1366px] flex justify-center items-center h-full'>
+            <div className='max-w-[1366px] flex justify-center items-center h-full mx-auto'>
                 <div className='max-w-[644px] text-center'>
                     <div className='bg-primary-dark w-36 h-36 rounded-full flex items-center justify-center mx-auto'>
                         <IconMailContainedWhite />

@@ -11,7 +11,7 @@ const ConnectAmazonAccount: React.FC = (): JSX.Element => {
             className='bg-cover bg-center bg-no-repeat h-dvh p-2'
             style={{ backgroundImage: `url(${BGIMG})` }}
         >
-            <div className='max-w-[1366px] flex justify-center h-full md:items-center'>
+            <div className='max-w-[1366px] flex mx-auto justify-center h-full md:items-center'>
                 <div className='max-w-[644px] text-center'>
                     <div className='bg-primary-dark w-36 h-36 rounded-full flex items-center justify-center mx-auto'>
                         <IconAmazonOutlinedWhite />
