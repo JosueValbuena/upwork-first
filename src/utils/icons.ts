@@ -39,3 +39,5 @@ export { ReactComponent as IconThemeModeOutlinedBlack } from '@/assets/icons/ico
 export { ReactComponent as IconSortableOutlinedBlack } from '@/assets/icons/sort-vertical-svgrepo-outlined.svg';
 export { ReactComponent as IconSortableNotAllowedOutlinedBlack } from '@/assets/icons/sort-vertical-notallowed-outlined.svg';
 export { ReactComponent as IconGoogleOutlinedNormal } from '@/assets/icons/icon-google-normal-outlined.svg';
+export { ReactComponent as IconMailContainedWhite } from '@/assets/icons/icon-mail-white-contained.svg';
+export { ReactComponent as IconAmazonOutlinedWhite } from '@/assets/icons/icon-amazon-white-outlined.svg';

@@ -101,7 +101,7 @@ const LogIn = () => {
                                     />
                                 </div>
 
-                                <p className='text-red-500 text-sm font-semibold'>Recover password</p>
+                                <p className='text-red-500 text-sm font-semibold hover:underline hover:cursor-pointer'>Recover password</p>
 
                             </div>
 
