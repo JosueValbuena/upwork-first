@@ -41,3 +41,4 @@ export { ReactComponent as IconSortableNotAllowedOutlinedBlack } from '@/assets/
 export { ReactComponent as IconGoogleOutlinedNormal } from '@/assets/icons/icon-google-normal-outlined.svg';
 export { ReactComponent as IconMailContainedWhite } from '@/assets/icons/icon-mail-white-contained.svg';
 export { ReactComponent as IconAmazonOutlinedWhite } from '@/assets/icons/icon-amazon-white-outlined.svg';
+export { ReactComponent as IconCheckOutlinedWhite } from '@/assets/icons/icon-check-white-outlined.svg';

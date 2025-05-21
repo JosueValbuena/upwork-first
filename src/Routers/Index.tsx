@@ -9,6 +9,7 @@ import SignUp from "@/pages/sign-up/SignUp";
 import AccountEmailConfirm from "@/pages/account-email-confirm/AccountEmailConfirm";
 import ConnectAmazonAccount from "@/pages/connect-amazon-account/ConnectAmazonAccount";
 import { paths } from "@/utils/constants";
+import ConnectAmazonAccountSuccessfull from "@/pages/connect-amazon-account-successfull/ConnectAmazonAccountSuccessfull";
 
 const Routers = () => {
     return (
@@ -18,6 +19,7 @@ const Routers = () => {
             <Route path={paths.signup} element={<SignUp />} />
             <Route path={paths.accountEmailConfirm} element={<AccountEmailConfirm />} />
             <Route path={paths.connectAmazonAccount} element={<ConnectAmazonAccount />} />
+            <Route path={paths.connectAmazonAccountSuccessfully} element={<ConnectAmazonAccountSuccessfull />} />
 
             <Route path="/dashboard" element={<ContentWrapper />}>
                 <Route index element={<Dashboard />} />

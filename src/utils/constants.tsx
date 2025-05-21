@@ -8,7 +8,8 @@ export const paths = {
   accountEmailConfirm: '/account-email-confirm',
   connectAmazonAccount: '/connect-amazon-account',
   accountSettings: '/account-settings',
-  settings: '/settings'
+  settings: '/settings',
+  connectAmazonAccountSuccessfully: '/connect-amazon-account-successfully',
 };
 
 export const pathsRoute = {
@@ -18,7 +19,8 @@ export const pathsRoute = {
   accountEmailConfirm: paths.accountEmailConfirm,
   connectAmazonAccount: paths.connectAmazonAccount,
   accountSettings: `${paths.dashoard}${paths.accountSettings}`,
-  settings: `${paths.dashoard}${paths.settings}`
+  settings: `${paths.dashoard}${paths.settings}`,
+  connectAmazonAccountSuccessfully: paths.connectAmazonAccountSuccessfully
 };
 
 export const navigationLinks: NavigationLink[] = [
