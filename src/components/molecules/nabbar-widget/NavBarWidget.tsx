@@ -12,6 +12,7 @@ import {
 import PopoverCustom from "../pop-over-custom/PopOverCustom";
 import { ModeToggle } from '../mote-theme-toggle/mode-toggle'
 import SortModeToggler from "../sort-mode-toggler/SortModeToggler";
+import { pathsRoute } from "@/utils/constants";
 
 const NavBarWidget = () => {
 
@@ -27,7 +28,7 @@ const NavBarWidget = () => {
             <div className="grid gap-4">
                 <div className="space-y-2">
                     <NavLink
-                        to={'/account-settings'}
+                        to={pathsRoute.accountSettings}
                         className=' hover:text-gray-500 hover:font-semibold'
                         onClick={handleOpenPopOver}
                     >
@@ -48,7 +49,7 @@ const NavBarWidget = () => {
                 className="mx-2 cursor-pointer text-foreground"
                 stroke={theme === 'dark' ? '#fff' : ''}
             />
-            <Link to={'/settings'}>
+            <Link to={pathsRoute.settings}>
                 <IconGearpOutlinedGray
                     className="mx-2 cursor-pointer"
                     {...(theme === 'dark' ? { fill: '#fff' } : {})}

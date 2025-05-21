@@ -16,7 +16,6 @@ const FormFieldInputPassword = ({ form, id, placeHolder, customizedInput, label 
             name={id}
             render={({ field }) => (
                 <FormItem>
-                    {console.log({ field })}
                     {label && (
                         <FormLabel>{label}</FormLabel>
                     )}

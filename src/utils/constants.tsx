@@ -1,10 +1,30 @@
 import type { CurrencyList, DashboardMetric, NavigationLink, RiskItem, RiskStatus, TimeList } from "@/types";
 import { IconAmazonOutlinedPurple, IconArrowDownOutlinedPurple, IconArrowUpOutlinedPurple, IconBoxFstOutlinedPurple, IconBoxScndOutlinedPurple, IconCartOutlinedPurple, IconChart4OutlinedPurple, IconChartFstOutlinedPurple, IconChartScndOutlinedPurple, IconChartTrdOutlinedPurple, IconCheckListOutlinedPurple, IconClockOutlinedPurple, IconCurrencyFrstOutlinedPurple, IconCurrencyScndOutlinedPurple, IconDocumentOutlinedPurple, IconDocumentScndOutlinedPurple, IconHouseFstOutlinedPurple, IconHouseScndOutlinedPurple, IconMinusContainedGray, IconRepeatScndOutlinedGPurple, IconUserGearOutlinedPurple, IconWarningContainedRed, IconWarningContainedYellow } from "./icons";
 
+export const paths = {
+  dashoard: '/dashboard',
+  login: '/login',
+  signup: '/signup',
+  accountEmailConfirm: '/account-email-confirm',
+  connectAmazonAccount: '/connect-amazon-account',
+  accountSettings: '/account-settings',
+  settings: '/settings'
+};
+
+export const pathsRoute = {
+  dashoard: paths.dashoard,
+  login: paths.login,
+  signup: paths.signup,
+  accountEmailConfirm: paths.accountEmailConfirm,
+  connectAmazonAccount: paths.connectAmazonAccount,
+  accountSettings: `${paths.dashoard}${paths.accountSettings}`,
+  settings: `${paths.dashoard}${paths.settings}`
+};
+
 export const navigationLinks: NavigationLink[] = [
   {
     label: 'Dashboard',
-    path: '/dashboard',
+    path: paths.dashoard,
     icon: 'home'
   },
   {

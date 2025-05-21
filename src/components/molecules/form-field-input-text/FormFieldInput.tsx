@@ -16,7 +16,6 @@ const FormFieldInputText = ({ form, id, placeHolder, customizedInput, label }: F
             name={id}
             render={({ field }) => (
                 <FormItem>
-                    {console.log({ field })}
                     {label && (
                         <FormLabel>Username</FormLabel>
                     )}
