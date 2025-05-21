@@ -81,23 +81,24 @@ const LogIn = () => {
                                 id={'email'}
                                 form={form}
                                 placeHolder={'Enter Email'}
-                                customizedInput={'bg-white py-7 mt-3'}
+                                customizedInput={'bg-white py-7 mt-3 rounded-xl'}
                             />
 
                             <FormFieldInputPassword
                                 id={'password'}
                                 form={form}
                                 placeHolder={'Password'}
-                                customizedInput={'bg-white py-7 mt-5'}
+                                customizedInput={'bg-white py-7 mt-5 rounded-xl'}
                             />
 
                             <div className='flex items-center justify-between my-3'>
 
-                                <div className='w-[9.5rem]'>
+                                <div className='w-[8.5rem]'>
                                     <SwitchLabel
                                         id={'remember-me'}
                                         label={'Remenber me'}
                                         switchFirst={true}
+                                        customizedLabel={'font-normal'}
                                     />
                                 </div>
 
