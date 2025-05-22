@@ -50,15 +50,15 @@ const LogIn = () => {
             style={{ backgroundImage: `url(${BGIMG})` }}
         >
 
-            <div className="flex flex-col border-2 border-red-600 ">
+            {/* <div className="flex flex-col border-2 border-red-600 ">
                 <Link to={pathsRoute.accountEmailConfirm} className="hover:underline">Account email confirm</Link>
                 <Link to={pathsRoute.connectAmazonAccount} className="hover:underline">Connect amazon account</Link>
                 <Link to={pathsRoute.connectAmazonAccountSuccessfully} className="hover:underline">Connect amazon account successfully</Link>
-            
-            <p className="my-3">to get here after navigate to other url, just press go back in navigator</p>
 
-            <p className="text-red-600 font-bold">This will be remove</p>
-            </div>
+                <p className="my-3">to get here after navigate to other url, just press go back in navigator</p>
+
+                <p className="text-red-600 font-bold">This will be remove</p>
+            </div> */}
 
             <p className="text-center pr-10 pt-3 text-lg xl:text-end">Don't have an account? <Link to="/signup"><span className="text-primary-dark text-lg font-bold">Sign Up!</span></Link></p>
 
