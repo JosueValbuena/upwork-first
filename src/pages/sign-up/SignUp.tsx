@@ -43,6 +43,18 @@ const SignUp = () => {
 
     const onSubmit: SubmitHandler<Inputs> = (data) => {
         console.log(data)
+        const newUserData = {
+            user: data.email,
+            password: data.password
+        };
+
+        const usersDataStored = localStorage.getItem('users');
+        /* @ts-ignore */
+        const usersDataParsed: any = JSON.parse(usersDataStored) || [];
+
+        const newUsersData = [...usersDataParsed, newUserData];
+        console.log({ newUsersData })
+        localStorage.setItem('users', JSON.stringify(newUsersData));
     };
 
     return (

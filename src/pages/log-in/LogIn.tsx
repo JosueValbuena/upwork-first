@@ -8,8 +8,10 @@ import { FormFieldInputPassword, FormFieldInputText, SwitchLabel } from '@/compo
 import { Button } from '@/components/ui/button';
 import { IconGoogleOutlinedNormal } from '@/utils/icons';
 import { Form } from "@/components/ui/form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { pathsRoute } from "@/utils/constants";
+import { useState } from "react";
+/* import { pathsRoute } from "@/utils/constants"; */
 
 const formSchema = z.object({
     email: z.string()
@@ -31,6 +33,9 @@ type Inputs = z.infer<typeof formSchema>;
 
 const LogIn = () => {
 
+    const [error, setError] = useState('');
+    const navigate = useNavigate();
+
     const form = useForm<Inputs>({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -42,6 +47,27 @@ const LogIn = () => {
 
     const onSubmit: SubmitHandler<Inputs> = (data) => {
         console.log(data)
+
+        const usersDataStores = localStorage.getItem('users');
+
+        if (!usersDataStores) {
+            console.error('No hay usuarios registrados')
+            return
+        }
+
+        const usersDataParsed = JSON.parse(usersDataStores);
+
+        const findUser = usersDataParsed.find((user: any) => (
+            user.user === data.email && user.password === data.password
+        ));
+
+        if (!findUser) {
+            console.log('credenciales incorrectas');
+            setError('Wrong email or password')
+            return
+        };
+
+        navigate(pathsRoute.dashoard);
     };
 
     return (
@@ -116,6 +142,12 @@ const LogIn = () => {
                                 <p className='text-red-500 text-sm font-semibold hover:underline hover:cursor-pointer'>Recover password</p>
 
                             </div>
+
+                            {error && (
+                                <p className='text-red-500 text-sm font-semibold text-center'>
+                                    {error}
+                                </p>
+                            )}
 
                             <Button
                                 className='w-full my-3 py-8 rounded-2xl bg-primary-dark text-lg font-bold'
