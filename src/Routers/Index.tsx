@@ -14,13 +14,14 @@ import ConnectAmazonAccountSuccessfull from "@/pages/connect-amazon-account-succ
 const Routers = () => {
     return (
         <Routes>
-            <Route path="/" element={<Navigate to={paths.login} replace />} />
+            {/* <Route path="/" element={<Navigate to={paths.login} replace />} /> */}
             <Route path={paths.login} element={<LogIn />} />
             <Route path={paths.signup} element={<SignUp />} />
             <Route path={paths.accountEmailConfirm} element={<AccountEmailConfirm />} />
             <Route path={paths.connectAmazonAccount} element={<ConnectAmazonAccount />} />
             <Route path={paths.connectAmazonAccountSuccessfully} element={<ConnectAmazonAccountSuccessfull />} />
 
+            <Route path="/" element={<Navigate to={paths.dashoard} replace />} />
             <Route path="/dashboard" element={<ContentWrapper />}>
                 <Route index element={<Dashboard />} />
                 <Route path="settings" element={<Settings />} />
