@@ -1,28 +1,20 @@
 import { Button } from "@/components/ui/button"
+import TableCustomTwo from "../table-custom-two/TableCustomTwo"
 
 const ActiveMarketplacesSection = () => {
     return (
-        <div className="p-3 flex flex-col gap-3 bg-background-secondary-customized mt-3">
-            <p className="text-xl font-semibold">Active Marketplaces</p>
+        <div className="p-3 flex flex-col gap-3 bg-primary-light mt-6">
+            <div className="w-full max-w-[1366px] mx-auto flex">
 
-            <div className="flex gap-1">
-                <Button className="bg-primary-light text-foreground font-semibold text-md hover:text-white">
-                    UK
-                </Button>
+                <div className="grow-1">
+                    <TableCustomTwo />
+                </div>
 
-                <Button className="bg-primary-light text-foreground font-semibold text-md hover:text-white">
-                    US
-                </Button>
+                <div className="ml-10">
+                    <Button className="bg-primary-dark text-md font-bold">Add marketplace</Button>
+                </div>
 
-                <Button className="bg-primary-light text-foreground font-semibold text-md hover:text-white">
-                    DE
-                </Button>
-
-                <Button className="bg-primary-light text-foreground font-semibold text-md hover:text-white">
-                    CA
-                </Button>
             </div>
-
         </div>
     )
 }

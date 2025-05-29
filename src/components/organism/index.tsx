@@ -29,5 +29,6 @@ export { default as SchedulingSection } from "./scheduling-section/SchedulingSec
 export { default as SchedulingSecondSection } from "./scheduling-second-section/SchedulingSecondSection";
 export { default as SmartRepricerActivityLog } from "./smart-repricer-activity/SmartRepricerActivityLog";
 export { default as TableCustom } from "./table-custom/TableCustom";
+export { default as TableCustomTwo } from "./table-custom-two/TableCustomTwo";
 export { default as UserManagementSection } from "./user-management-section/UserManagementSection";
 export { default as TimeZoneSection } from "./time-zone-section/TimeZoneSection";
