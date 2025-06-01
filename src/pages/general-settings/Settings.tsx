@@ -29,7 +29,10 @@ const buttonsTab = [
     },
     {
         label: 'Suscriptions'
-    },
+    }
+];
+
+const globalSettingsOptions = [
     {
         label: 'Min Price Settings'
     },
@@ -39,7 +42,7 @@ const buttonsTab = [
     {
         label: 'Strategy Price Settings'
     },
-];
+]
 
 const Settings = () => {
 
@@ -52,9 +55,9 @@ const Settings = () => {
     return (
         <div>
 
-            <div className='w-full mx-auto'>
+            <div className='max-w-[1366px] w-full mx-auto'>
 
-                <div className="flex items-center justify-between pt-3 px-3 mb-3">
+                <div className="flex items-center justify-between pt-3 mx-10 mb-3">
                     <h1 className='text-3xl font-semibold'>
                         Settings
                     </h1>
@@ -64,7 +67,7 @@ const Settings = () => {
                     </Button>
                 </div>
 
-                <div className="flex justify-start flex-wrap gap-y-3 gap-x-5">
+                <div className="flex justify-between flex-wrap gap-y-3 gap-x-5 mx-10">
                     {buttonsTab.map(element => (
                         <Button
                             key={element.label}
@@ -77,6 +80,22 @@ const Settings = () => {
                         </Button>
                     ))}
                 </div>
+
+                {activeTab === 'General Settings' && (
+                    <div className="flex justify-start flex-wrap gap-y-3 gap-x-5 mt-3 ml-3">
+                        {globalSettingsOptions.map(element => (
+                            <Button
+                                key={element.label}
+                                className={`text-md font-bold bg-primary-light text-foreground hover:bg-primary-dark
+                        ${activeTab === element.label ? 'bg-primary-dark text-white' : ''}
+                        `}
+                                onClick={() => onChangeTab(element.label)}
+                            >
+                                {element.label}
+                            </Button>
+                        ))}
+                    </div>
+                )}
 
             </div>
 
