@@ -24,6 +24,7 @@ export { default as InventoryByBrand } from "./inventory-by-brand/InventoryByBra
 export { default as LinearHorizontalChartSalesOverview } from "./linear-horizontal-salesOverview/ChartSalesOverview";
 export { default as MobileDraweMenu } from "./mobile-drawe-menu/MobileDrawerMenu";
 export { default as NavBar } from "@/components/organism/navbar/NavBar";
+export { default as NotificationSettings } from "./notifications-settings/NotificationSettings";
 export { default as NotificationSection } from "./notification-section/NotificationSection";
 export { default as RepricingRulesSection } from "./repricing-rules-section/RepricingRulesSection";
 export { default as RiskAssessments } from "./risk-assessments/RiskAssessments";

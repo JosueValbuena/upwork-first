@@ -2,12 +2,13 @@ import { Checkbox } from "@/components/ui/checkbox"
 
 interface CheckBoxLabel {
     id: string,
-    label: string
+    label: string,
+    customizeStyles: string
 }
 
-const CheckBoxLabel = ({ id, label }: CheckBoxLabel) => {
+const CheckBoxLabel = ({ id, label, customizeStyles }: CheckBoxLabel) => {
     return (
-        <div className="flex justify-between">
+        <div className={` ${customizeStyles ? customizeStyles : 'flex justify-between'}`}>
             <label
                 htmlFor={id}
                 className="text-md font-semibold"

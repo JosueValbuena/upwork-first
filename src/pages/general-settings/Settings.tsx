@@ -1,5 +1,5 @@
 import {
-    ActiveMarketplacesSection, GlobalSettings, IntegrationsSettings,/* , CurrencyAndPriceSection, GeneralSettingsRepricingApp, GlobalSafeguardSection, InventoryAndCostIntegrationSection, SchedulingSecondSection, SchedulingSection,  TimeZoneSection*/
+    ActiveMarketplacesSection, GlobalSettings, IntegrationsSettings, NotificationSettings,/* , CurrencyAndPriceSection, GeneralSettingsRepricingApp, GlobalSafeguardSection, InventoryAndCostIntegrationSection, SchedulingSecondSection, SchedulingSection,  TimeZoneSection*/
     UserProfileSettings
 } from "@/components/organism"
 import { Button } from "@/components/ui/button";
@@ -85,6 +85,10 @@ const Settings = () => {
 
             {activeTab === 'Global Settings' && (
                 <GlobalSettings />
+            )}
+
+            {activeTab === 'Notifications' && (
+                <NotificationSettings />
             )}
 
             {/* <div className="lg:flex lg:w-full lg:gap-3">
