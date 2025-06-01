@@ -52,7 +52,7 @@ const Settings = () => {
     return (
         <div>
 
-            <div className='max-w-[1366px] w-full mx-auto'>
+            <div className='w-full mx-auto'>
 
                 <div className="flex items-center justify-between pt-3 px-3 mb-3">
                     <h1 className='text-3xl font-semibold'>
@@ -68,7 +68,7 @@ const Settings = () => {
                     {buttonsTab.map(element => (
                         <Button
                             key={element.label}
-                            className={`text-md font-bold bg-primary-light text-foreground w-[11.8rem] hover:bg-primary-dark
+                            className={`text-md font-bold bg-primary-light text-foreground hover:bg-primary-dark
                             ${activeTab === element.label ? 'bg-primary-dark text-white' : ''}
                             `}
                             onClick={() => onChangeTab(element.label)}
