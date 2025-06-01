@@ -30,6 +30,15 @@ const buttonsTab = [
     {
         label: 'Suscriptions'
     },
+    {
+        label: 'Min Price Settings'
+    },
+    {
+        label: 'Max Price Settings'
+    },
+    {
+        label: 'Strategy Price Settings'
+    },
 ];
 
 const Settings = () => {
@@ -55,11 +64,11 @@ const Settings = () => {
                     </Button>
                 </div>
 
-                <div className="flex justify-between flex-wrap gap-1">
+                <div className="flex justify-start flex-wrap gap-y-3 gap-x-5">
                     {buttonsTab.map(element => (
                         <Button
                             key={element.label}
-                            className={`text-md font-bold bg-primary-light text-foreground w-[10rem] hover:bg-primary-dark
+                            className={`text-md font-bold bg-primary-light text-foreground w-[11.8rem] hover:bg-primary-dark
                             ${activeTab === element.label ? 'bg-primary-dark text-white' : ''}
                             `}
                             onClick={() => onChangeTab(element.label)}
