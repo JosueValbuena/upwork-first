@@ -3,7 +3,7 @@ import { Checkbox } from "@/components/ui/checkbox"
 interface CheckBoxLabel {
     id: string,
     label: string,
-    customizeStyles: string
+    customizeStyles?: string
 }
 
 const CheckBoxLabel = ({ id, label, customizeStyles }: CheckBoxLabel) => {
