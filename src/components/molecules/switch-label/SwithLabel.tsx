@@ -4,7 +4,7 @@ import { Switch } from "@/components/ui/switch"
 interface SwitchLabel {
     id: string,
     label: string,
-    customizedLabel?: string,
+    customizedLabel?: string | false,
     switchFirst?: boolean
 };
 

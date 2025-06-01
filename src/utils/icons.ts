@@ -42,3 +42,9 @@ export { ReactComponent as IconGoogleOutlinedNormal } from '@/assets/icons/icon-
 export { ReactComponent as IconMailContainedWhite } from '@/assets/icons/icon-mail-white-contained.svg';
 export { ReactComponent as IconAmazonOutlinedWhite } from '@/assets/icons/icon-amazon-white-outlined.svg';
 export { ReactComponent as IconCheckOutlinedWhite } from '@/assets/icons/icon-check-white-outlined.svg';
+export { ReactComponent as IconUSAFlag } from '@/assets/icons/flag-USA.svg';
+export { ReactComponent as IconCanadaFlag } from '@/assets/icons/flag-CA.svg';
+export { ReactComponent as IconGermanyFlag } from '@/assets/icons/flag-DE.svg';
+export { ReactComponent as IconUKFlag } from '@/assets/icons/flag-GB.svg';
+export { ReactComponent as IconEyeContainedPuprle } from '@/assets/icons/icon-eye-purple-contained.svg';
+export { ReactComponent as IconPlusOutlinedWhite } from '@/assets/icons/icon-plus-white-outlined.svg';

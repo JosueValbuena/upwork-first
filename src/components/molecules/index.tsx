@@ -11,6 +11,7 @@ export { default as ModalCustom } from "./modal-custom/ModalCustom";
 export { default as NavbarLinks } from "./navbar-links/NavbarLinks";
 export { default as NavBarWidget } from "./nabbar-widget/NavBarWidget";
 export { default as PopoverCustom } from "./pop-over-custom/PopOverCustom";
+export { default as SelectLabel } from "./select-label/SelectLabel";
 export { default as SortModeToggler } from "./sort-mode-toggler/SortModeToggler";
 export { default as SwitchLabel } from "./switch-label/SwithLabel";
 /* export { ModeToggle } from "./mote-theme-toggle/mode-toggle"; */

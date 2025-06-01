@@ -14,7 +14,6 @@ const InputTextLabel = ({ id, label, placeHolder, type }: InputTextLabel) => {
 
     const [inputValue, setInputValue] = useState('');
 
-    //configure react hook form later with controller
     return (
         <div className="md:flex md:justify-between">
             <Label

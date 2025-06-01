@@ -3,9 +3,11 @@ import { Outlet } from 'react-router-dom'
 
 const ContentWrapper = () => {
     return (
-        <div className=''>
+        <div className='flex flex-col'>
             <NavBar />
-            <Outlet />
+            <div className='grow-1'>
+                <Outlet />
+            </div>
             <Footer />
         </div>
     )

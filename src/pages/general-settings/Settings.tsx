@@ -1,4 +1,7 @@
-import { ActiveMarketplacesSection/* , CurrencyAndPriceSection, GeneralSettingsRepricingApp, GlobalSafeguardSection, InventoryAndCostIntegrationSection, SchedulingSecondSection, SchedulingSection,  TimeZoneSection*/ } from "@/components/organism"
+import {
+    ActiveMarketplacesSection, GlobalSettings, IntegrationsSettings,/* , CurrencyAndPriceSection, GeneralSettingsRepricingApp, GlobalSafeguardSection, InventoryAndCostIntegrationSection, SchedulingSecondSection, SchedulingSection,  TimeZoneSection*/
+    UserProfileSettings
+} from "@/components/organism"
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
@@ -68,7 +71,21 @@ const Settings = () => {
 
             </div>
 
-            <ActiveMarketplacesSection />
+            {activeTab === 'Marketplaces' && (
+                <ActiveMarketplacesSection />
+            )}
+
+            {activeTab === 'User Profile' && (
+                <UserProfileSettings />
+            )}
+
+            {activeTab === 'Integrations' && (
+                <IntegrationsSettings />
+            )}
+
+            {activeTab === 'Global Settings' && (
+                <GlobalSettings />
+            )}
 
             {/* <div className="lg:flex lg:w-full lg:gap-3">
                 <div className="lg:w-1/3">

@@ -14,7 +14,9 @@ export { default as ComptiterTragetingCheckSection } from "./comptiter-trageting
 export { default as CurrencyAndPriceSection } from "./currency-and-price-section/CurrencyAndPriceSection";
 export { default as GeneralSettingsRepricingApp } from "./general-settings-repricing-app/GeneralSettingsRepricingApp";
 export { default as GlobalSafeguardSection } from "./global-safeguard-section/GlobalSafeguardSection";
+export { default as GlobalSettings } from "./global-settigns/GlobalSettings";
 export { default as Footer } from "./footer/Footer";
+export { default as IntegrationsSettings } from "./integrations-settings/IntegrationsSettings";
 export { default as InventoryAgeAnalysis } from "./inventory-age-analysis/InventoryAgeAnalysis";
 export { default as InventoryAllocation } from "./inventory-allocation/InventoryAllocation";
 export { default as InventoryAndCostIntegrationSection } from "./inventory-and-cost-integration-section/InventoryAndCostIntegrationSection";
@@ -31,4 +33,5 @@ export { default as SmartRepricerActivityLog } from "./smart-repricer-activity/S
 export { default as TableCustom } from "./table-custom/TableCustom";
 export { default as TableCustomTwo } from "./table-custom-two/TableCustomTwo";
 export { default as UserManagementSection } from "./user-management-section/UserManagementSection";
+export { default as UserProfileSettings } from "./user-profile-settings/UserProfileSettings";
 export { default as TimeZoneSection } from "./time-zone-section/TimeZoneSection";

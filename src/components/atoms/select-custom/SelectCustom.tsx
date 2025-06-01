@@ -12,13 +12,14 @@ interface SelectOption {
 }
 
 interface SelectList {
-  selectList: SelectOption[]
+  selectList: SelectOption[],
+  customStyle?: string
 }
 
-const SelectCustom = ({ selectList }: SelectList) => {
+const SelectCustom = ({ selectList, customStyle }: SelectList) => {
   return (
     <Select defaultValue={selectList[0].value}>
-      <SelectTrigger className="w-full bg-primary-light font-semibold">
+      <SelectTrigger className={customStyle ? customStyle : `w-full bg-primary-light font-semibold`}>
         <SelectValue placeholder="Select" />
       </SelectTrigger>
       <SelectContent>
