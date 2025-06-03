@@ -1,5 +1,5 @@
 import {
-    ActiveMarketplacesSection, GlobalSettings, IntegrationsSettings, NotificationSettings,/* , CurrencyAndPriceSection, GeneralSettingsRepricingApp, GlobalSafeguardSection, InventoryAndCostIntegrationSection, SchedulingSecondSection, SchedulingSection,  TimeZoneSection*/
+    ActiveMarketplacesSection, DefaultStrategySettings, GlobalSettings, IntegrationsSettings, MaxPriceSettings, MinPriceSettings, NotificationSettings,/* , CurrencyAndPriceSection, GeneralSettingsRepricingApp, GlobalSafeguardSection, InventoryAndCostIntegrationSection, SchedulingSecondSection, SchedulingSection,  TimeZoneSection*/
     UserProfileSettings
 } from "@/components/organism"
 import { Button } from "@/components/ui/button";
@@ -47,9 +47,14 @@ const globalSettingsOptions = [
 const Settings = () => {
 
     const [activeTab, setActiveTab] = useState('Marketplaces');
+    const [activeGeneralSettionsTab, setActiveGeneralSettionsTab] = useState('Min Price Settings');
 
     const onChangeTab = (label: string): void => {
         setActiveTab(label);
+    };
+
+    const onGeneralSettingsTab = (label: string): void => {
+        setActiveGeneralSettionsTab(label);
     };
 
     return (
@@ -82,14 +87,14 @@ const Settings = () => {
                 </div>
 
                 {activeTab === 'General Settings' && (
-                    <div className="flex justify-start flex-wrap gap-y-3 gap-x-5 mt-3 ml-3">
+                    <div className="flex justify-start flex-wrap gap-y-3 gap-x-5 mt-3 mx-10">
                         {globalSettingsOptions.map(element => (
                             <Button
                                 key={element.label}
                                 className={`text-md font-bold bg-primary-light text-foreground hover:bg-primary-dark
-                        ${activeTab === element.label ? 'bg-primary-dark text-white' : ''}
+                        ${activeGeneralSettionsTab === element.label ? 'bg-primary-dark text-white' : ''}
                         `}
-                                onClick={() => onChangeTab(element.label)}
+                                onClick={() => onGeneralSettingsTab(element.label)}
                             >
                                 {element.label}
                             </Button>
@@ -117,6 +122,22 @@ const Settings = () => {
 
             {activeTab === 'Notifications' && (
                 <NotificationSettings />
+            )}
+
+            {activeTab === 'General Settings' && (
+                <>
+                    {activeGeneralSettionsTab === 'Min Price Settings' && (
+                        <MinPriceSettings />
+                    )}
+
+                    {activeGeneralSettionsTab === 'Max Price Settings' && (
+                        <MaxPriceSettings />
+                    )}
+
+                    {activeGeneralSettionsTab === 'Strategy Price Settings' && (
+                        <DefaultStrategySettings />
+                    )}
+                </>
             )}
 
             {/* <div className="lg:flex lg:w-full lg:gap-3">

@@ -3,9 +3,9 @@ import { Input } from "@/components/ui/input"
 interface InputTextCustom {
     id: string,
     name: string,
-    value: string,
-    onChange: any,
-    placeHolder: string,
+    value?: string,
+    onChange?: any,
+    placeHolder?: string,
     type: string,
     customizedInput?: string,
 };

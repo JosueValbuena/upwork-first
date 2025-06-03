@@ -48,3 +48,4 @@ export { ReactComponent as IconGermanyFlag } from '@/assets/icons/flag-DE.svg';
 export { ReactComponent as IconUKFlag } from '@/assets/icons/flag-GB.svg';
 export { ReactComponent as IconEyeContainedPuprle } from '@/assets/icons/icon-eye-purple-contained.svg';
 export { ReactComponent as IconPlusOutlinedWhite } from '@/assets/icons/icon-plus-white-outlined.svg';
+export { ReactComponent as IconTrashNormal } from '@/assets/icons/icon-trash-normal.svg';

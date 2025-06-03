@@ -12,6 +12,7 @@ export { default as ChartsPieTwo } from "./charts-pie-2/ChartsPieTwo";
 export { default as ComptiterTragetingSection } from "./comptiter-trageting-section/ComptiterTragetingSection";
 export { default as ComptiterTragetingCheckSection } from "./comptiter-trageting-check-section/ComptiterTragetingCheckSection";
 export { default as CurrencyAndPriceSection } from "./currency-and-price-section/CurrencyAndPriceSection";
+export { default as DefaultStrategySettings } from "./default-strategy-settings/DefaultStrategySettings";
 export { default as GeneralSettingsRepricingApp } from "./general-settings-repricing-app/GeneralSettingsRepricingApp";
 export { default as GlobalSafeguardSection } from "./global-safeguard-section/GlobalSafeguardSection";
 export { default as GlobalSettings } from "./global-settigns/GlobalSettings";
@@ -22,6 +23,8 @@ export { default as InventoryAllocation } from "./inventory-allocation/Inventory
 export { default as InventoryAndCostIntegrationSection } from "./inventory-and-cost-integration-section/InventoryAndCostIntegrationSection";
 export { default as InventoryByBrand } from "./inventory-by-brand/InventoryByBrad";
 export { default as LinearHorizontalChartSalesOverview } from "./linear-horizontal-salesOverview/ChartSalesOverview";
+export { default as MaxPriceSettings } from "./max-price-settings/MaxPriceSettings";
+export { default as MinPriceSettings } from "./min-price-settings/MinPriceSettings";
 export { default as MobileDraweMenu } from "./mobile-drawe-menu/MobileDrawerMenu";
 export { default as NavBar } from "@/components/organism/navbar/NavBar";
 export { default as NotificationSettings } from "./notifications-settings/NotificationSettings";
