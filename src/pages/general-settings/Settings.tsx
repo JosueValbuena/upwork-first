@@ -76,7 +76,7 @@ const Settings = () => {
                     {buttonsTab.map(element => (
                         <Button
                             key={element.label}
-                            className={`text-md font-bold bg-primary-light text-foreground hover:bg-primary-dark
+                            className={`text-sm font-semibold bg-primary-light text-foreground hover:bg-primary-dark px-6
                             ${activeTab === element.label ? 'bg-primary-dark text-white' : ''}
                             `}
                             onClick={() => onChangeTab(element.label)}
@@ -91,7 +91,7 @@ const Settings = () => {
                         {globalSettingsOptions.map(element => (
                             <Button
                                 key={element.label}
-                                className={`text-md font-bold bg-primary-light text-foreground hover:bg-primary-dark
+                                className={`text-sm font-semibold bg-primary-light text-foreground hover:bg-primary-dark
                         ${activeGeneralSettionsTab === element.label ? 'bg-primary-dark text-white' : ''}
                         `}
                                 onClick={() => onGeneralSettingsTab(element.label)}

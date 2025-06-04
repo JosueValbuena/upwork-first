@@ -60,7 +60,7 @@ const MinPriceSettings = () => {
                         <p>When new SKU’s are added, assign a Minimum Price based on the following priority rules:</p>
                     </div>
 
-                    <Button className="bg-primary-dark">
+                    <Button className="bg-primary-dark font-semibold">
                         <IconPlusOutlinedWhite />
                         Add New Rule
                     </Button>

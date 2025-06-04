@@ -71,7 +71,7 @@ const ManageUsersSettings = () => {
                     <h2 className="font-bold text-xl">Manage Users</h2>
 
 
-                    <Button className="bg-primary-dark">
+                    <Button className="bg-primary-dark font-semibold">
                         <IconPlusOutlinedWhite />
                         Add User
                     </Button>

@@ -22,7 +22,7 @@ const TableCustomTwo = ({ tableHeadTitles, tableContent, customizeHeader }: Tabl
             <TableHeader className={customizeHeader ? customizeHeader : ''}>
                 <TableRow>
                     {tableHeadTitles.map((title: string) => (
-                        <TableHead className="font-bold text-xl">{title}</TableHead>
+                        <TableHead className="font-semibold text-lg">{title}</TableHead>
                     ))}
                     {/* <TableHead className="w-[100px]">Invoice</TableHead>
                     <TableHead>Method</TableHead>

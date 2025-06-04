@@ -66,7 +66,7 @@ const DefaultStrategySettings = () => {
                         <p>When new SKU’s are added, assign a repricing strategy based on the following priority rules:</p>
                     </div>
 
-                    <Button className="bg-primary-dark">
+                    <Button className="bg-primary-dark font-semibold">
                         <IconPlusOutlinedWhite />
                         Add New Rule
                     </Button>
