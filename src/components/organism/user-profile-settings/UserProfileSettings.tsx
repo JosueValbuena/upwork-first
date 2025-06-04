@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 
 const UserProfileSettings = () => {
     return (
-        <div className='p-3 flex flex-col gap-3 bg-primary-light mt-6 md:px-10'>
+        <div className='p-3 flex flex-col gap-3 bg-primary-light mt-6 h-full md:px-10'>
             <div className="w-full max-w-[1366px] mx-auto flex flex-col gap-5 md:p-5">
                 <div className="flex flex-col gap-5 md:flex-row md:gap-20">
                     <SelectLabel label={'Default Currency'} />
