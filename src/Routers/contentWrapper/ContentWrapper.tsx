@@ -3,11 +3,9 @@ import { Outlet } from 'react-router-dom'
 
 const ContentWrapper = () => {
     return (
-        <div className='flex flex-col'>
+        <div className='grid min-h-[100dvh] grid-rows-[auto_1fr_auto]'>
             <NavBar />
-            <div className='grow-1'>
-                <Outlet />
-            </div>
+            <Outlet />
             <Footer />
         </div>
     )

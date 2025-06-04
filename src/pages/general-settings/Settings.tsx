@@ -1,5 +1,5 @@
 import {
-    ActiveMarketplacesSection, DefaultStrategySettings, GlobalSettings, IntegrationsSettings, MaxPriceSettings, MinPriceSettings, NotificationSettings,/* , CurrencyAndPriceSection, GeneralSettingsRepricingApp, GlobalSafeguardSection, InventoryAndCostIntegrationSection, SchedulingSecondSection, SchedulingSection,  TimeZoneSection*/
+    ActiveMarketplacesSection, DefaultStrategySettings, GlobalSettings, IntegrationsSettings, ManageUsersSettings, MaxPriceSettings, MinPriceSettings, NotificationSettings, SuscriptionsSettings,/* , CurrencyAndPriceSection, GeneralSettingsRepricingApp, GlobalSafeguardSection, InventoryAndCostIntegrationSection, SchedulingSecondSection, SchedulingSection,  TimeZoneSection*/
     UserProfileSettings
 } from "@/components/organism"
 import { Button } from "@/components/ui/button";
@@ -28,7 +28,7 @@ const buttonsTab = [
         label: 'Manage Users'
     },
     {
-        label: 'Suscriptions'
+        label: 'Subscriptions'
     }
 ];
 
@@ -72,7 +72,7 @@ const Settings = () => {
                     </Button>
                 </div>
 
-                <div className="flex justify-between flex-wrap gap-y-3 gap-x-5 mx-10">
+                <div className="flex justify-between flex-wrap gap-y-3 gap-x-4 mx-10">
                     {buttonsTab.map(element => (
                         <Button
                             key={element.label}
@@ -138,6 +138,14 @@ const Settings = () => {
                         <DefaultStrategySettings />
                     )}
                 </>
+            )}
+
+            {activeTab === 'Manage Users' && (
+                <ManageUsersSettings />
+            )}
+
+            {activeTab === 'Subscriptions' && (
+                <SuscriptionsSettings />
             )}
 
             {/* <div className="lg:flex lg:w-full lg:gap-3">

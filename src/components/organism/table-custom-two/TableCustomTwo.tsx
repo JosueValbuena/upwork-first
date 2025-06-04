@@ -11,14 +11,15 @@ import {
 
 interface TableCustomTwo {
     tableHeadTitles: any,
-    tableContent: any
+    tableContent: any,
+    customizeHeader?: string
 }
 
-const TableCustomTwo = ({ tableHeadTitles, tableContent }: TableCustomTwo) => {
+const TableCustomTwo = ({ tableHeadTitles, tableContent, customizeHeader }: TableCustomTwo) => {
     return (
         <Table>
             {/* <TableCaption>A list of your recent invoices.</TableCaption> */}
-            <TableHeader>
+            <TableHeader className={customizeHeader ? customizeHeader : ''}>
                 <TableRow>
                     {tableHeadTitles.map((title: string) => (
                         <TableHead className="font-bold text-xl">{title}</TableHead>
@@ -31,10 +32,13 @@ const TableCustomTwo = ({ tableHeadTitles, tableContent }: TableCustomTwo) => {
             <TableBody>
                 {tableContent.map((element: any) => (
                     <TableRow key={element?.active_marketplaces}>
-                        <TableCell className="font-medium">{element?.active_marketplaces}</TableCell>
+                        {Object.values(element).map((elementValue: any) => (
+                            <TableCell className="font-medium">{elementValue}</TableCell>
+                        ))}
+                        {/* <TableCell className="font-medium">{element?.active_marketplaces}</TableCell>
                         <TableCell>{element?.seller_ID}</TableCell>
                         <TableCell>{element?.status}</TableCell>
-                        <TableCell className="text-right">{element?.action}</TableCell>
+                        <TableCell className="text-right">{element?.action}</TableCell> */}
                     </TableRow>
                 ))}
                 {/*              {invoices.map((invoice) => (

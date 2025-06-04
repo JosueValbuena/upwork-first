@@ -23,6 +23,7 @@ export { default as InventoryAllocation } from "./inventory-allocation/Inventory
 export { default as InventoryAndCostIntegrationSection } from "./inventory-and-cost-integration-section/InventoryAndCostIntegrationSection";
 export { default as InventoryByBrand } from "./inventory-by-brand/InventoryByBrad";
 export { default as LinearHorizontalChartSalesOverview } from "./linear-horizontal-salesOverview/ChartSalesOverview";
+export { default as ManageUsersSettings } from "./manage-users-settings/ManageUsersSettings";
 export { default as MaxPriceSettings } from "./max-price-settings/MaxPriceSettings";
 export { default as MinPriceSettings } from "./min-price-settings/MinPriceSettings";
 export { default as MobileDraweMenu } from "./mobile-drawe-menu/MobileDrawerMenu";
@@ -34,6 +35,7 @@ export { default as RiskAssessments } from "./risk-assessments/RiskAssessments";
 export { default as SchedulingSection } from "./scheduling-section/SchedulingSection";
 export { default as SchedulingSecondSection } from "./scheduling-second-section/SchedulingSecondSection";
 export { default as SmartRepricerActivityLog } from "./smart-repricer-activity/SmartRepricerActivityLog";
+export { default as SuscriptionsSettings } from "./suscriptions-settings/SuscriptionsSettings";
 export { default as TableCustom } from "./table-custom/TableCustom";
 export { default as TableCustomTwo } from "./table-custom-two/TableCustomTwo";
 export { default as UserManagementSection } from "./user-management-section/UserManagementSection";
