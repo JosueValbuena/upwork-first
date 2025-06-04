@@ -11,14 +11,14 @@ const CheckBoxLabel = ({ id, label, customizeStyles }: CheckBoxLabel) => {
         <div className={` ${customizeStyles ? customizeStyles : 'flex justify-between'}`}>
             <label
                 htmlFor={id}
-                className="text-md font-semibold"
+                className="text-sm font-semibold"
             >
                 {label}
             </label>
 
             <Checkbox
                 id={id}
-                className="data-[state=checked]:bg-violet-700 cursor-pointer w-7 h-7 rounded-lg"
+                className="data-[state=checked]:bg-violet-700 cursor-pointer w-6 h-6 rounded-lg"
             />
         </div>
     )

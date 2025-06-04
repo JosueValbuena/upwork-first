@@ -27,7 +27,7 @@ const NotificationSettings = () => {
     return (
         <div className='p-3 flex flex-col gap-3 bg-primary-light mt-6 md:px-10'>
             <div className="w-full max-w-[1366px] mx-auto flex flex-col gap-5 md:p-5">
-                <h2 className="font-bold text-xl">Notification</h2>
+                <h2 className="font-bold text-lg">Notification</h2>
 
                 <div className="md:flex md:gap-33">
                     <div>
@@ -50,7 +50,7 @@ const NotificationSettings = () => {
                 </div>
 
                 <div className="mt-3">
-                    <p className="text-md font-semibold">Method of notifications</p>
+                    <p className="textmd font-semibold">Method of notifications</p>
                     <p>Choose how you’d like to recive alerts.</p>
 
                     <CheckBoxLabel id={'email'} label={'Email'} customizeStyles={'flex items-center flex-row-reverse justify-end mt-2 gap-3'} />

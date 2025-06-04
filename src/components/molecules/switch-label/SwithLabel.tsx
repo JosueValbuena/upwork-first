@@ -13,7 +13,7 @@ const SwitchLabel = ({ id, label, customizedLabel, switchFirst }: SwitchLabel) =
     return (
         <div className={`flex items-center justify-between mt-1 ${switchFirst ? 'flex-row-reverse justify-end gap-3' : ''}`}>
             <Label
-                className={customizedLabel ? customizedLabel : "text-md font-semibold"}
+                className={customizedLabel ? customizedLabel : "text-sm font-semibold"}
                 htmlFor={id}
             >
                 {label}

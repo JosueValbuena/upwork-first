@@ -16,18 +16,18 @@ const UserProfileSettings = () => {
                 </div>
 
                 <div className="flex flex-col gap-5 items-center md:flex-row">
-                    <p className="font-semibold text-lg">My Email:</p> <p className="font-semibold text-lg">example@example.com</p>
-                    <Button className=" bg-primary-dark cursor-pointer md:ml-7">Update Email</Button>
+                    <p className="font-semibold text-md">My Email:</p> <p className="font-semibold text-md">example@example.com</p>
+                    <Button className=" bg-primary-dark cursor-pointer md:ml-15">Update Email</Button>
                 </div>
 
                 <div className="flex flex-col gap-5 items-center md:flex-row">
-                    <p className="font-semibold text-lg">Set Phone #:</p> <p className="font-semibold text-lg">(777) 123-4567</p>
-                    <Button className=" bg-primary-dark cursor-pointer md:ml-22">Update Phone</Button>
+                    <p className="font-semibold text-md">Set Phone #:</p> <p className="font-semibold text-md">(777) 123-4567</p>
+                    <Button className=" bg-primary-dark cursor-pointer md:ml-28">Update Phone</Button>
                 </div>
 
                 <div className="flex flex-col gap-5 items-center md:flex-row">
-                    <p className="font-semibold text-lg">Password</p>
-                    <Button className=" bg-primary-dark cursor-pointer md:ml-65">Change Password</Button>
+                    <p className="font-semibold text-md">Password</p>
+                    <Button className=" bg-primary-dark cursor-pointer md:ml-67">Change Password</Button>
                 </div>
 
             </div>

@@ -78,7 +78,7 @@ const DefaultStrategySettings = () => {
                     <div className="flex flex-col gap-5">
 
                         <div className="md:flex items-center gap-5">
-                            <p className="font-bold text-lg">If</p>
+                            <p className="font-bold text-md">If</p>
 
                             <SelectCustom selectList={selectDetault.brandName} customStyle={'bg-white w-[13rem]'} />
 
@@ -93,7 +93,7 @@ const DefaultStrategySettings = () => {
                         </div>
 
                         <div className="md:flex items-center gap-5">
-                            <p className="font-bold text-lg">If</p>
+                            <p className="font-bold text-md">If</p>
 
                             <SelectCustom selectList={selectDetault.brandName} customStyle={'bg-white w-[13rem]'} />
 
@@ -124,7 +124,7 @@ const DefaultStrategySettings = () => {
                     <div className="flex flex-col gap-5">
 
                         <div className="md:flex items-center gap-5">
-                            <p className="font-bold text-lg">If</p>
+                            <p className="font-bold text-md">If</p>
 
                             <SelectCustom selectList={selectDetault.brandName} customStyle={'bg-white w-[13rem]'} />
 
@@ -139,7 +139,7 @@ const DefaultStrategySettings = () => {
                         </div>
 
                         <div className="md:flex items-center gap-5">
-                            <p className="font-bold text-lg">If</p>
+                            <p className="font-bold text-md">If</p>
 
                             <SelectCustom selectList={selectDetault.brandName} customStyle={'bg-white w-[13rem]'} />
 
@@ -165,7 +165,7 @@ const DefaultStrategySettings = () => {
                 <Separator />
 
                 <div>
-                    <p className="font-bold text-xl">Multiple Based Rules</p>
+                    <p className="font-bold text-lg">Multiple Based Rules</p>
                     <p>Applies this Max Price only if at least 2 of the above rule’s are found true.</p>
 
                     <SelectCustom selectList={selectDetault.balancedStrategy} customStyle={'bg-white w-[14rem] mt-3'} />
@@ -174,7 +174,7 @@ const DefaultStrategySettings = () => {
                 <Separator />
 
                 <div>
-                    <p className="font-bold text-xl">Default Min Price (Fallback)</p>
+                    <p className="font-bold text-lg">Default Min Price (Fallback)</p>
                     <p>Applies only if none of the above rule’s are found true.</p>
                     <SelectCustom selectList={selectDetault.balancedStrategy} customStyle={'bg-white w-[14rem] mt-3'} />
                 </div>

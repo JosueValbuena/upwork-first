@@ -72,7 +72,7 @@ const MinPriceSettings = () => {
                     <div className="flex flex-col gap-5">
 
                         <div className="md:flex items-center gap-5">
-                            <p className="font-bold text-lg">If</p>
+                            <p className="font-bold text-md">If</p>
 
                             <SelectCustom selectList={selectDetault.brandName} customStyle={'bg-white w-[13rem]'} />
 
@@ -87,7 +87,7 @@ const MinPriceSettings = () => {
                         </div>
 
                         <div className="md:flex items-center gap-5">
-                            <p className="font-bold text-lg">If</p>
+                            <p className="font-bold text-md">If</p>
 
                             <SelectCustom selectList={selectDetault.brandName} customStyle={'bg-white w-[13rem]'} />
 
@@ -111,15 +111,15 @@ const MinPriceSettings = () => {
                 </div>
 
                 <div className="">
-                    <p className="font-bold text-xl md:pl-66">Perform the Following</p>
+                    <p className="font-bold text-lg md:pl-66">Perform the Following</p>
 
-                    <div className="md:flex items-center gap-29 mt-3 md:ml-30">
-                        <p className="font-bold text-md">Set Min Price based on</p>
+                    <div className="md:flex items-center gap-28 mt-3 md:ml-30">
+                        <p className="font-bold text-sm">Set Min Price based on</p>
                         <SelectCustom selectList={selectDetault.pricePlusShipping} customStyle={'bg-white w-[14rem]'} />
                     </div>
 
                     <div className="md:flex items-center gap-10 mt-3 md:ml-30">
-                        <p className="font-bold text-md">Min Price = Your Price + Shipping</p>
+                        <p className="font-bold text-sm">Min Price = Your Price + Shipping</p>
                         <div className="flex items-center gap-3">
                             <SelectCustom selectList={selectDetault.plus} customStyle={'bg-white'} />
                             <InputCustom id={'rule-1'} name={'rule-1'} placeHolder="00" type={'text'} customizedInput={'bg-white w-[5rem]'} />
@@ -131,16 +131,16 @@ const MinPriceSettings = () => {
                 <Separator />
 
                 <div>
-                    <p className="font-bold text-xl">Multiple Based Rules</p>
+                    <p className="font-bold text-lg">Multiple Based Rules</p>
                     <p>Applies this Min Price only if at least 2 of the above rule’s are found true.</p>
 
-                    <div className="md:flex items-center gap-29 mt-3 md:ml-30">
-                        <p className="font-bold text-md">Set Max Price based on</p>
+                    <div className="md:flex items-center gap-28 mt-3 md:ml-30">
+                        <p className="font-bold text-sm">Set Max Price based on</p>
                         <SelectCustom selectList={selectDetault.pricePlusShipping} customStyle={'bg-white w-[14rem]'} />
                     </div>
 
                     <div className="md:flex items-center gap-10 mt-3 md:ml-30">
-                        <p className="font-bold text-md">Min Price = Your Price + Shipping</p>
+                        <p className="font-bold text-sm">Min Price = Your Price + Shipping</p>
                         <div className="flex items-center gap-3">
                             <SelectCustom selectList={selectDetault.minus} customStyle={'bg-white'} />
                             <InputCustom id={'rule-1'} name={'rule-1'} placeHolder="00" type={'text'} customizedInput={'bg-white w-[5rem]'} />
@@ -152,16 +152,16 @@ const MinPriceSettings = () => {
                 <Separator />
 
                 <div>
-                    <p className="font-bold text-xl">Default Min Price (Fallback)</p>
+                    <p className="font-bold text-lg">Default Min Price (Fallback)</p>
                     <p>Applies only if none of the above rule’s are found true.</p>
 
-                    <div className="md:flex items-center gap-29 mt-3 md:ml-30">
-                        <p className="font-bold text-md">Set Min Price based on</p>
+                    <div className="md:flex items-center gap-28 mt-3 md:ml-30">
+                        <p className="font-bold text-sm">Set Min Price based on</p>
                         <SelectCustom selectList={selectDetault.pricePlusShipping} customStyle={'bg-white w-[14rem]'} />
                     </div>
 
                     <div className="md:flex items-center gap-10 mt-3 md:ml-30">
-                        <p className="font-bold text-md">Min Price = Your Price + Shipping</p>
+                        <p className="font-bold text-sm">Min Price = Your Price + Shipping</p>
                         <div className="flex items-center gap-3">
                             <SelectCustom selectList={selectDetault.minus} customStyle={'bg-white'} />
                             <InputCustom id={'rule-1'} name={'rule-1'} placeHolder="00" type={'text'} customizedInput={'bg-white w-[5rem]'} />
