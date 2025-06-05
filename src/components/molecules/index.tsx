@@ -14,4 +14,5 @@ export { default as PopoverCustom } from "./pop-over-custom/PopOverCustom";
 export { default as SelectLabel } from "./select-label/SelectLabel";
 export { default as SortModeToggler } from "./sort-mode-toggler/SortModeToggler";
 export { default as SwitchLabel } from "./switch-label/SwithLabel";
+export { default as TooltipCustom } from "./tooltip-custom/TooltipCustom";
 /* export { ModeToggle } from "./mote-theme-toggle/mode-toggle"; */

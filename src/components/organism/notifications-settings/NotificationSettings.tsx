@@ -1,5 +1,5 @@
 import { SelectCustom } from "@/components/atoms"
-import { CheckBoxLabel, SwitchLabel } from "@/components/molecules"
+import { CheckBoxLabel, SwitchLabel, TooltipCustom } from "@/components/molecules"
 
 const defaultValues = [
     {
@@ -67,7 +67,7 @@ const NotificationSettings = () => {
                     <SelectCustom selectList={defaultValues} customStyle={'w-[12rem] bg-white'} />
                 </div>
 
-                <div className="mt-3 md:flex md:items-center md:gap-13">
+                <div className="mt-3 md:flex md:items-center md:gap-23">
                     <div>
                         <SwitchLabel id={'notifications-1'} label={'Active SKU’s Missing a Min/Max/Cost price.'} switchFirst={true} />
                         <p className="md: w-[20rem]">Get notified when a product is missing a Min/Max/Cost Price.</p>
@@ -75,7 +75,7 @@ const NotificationSettings = () => {
                     <SelectCustom selectList={defaultValues} customStyle={'w-[12rem] bg-white'} />
                 </div>
 
-                <div className="mt-3 md:flex md:items-center md:gap-25">
+                <div className="mt-3 md:flex md:items-center md:gap-28">
                     <div>
                         <SwitchLabel id={'notifications-2'} label={"Active SKU's where Price < Min Price."} switchFirst={true} />
                         <p className="md: w-[20rem]">Get notified when a SKU’s Price is less then the Min Price.</p>
@@ -83,7 +83,7 @@ const NotificationSettings = () => {
                     <SelectCustom selectList={defaultValues} customStyle={'w-[12rem] bg-white'} />
                 </div>
 
-                <div className="mt-3 md:flex md:items-center md:gap-24">
+                <div className="mt-3 md:flex md:items-center md:gap-28">
                     <div>
                         <SwitchLabel id={'notifications-3'} label={"Active SKU's where Price < Cost Price."} switchFirst={true} />
                         <p className="md: w-[20rem]">Get notified when a SKU’s Price is less then the Cost Price.</p>
@@ -91,7 +91,7 @@ const NotificationSettings = () => {
                     <SelectCustom selectList={defaultValues} customStyle={'w-[12rem] bg-white'} />
                 </div>
 
-                <div className="mt-3 md:flex md:items-center md:gap-18">
+                <div className="mt-3 md:flex md:items-center md:gap-27">
                     <div>
                         <SwitchLabel id={'notifications-4'} label={"Active SKU's where No Sales for 30 Days."} switchFirst={true} />
                         <p className="md: w-[20rem]">Get notified when a Active SKU with an age at least 30 Days has had no sales in the past 30 Days.</p>
@@ -99,15 +99,30 @@ const NotificationSettings = () => {
                     <SelectCustom selectList={defaultValues} customStyle={'w-[12rem] bg-white'} />
                 </div>
 
-                <div className="mt-3 md:flex md:items-center md:gap-11">
+                <div className="mt-3 md:flex md:items-center md:gap-20">
                     <div>
-                        <SwitchLabel id={'notifications-5'} label={"Active SKU's where Competition <  Min Price."} switchFirst={true} />
-                        <p className="md: w-[20rem]">Get notified when a Active SKU’s Competitors Price is below my Min Price.</p>
+                        <TooltipCustom
+                            title={<p>Get notified when a Active SKU’s Competitors Price is below my Min Price.</p>}
+                            trigger={<SwitchLabel id={'notifications-5'} label={"Active SKU's where Competition <  Min Price."} switchFirst={true} />}
+                        />
+                        {/* <TooltipProvider>
+                            <Tooltip>
+                                <TooltipTrigger asChild>
+                                    <SwitchLabel id={'notifications-5'} label={"Active SKU's where Competition <  Min Price."} switchFirst={true} />
+                                </TooltipTrigger>
+                                <TooltipPortal>
+                                    <TooltipContent>
+                                        <p>Get notified when a Active SKU’s Competitors Price is below my Min Price.</p>
+                                    </TooltipContent>
+                                </TooltipPortal>
+                            </Tooltip>
+                        </TooltipProvider> */}
+                        {/* <p className="md: w-[20rem]">Get notified when a Active SKU’s Competitors Price is below my Min Price.</p> */}
                     </div>
                     <SelectCustom selectList={defaultValues} customStyle={'w-[12rem] bg-white'} />
                 </div>
 
-                <div className="mt-3 md:flex md:items-center md:gap-14">
+                <div className="mt-3 md:flex md:items-center md:gap-22">
                     <div>
                         <SwitchLabel id={'notifications-6'} label={"Active SKU's Without an Assigned Strategy."} switchFirst={true} />
                         <p className="md: w-[20rem]">Get notified when a product is missing a strategy.</p>
