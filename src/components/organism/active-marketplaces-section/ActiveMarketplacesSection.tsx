@@ -1,8 +1,12 @@
 import { Button } from "@/components/ui/button"
 import TableCustomTwo from "../table-custom-two/TableCustomTwo"
 import { IconCanadaFlag, IconEyeContainedPuprle, IconGermanyFlag, IconPlusOutlinedWhite, IconUKFlag, IconUSAFlag } from "@/utils/icons";
+import { SelectMarketplaceModal } from "../modals";
+import { useState } from "react";
 
 const ActiveMarketplacesSection = () => {
+
+    const [isOpenModal, setIsOpenModal] = useState(false);
 
     const tableHeadTitles = [
         'Active Marketplaces',
@@ -54,23 +58,39 @@ const ActiveMarketplacesSection = () => {
 
     ];
 
+    const onOpenModal = () => {
+        setIsOpenModal(true);
+    };
+
+    const onCloseModal = () => {
+        setIsOpenModal(false);
+    };
+
     return (
-        <div className="p-3 flex flex-col gap-3 bg-primary-light mt-6 h-full md:px-5">
-            <div className="w-full max-w-[1366px] mx-auto flex flex-col-reverse md:p-5 lg:flex-row">
+        <>
 
-                <div className="grow-1 pt-5">
-                    <TableCustomTwo tableHeadTitles={tableHeadTitles} tableContent={tableData} />
+            <SelectMarketplaceModal isOpen={isOpenModal} onCloseModal={onCloseModal}/>
+
+            <div className="p-3 flex flex-col gap-3 bg-primary-light mt-6 h-full md:px-5">
+                <div className="w-full max-w-[1366px] mx-auto flex flex-col-reverse md:p-5 lg:flex-row">
+
+                    <div className="grow-1 pt-5">
+                        <TableCustomTwo tableHeadTitles={tableHeadTitles} tableContent={tableData} />
+                    </div>
+
+                    <div className="lg:ml-10">
+                        <Button
+                            className="bg-primary-dark text-md font-semibold"
+                            onClick={onOpenModal}
+                        >
+                            <IconPlusOutlinedWhite />
+                            Add marketplace
+                        </Button>
+                    </div>
+
                 </div>
-
-                <div className="lg:ml-10">
-                    <Button className="bg-primary-dark text-md font-semibold">
-                        <IconPlusOutlinedWhite />
-                        Add marketplace
-                    </Button>
-                </div>
-
             </div>
-        </div>
+        </>
     )
 }
 

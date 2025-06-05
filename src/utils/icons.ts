@@ -49,3 +49,6 @@ export { ReactComponent as IconUKFlag } from '@/assets/icons/flag-GB.svg';
 export { ReactComponent as IconEyeContainedPuprle } from '@/assets/icons/icon-eye-purple-contained.svg';
 export { ReactComponent as IconPlusOutlinedWhite } from '@/assets/icons/icon-plus-white-outlined.svg';
 export { ReactComponent as IconTrashNormal } from '@/assets/icons/icon-trash-normal.svg';
+export { ReactComponent as IconAmazonNormal } from '@/assets/icons/icon-amazon-normal-outlined.svg';
+export { ReactComponent as IconEbayNormal } from '@/assets/icons/icon-email-normal-outlined.svg';
+export { ReactComponent as IconWalmartNormal } from '@/assets/icons/icon-walmart-normal-outlined.svg';
