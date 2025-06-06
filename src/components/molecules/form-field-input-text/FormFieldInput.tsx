@@ -7,9 +7,10 @@ interface FormFieldInput {
     placeHolder: string,
     customizedInput?: string,
     label?: any,
+    labelCustomized?: string,
 }
 
-const FormFieldInputText = ({ form, id, placeHolder, customizedInput, label }: FormFieldInput) => {
+const FormFieldInputText = ({ form, id, placeHolder, customizedInput, label, labelCustomized }: FormFieldInput) => {
     return (
         <FormField
             control={form.control}
@@ -17,7 +18,7 @@ const FormFieldInputText = ({ form, id, placeHolder, customizedInput, label }: F
             render={({ field }) => (
                 <FormItem>
                     {label && (
-                        <FormLabel>Username</FormLabel>
+                        <FormLabel className={labelCustomized ? labelCustomized : ''}>{label}</FormLabel>
                     )}
                     <FormControl>
                         {/* <Input

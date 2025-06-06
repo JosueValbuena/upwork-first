@@ -1,8 +1,20 @@
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import TableCustomTwo from "../table-custom-two/TableCustomTwo"
+import { ChangePlanModal } from "../modals";
+import { useState } from "react";
 
 const SuscriptionsSettings = () => {
+
+    const [isOpenModalChangePlan, setIsOpenModalChangePlan] = useState(false);
+
+    const onOpenModalChangePlan = () => {
+        setIsOpenModalChangePlan(true);
+    };
+
+    const onCloseModalChangePlan = () => {
+        setIsOpenModalChangePlan(false);
+    };
 
     const tableHeadTitles = [
         'Date',
@@ -44,48 +56,57 @@ const SuscriptionsSettings = () => {
     ];
 
     return (
-        <div className='p-3 flex flex-col gap-3 bg-primary-light mt-6 md:px-10'>
-            <div className="w-full max-w-[1366px] mx-auto flex flex-col gap-5 md:p-5">
+        <>
+            <ChangePlanModal isOpen={isOpenModalChangePlan} onCloseModal={onCloseModalChangePlan} />
 
-                <h2 className="font-bold text-xl">Billing</h2>
+            <div className='p-3 flex flex-col gap-3 bg-primary-light mt-6 md:px-10'>
+                <div className="w-full max-w-[1366px] mx-auto flex flex-col gap-5 md:p-5">
 
-                <div className="flex">
-                    <div>
-                        <p>Plan</p>
-                        <p className="font-semibold">Profesional</p>
+                    <h2 className="font-bold text-xl">Billing</h2>
+
+                    <div className="flex">
+                        <div>
+                            <p>Plan</p>
+                            <p className="font-semibold">Profesional</p>
+                        </div>
+
+                        <Button
+                            className="bg-primary-dark ml-23 font-bold"
+                            onClick={onOpenModalChangePlan}
+                        >
+                            Change Plan
+                        </Button>
+
+                        <Button className="bg-primary-dark ml-7 font-bold">Cancel Subscription</Button>
                     </div>
 
-                    <Button className="bg-primary-dark ml-23 font-bold">Change Plan</Button>
+                    <Separator />
 
-                    <Button className="bg-primary-dark ml-7 font-bold">Cancel Subscription</Button>
-                </div>
-
-                <Separator />
-
-                <div className="flex">
-                    <div>
-                        <p>Next Renewal Date</p>
-                        <p className="font-semibold">May-15-2025</p>
-                    </div>
-                </div>
-
-                <Separator />
-
-                <div className="flex">
-                    <div>
-                        <p>Payment Method</p>
-                        <p className="font-semibold">Visa ending in 234</p>
+                    <div className="flex">
+                        <div>
+                            <p>Next Renewal Date</p>
+                            <p className="font-semibold">May-15-2025</p>
+                        </div>
                     </div>
 
-                    <Button className="bg-primary-dark ml-10 font-bold">Update</Button>
+                    <Separator />
+
+                    <div className="flex">
+                        <div>
+                            <p>Payment Method</p>
+                            <p className="font-semibold">Visa ending in 234</p>
+                        </div>
+
+                        <Button className="bg-primary-dark ml-10 font-bold">Update</Button>
+                    </div>
+
+                    <h2 className="font-bold text-xl">Billing History</h2>
+
+                    <TableCustomTwo tableHeadTitles={tableHeadTitles} tableContent={tableContent} />
+
                 </div>
-
-                <h2 className="font-bold text-xl">Billing History</h2>
-
-                <TableCustomTwo tableHeadTitles={tableHeadTitles} tableContent={tableContent} />
-
             </div>
-        </div>
+        </>
     )
 }
 

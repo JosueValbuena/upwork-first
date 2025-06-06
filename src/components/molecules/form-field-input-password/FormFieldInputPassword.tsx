@@ -7,9 +7,10 @@ interface FormFieldInput {
     placeHolder: string,
     customizedInput?: string,
     label?: any
+    customizedLabel?: string,
 }
 
-const FormFieldInputPassword = ({ form, id, placeHolder, customizedInput, label }: FormFieldInput) => {
+const FormFieldInputPassword = ({ form, id, placeHolder, customizedInput, label, customizedLabel }: FormFieldInput) => {
     return (
         <FormField
             control={form.control}
@@ -17,7 +18,7 @@ const FormFieldInputPassword = ({ form, id, placeHolder, customizedInput, label 
             render={({ field }) => (
                 <FormItem>
                     {label && (
-                        <FormLabel>{label}</FormLabel>
+                        <FormLabel className={customizedLabel ? customizedLabel : ''}>{label}</FormLabel>
                     )}
                     <FormControl>
                         <InputPasswordCustom
