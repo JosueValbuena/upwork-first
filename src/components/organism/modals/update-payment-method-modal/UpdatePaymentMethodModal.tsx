@@ -14,8 +14,8 @@ import {
     DialogTitle,
 } from "@/components/ui/dialog";
 
-import { FormFieldInputText } from "@/components/molecules";
-import { IconAmericanExpressNormal, IconMastercardNormal, IconPaypalNormal, IconVisaNormal } from "@/utils/icons";
+import { FormFieldInputText, FormFieldRadioGroup } from "@/components/molecules";
+import { IconAmericanExpressNormal, IconMastercardNormal, IconpadlockOutlinedPurple, IconPaypalNormal, IconVisaNormal } from "@/utils/icons";
 import FormFieldSelect from "@/components/molecules/form-field-select/FormFieldSelect";
 
 interface UpdatePaymentMethodModal {
@@ -24,18 +24,50 @@ interface UpdatePaymentMethodModal {
 };
 
 const formSchema = z.object({
-    name: z.string()
+    paymentMethod: z.string()
         .min(1, {
             message: "Field is required.",
         }),
-    email: z.string()
+    billingName: z.string()
         .min(1, {
             message: "Field is required.",
         }),
-    role: z.string()
+    cardNumber: z.string()
         .min(1, {
             message: "Field is required.",
-        })
+        }),
+    cvv: z.string()
+        .min(1, {
+            message: "Field is required.",
+        }),
+    streetAddress: z.string()
+        .min(1, {
+            message: "Field is required.",
+        }),
+    city: z.string()
+        .min(1, {
+            message: "Field is required.",
+        }),
+    state: z.string()
+        .min(1, {
+            message: "Field is required.",
+        }),
+    zipCode: z.string()
+        .min(1, {
+            message: "Field is required.",
+        }),
+    country: z.string()
+        .min(1, {
+            message: "Field is required.",
+        }),
+    mm: z.string()
+        .min(1, {
+            message: "Field is required.",
+        }),
+    yy: z.string()
+        .min(1, {
+            message: "Field is required.",
+        }),
     /* password: z.string()
         .min(6, {
             message: "Password must be at least 6 characters.",
@@ -86,21 +118,42 @@ const UpdatePaymentMethodModal = ({ isOpen, onCloseModal }: UpdatePaymentMethodM
                     </DialogTitle>
                     <DialogDescription>
 
-                        <p className="text-foreground mt-5">Choose a payment method and securely update your information.</p>
-
-                        <div className="flex items-center gap-3 mt-3">
-                            <IconMastercardNormal />
-                            <IconPaypalNormal />
-                            <IconVisaNormal />
-                            <IconAmericanExpressNormal />
-                        </div>
-
                         <Form {...form}>
                             <form onSubmit={form.handleSubmit(onSubmit as SubmitHandler<FieldValues>)}>
 
                                 <div className="max-h-[60dvh] overflow-y-scroll">
                                     <div>
+
+                                        <p className="text-foreground mt-5">Choose a payment method and securely update your information.</p>
+
+                                        <div className="flex items-center gap-3 mt-3">
+                                            <IconMastercardNormal />
+                                            <IconPaypalNormal />
+                                            <IconVisaNormal />
+                                            <IconAmericanExpressNormal />
+                                        </div>
+
+                                        <FormFieldRadioGroup
+                                            id="paymentMethod"
+                                            form={form}
+                                            label="Method of payment"
+                                            labelCustomized={'font-semibold text-foreground mt-3'}
+                                            options={
+                                                [
+                                                    {
+                                                        label: 'Credit Card',
+                                                        value: 'credit-card'
+                                                    },
+                                                    {
+                                                        label: 'Paypal',
+                                                        value: 'paypal'
+                                                    },
+                                                ]
+                                            }
+                                        />
+
                                         <div className="flex gap-3">
+
                                             <FormFieldInputText
                                                 id={'billingName'}
                                                 form={form}
@@ -121,14 +174,25 @@ const UpdatePaymentMethodModal = ({ isOpen, onCloseModal }: UpdatePaymentMethodM
                                         </div>
 
                                         <div className="flex gap-3">
-                                            <FormFieldInputText
-                                                id={'expirationDate'}
-                                                form={form}
-                                                placeHolder={'name'}
-                                                customizedInput={'bg-white mt-1 rounded-md'}
-                                                label={'expirationDate:'}
-                                                labelCustomized={'text-foreground mt-5'}
-                                            />
+
+                                            <div>
+                                                <p className="text-foreground mt-5">Expiration Date</p>
+                                                <div className="flex gap-3">
+                                                    <FormFieldInputText
+                                                        id={'mm'}
+                                                        form={form}
+                                                        placeHolder={'MM'}
+                                                        customizedInput={'bg-white mt-1 rounded-md w-[6.5rem]'}
+                                                    />
+
+                                                    <FormFieldInputText
+                                                        id={'yy'}
+                                                        form={form}
+                                                        placeHolder={'YY'}
+                                                        customizedInput={'bg-white mt-1 rounded-md w-[6.5rem]'}
+                                                    />
+                                                </div>
+                                            </div>
 
                                             <FormFieldInputText
                                                 id={'cvv'}
@@ -142,7 +206,7 @@ const UpdatePaymentMethodModal = ({ isOpen, onCloseModal }: UpdatePaymentMethodM
                                         </div>
                                     </div>
 
-                                    <p className="font-semibold text-foreground mt-3">Billing Address</p>
+                                    <p className="font-semibold text-foreground mt-6">Billing Address</p>
 
                                     <FormFieldInputText
                                         id={'streetAddress'}
@@ -153,8 +217,8 @@ const UpdatePaymentMethodModal = ({ isOpen, onCloseModal }: UpdatePaymentMethodM
                                         labelCustomized={'text-foreground mt-5'}
                                     />
 
-                                    <div>
-                                        <div className="flex gap-3">
+                                    <div className="flex items-center gap-3">
+                                        <div className="flex flex-col gap-3 w-full">
                                             <FormFieldInputText
                                                 id={'city'}
                                                 form={form}
@@ -164,18 +228,6 @@ const UpdatePaymentMethodModal = ({ isOpen, onCloseModal }: UpdatePaymentMethodM
                                                 labelCustomized={'text-foreground mt-5'}
                                             />
 
-                                            <FormFieldSelect
-                                                id={'state'}
-                                                form={form}
-                                                selectList={optionValue}
-                                                placeHolder={'Select State'}
-                                                customStyle="bg-white w-full mt-1"
-                                                labelCustomized={'text-foreground mt-5'}
-                                                label={'Select State'}
-                                            />
-                                        </div>
-
-                                        <div className="flex gap-3">
                                             <FormFieldInputText
                                                 id={'zipCode'}
                                                 form={form}
@@ -185,6 +237,20 @@ const UpdatePaymentMethodModal = ({ isOpen, onCloseModal }: UpdatePaymentMethodM
                                                 labelCustomized={'text-foreground mt-5'}
                                             />
 
+                                        </div>
+
+                                        <div className="flex flex-col gap-3 w-full">
+
+                                            <FormFieldSelect
+                                                id={'state'}
+                                                form={form}
+                                                selectList={optionValue}
+                                                placeHolder={'Select State'}
+                                                customStyle="bg-white w-full mt-1"
+                                                labelCustomized={'text-foreground mt-5'}
+                                                label={'State'}
+                                            />
+
                                             <FormFieldSelect
                                                 id={'country'}
                                                 form={form}
@@ -192,10 +258,17 @@ const UpdatePaymentMethodModal = ({ isOpen, onCloseModal }: UpdatePaymentMethodM
                                                 placeHolder={'Select Country'}
                                                 customStyle="bg-white w-full mt-2"
                                                 labelCustomized={'text-foreground mt-5'}
-                                                label={'Select Country'}
+                                                label={'Country'}
                                             />
 
                                         </div>
+                                    </div>
+
+                                    <div className="flex items-center gap-3 my-3">
+                                        <p className="mt-1 text-[.75rem]">
+                                            Your information is encrypted and secure
+                                        </p>
+                                        <IconpadlockOutlinedPurple />
                                     </div>
 
 
@@ -229,7 +302,7 @@ const UpdatePaymentMethodModal = ({ isOpen, onCloseModal }: UpdatePaymentMethodM
                 </DialogHeader>
             </DialogContent>
         </Dialog>
-    )
+    );
 };
 
 export default UpdatePaymentMethodModal;

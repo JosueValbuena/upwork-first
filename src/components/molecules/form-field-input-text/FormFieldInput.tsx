@@ -21,11 +21,6 @@ const FormFieldInputText = ({ form, id, placeHolder, customizedInput, label, lab
                         <FormLabel className={labelCustomized ? labelCustomized : ''}>{label}</FormLabel>
                     )}
                     <FormControl>
-                        {/* <Input
-                            placeholder={placeHolder}
-                            {...field}
-                            className="bg-white py-7 mt-5"
-                        /> */}
                         <InputCustom
                             id={field.name}
                             name={field.name}

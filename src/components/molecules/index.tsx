@@ -5,6 +5,7 @@ export { default as CheckBoxLabel } from "./checkbox-label/CheckBoxLabel";
 export { default as FormFieldCheckbox } from "./form-field-checkbox/FormFieldCheckBox";
 export { default as FormFieldInputPassword } from "./form-field-input-password/FormFieldInputPassword";
 export { default as FormFieldInputText } from "./form-field-input-text/FormFieldInput";
+export { default as FormFieldRadioGroup } from "./form-field-radio-group/FormFieldRadioGroup";
 export { default as InputPasswordCustom } from "./input-password-custom/InputPasswordCustom";
 export { default as InputTextLabel } from "./input-text-label/InputTextLabel";
 export { default as InventoryStrategySection } from "./inventory-strategy-section/InventoryStrategySection";
