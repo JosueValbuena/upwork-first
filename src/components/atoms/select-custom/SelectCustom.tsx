@@ -12,18 +12,19 @@ interface SelectOption {
 }
 
 interface SelectList {
+  id?: string,
   selectList?: SelectOption[],
   customStyle?: string
-  placeholder?:string,
+  placeholder?: string,
 }
 
-const SelectCustom = ({ selectList, customStyle, placeholder }: SelectList) => {
+const SelectCustom = ({ id, selectList, customStyle, placeholder }: SelectList) => {
   return (
     <Select defaultValue={selectList && selectList[0].value}>
       <SelectTrigger className={customStyle ? customStyle : `w-full bg-primary-light font-semibold`}>
         <SelectValue placeholder={placeholder} />
       </SelectTrigger>
-      <SelectContent>
+      <SelectContent id={id}>
         {selectList?.map((element: SelectOption) => (
           <SelectItem
             key={element.value}

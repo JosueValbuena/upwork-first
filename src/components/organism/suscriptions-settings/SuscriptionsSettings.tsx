@@ -1,12 +1,13 @@
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import TableCustomTwo from "../table-custom-two/TableCustomTwo"
-import { ChangePlanModal } from "../modals";
+import { ChangePlanModal, UpdatePaymentMethodModal } from "../modals";
 import { useState } from "react";
 
 const SuscriptionsSettings = () => {
 
     const [isOpenModalChangePlan, setIsOpenModalChangePlan] = useState(false);
+    const [isOpenModalUpdatePaymentMethod, setIsOpenModalUpdatePaymentMethod] = useState(false);
 
     const onOpenModalChangePlan = () => {
         setIsOpenModalChangePlan(true);
@@ -14,6 +15,14 @@ const SuscriptionsSettings = () => {
 
     const onCloseModalChangePlan = () => {
         setIsOpenModalChangePlan(false);
+    };
+
+    const onOpenModalUpdatePaymentMethod = () => {
+        setIsOpenModalUpdatePaymentMethod(true);
+    };
+
+    const onCloseModalUpdatePaymentMethod = () => {
+        setIsOpenModalUpdatePaymentMethod(false);
     };
 
     const tableHeadTitles = [
@@ -58,6 +67,7 @@ const SuscriptionsSettings = () => {
     return (
         <>
             <ChangePlanModal isOpen={isOpenModalChangePlan} onCloseModal={onCloseModalChangePlan} />
+            <UpdatePaymentMethodModal isOpen={isOpenModalUpdatePaymentMethod} onCloseModal={onCloseModalUpdatePaymentMethod} />
 
             <div className='p-3 flex flex-col gap-3 bg-primary-light mt-6 md:px-10'>
                 <div className="w-full max-w-[1366px] mx-auto flex flex-col gap-5 md:p-5">
@@ -97,7 +107,12 @@ const SuscriptionsSettings = () => {
                             <p className="font-semibold">Visa ending in 234</p>
                         </div>
 
-                        <Button className="bg-primary-dark ml-10 font-bold">Update</Button>
+                        <Button
+                            className="bg-primary-dark ml-10 font-bold"
+                            onClick={onOpenModalUpdatePaymentMethod}
+                        >
+                            Update
+                        </Button>
                     </div>
 
                     <h2 className="font-bold text-xl">Billing History</h2>

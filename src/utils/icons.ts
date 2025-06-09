@@ -52,3 +52,7 @@ export { ReactComponent as IconTrashNormal } from '@/assets/icons/icon-trash-nor
 export { ReactComponent as IconAmazonNormal } from '@/assets/icons/icon-amazon-normal-outlined.svg';
 export { ReactComponent as IconEbayNormal } from '@/assets/icons/icon-email-normal-outlined.svg';
 export { ReactComponent as IconWalmartNormal } from '@/assets/icons/icon-walmart-normal-outlined.svg';
+export { ReactComponent as IconAmericanExpressNormal } from '@/assets/icons/icon-americanExpress-normal-outlined.svg';
+export { ReactComponent as IconPaypalNormal } from '@/assets/icons/icon-paypal-normal-outlined.svg';
+export { ReactComponent as IconVisaNormal } from '@/assets/icons/icon-visa-normal-outlined.svg';
+export { ReactComponent as IconMastercardNormal } from '@/assets/icons/icon-mastercard-normal-outlined.svg';
