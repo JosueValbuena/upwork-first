@@ -57,9 +57,11 @@ const UserProfileSettings = () => {
                     </div>
 
                     <div className="flex flex-col gap-5 items-center md:flex-row">
-                        <p className="font-medium text-md">My Email:</p> <p className="font-medium text-md">example@example.com</p>
+                        <div className="md:w-[23.5rem]">
+                            <p className="font-medium text-md">My Email:</p> <p className="font-medium text-md">example@example.com</p>
+                        </div>
                         <Button
-                            className="bg-primary-dark cursor-pointer w-[10rem] md:ml-27"
+                            className="bg-primary-dark cursor-pointer w-[10rem]"
                             onClick={onOpenModalUpdateEmail}
                         >
                             Update Email
@@ -67,9 +69,11 @@ const UserProfileSettings = () => {
                     </div>
 
                     <div className="flex flex-col gap-5 items-center md:flex-row">
-                        <p className="font-medium text-md">Set Phone #:</p> <p className="font-medium text-md">(777) 123-4567</p>
+                        <div className="md:w-[23.5rem]">
+                            <p className="font-medium text-md">Set Phone #:</p> <p className="font-medium text-md">(777) 123-4567</p>
+                        </div>
                         <Button
-                            className="bg-primary-dark cursor-pointer w-[10rem] md:ml-38"
+                            className="bg-primary-dark cursor-pointer w-[10rem]"
                             onClick={onOpenModalUpdatePhone}
                         >
                             Update Phone
@@ -77,9 +81,11 @@ const UserProfileSettings = () => {
                     </div>
 
                     <div className="flex flex-col gap-5 items-center md:flex-row">
-                        <p className="font-medium text-md">Password</p>
+                        <div className="md:w-[23.5rem]">
+                            <p className="font-medium text-md">Password</p>
+                        </div>
                         <Button
-                            className="bg-primary-dark cursor-pointer w-[10rem] md:ml-76"
+                            className="bg-primary-dark cursor-pointer w-[10rem]"
                             onClick={onOpenModalUpdatePassword}
                         >
                             Change Password
