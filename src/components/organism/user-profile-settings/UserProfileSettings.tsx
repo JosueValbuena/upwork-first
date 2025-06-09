@@ -2,7 +2,7 @@ import { SelectLabel } from "@/components/molecules"
 import { Button } from "@/components/ui/button"
 import { useState } from "react";
 import { ChangeEmailModal, ChangePasswordModal, UpdatePhoneModal } from "../modals";
-import ErrorBoundary from "@/components/error-boundary/ErrorBoundary";
+import ErrorBoundary from "@/components/utilsComponents/error-boundary/ErrorBoundary";
 
 const UserProfileSettings = () => {
 

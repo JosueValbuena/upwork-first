@@ -2,13 +2,11 @@ import { Checkbox } from "@/components/ui/checkbox"
 
 interface CheckBoxCustom {
     id?: string,
-    checked: any,
+    checked?: any,
     onCheckedChange: any
 };
 
 const ChecbokCustom = ({ id, checked, onCheckedChange }: CheckBoxCustom) => {
-
-
 
     return (
         <Checkbox

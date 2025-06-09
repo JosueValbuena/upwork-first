@@ -17,21 +17,21 @@ const ChartsLinearHeader = () => {
                     <div className="rounded-full bg-blue-500 w-2.5 h-2.5"></div>
                     <p className="text-xs pl-2 mr-2">Total sales</p>
 
-                    <ChecbokCustom onChecked={onChecked} />
+                    <ChecbokCustom onCheckedChange={onChecked} />
                 </div>
 
                 <div className="bg-primary-light p-2 flex items-center ml-3">
                     <div className="rounded-full bg-green-300 w-2.5 h-2.5"></div>
                     <p className="text-xs pl-2 mr-2">Profits</p>
 
-                    <ChecbokCustom onChecked={onChecked} />
+                    <ChecbokCustom onCheckedChange={onChecked} />
                 </div>
 
                 <div className="bg-primary-light p-2 flex items-center ml-3">
                     <div className="rounded-full bg-red-600 w-2.5 h-2.5"></div>
                     <p className="text-xs pl-2 mr-2">Units Sold</p>
 
-                    <ChecbokCustom onChecked={onChecked} />
+                    <ChecbokCustom onCheckedChange={onChecked} />
                 </div>
             </div>
 
