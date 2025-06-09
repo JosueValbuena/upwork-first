@@ -59,7 +59,7 @@ const UserProfileSettings = () => {
                     <div className="flex flex-col gap-5 items-center md:flex-row">
                         <p className="font-medium text-md">My Email:</p> <p className="font-medium text-md">example@example.com</p>
                         <Button
-                            className="bg-primary-dark cursor-pointer md:ml-27"
+                            className="bg-primary-dark cursor-pointer w-[10rem] md:ml-27"
                             onClick={onOpenModalUpdateEmail}
                         >
                             Update Email
@@ -69,7 +69,7 @@ const UserProfileSettings = () => {
                     <div className="flex flex-col gap-5 items-center md:flex-row">
                         <p className="font-medium text-md">Set Phone #:</p> <p className="font-medium text-md">(777) 123-4567</p>
                         <Button
-                            className="bg-primary-dark cursor-pointer md:ml-38"
+                            className="bg-primary-dark cursor-pointer w-[10rem] md:ml-38"
                             onClick={onOpenModalUpdatePhone}
                         >
                             Update Phone
@@ -79,7 +79,7 @@ const UserProfileSettings = () => {
                     <div className="flex flex-col gap-5 items-center md:flex-row">
                         <p className="font-medium text-md">Password</p>
                         <Button
-                            className="bg-primary-dark cursor-pointer md:ml-76"
+                            className="bg-primary-dark cursor-pointer w-[10rem] md:ml-76"
                             onClick={onOpenModalUpdatePassword}
                         >
                             Change Password

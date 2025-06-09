@@ -1,18 +1,22 @@
 import { Checkbox } from "@/components/ui/checkbox"
 
 interface CheckBoxCustom {
-    onChecked: any
-}
+    id: string,
+    checked: any,
+    onCheckedChange: any
+};
 
-const ChecbokCustom = ({ onChecked }: CheckBoxCustom) => {
+const ChecbokCustom = ({ id, checked, onCheckedChange }: CheckBoxCustom) => {
 
-    
+
 
     return (
         <Checkbox
+            id={id}
+            checked={checked}
             className="data-[state=checked]:bg-violet-700 cursor-pointer w-5 h-5"
-            onChange={onChecked}
-            onCheckedChange={onChecked}
+            /* onChange={onChecked} */
+            onCheckedChange={onCheckedChange}
         />
     )
 }

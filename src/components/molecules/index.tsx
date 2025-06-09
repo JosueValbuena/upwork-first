@@ -2,6 +2,7 @@ export { default as ButtonLabel } from "./button-label/ButtonLabel";
 export { default as CardBusinessOverview } from "./card-business-overview/CardBusinessOverview";
 export { default as CardRiskAssessments } from "./card-risk-assessments/CardRiskAssessments";
 export { default as CheckBoxLabel } from "./checkbox-label/CheckBoxLabel";
+export { default as FormFieldCheckbox } from "./form-field-checkbox/FormFieldCheckBox";
 export { default as FormFieldInputPassword } from "./form-field-input-password/FormFieldInputPassword";
 export { default as FormFieldInputText } from "./form-field-input-text/FormFieldInput";
 export { default as InputPasswordCustom } from "./input-password-custom/InputPasswordCustom";

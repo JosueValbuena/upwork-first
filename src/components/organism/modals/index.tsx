@@ -1,3 +1,4 @@
+export { default as AddUserModal } from "./add-user-modal/AddUserModal";
 export { default as ChangeEmailModal } from "./change-email-modal/ChangeEmailModal";
 export { default as ChangePasswordModal } from "./change-password-modal/ChangePasswordModal";
 export { default as ChangePlanModal } from "./change-plan-modal/ChangePlanModal";

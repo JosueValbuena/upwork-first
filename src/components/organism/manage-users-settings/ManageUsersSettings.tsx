@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button"
 import { IconPlusOutlinedWhite } from "@/utils/icons"
 import TableCustomTwo from "../table-custom-two/TableCustomTwo"
+import { AddUserModal } from "../modals";
+import { useState } from "react";
 
 const tableHeadTitles = [
     'Name',
@@ -12,6 +14,16 @@ const tableHeadTitles = [
 ];
 
 const ManageUsersSettings = () => {
+
+    const [isOpenModalAddUser, setIsOpenModalAddUser] = useState(false);
+
+    const onOpenModalAddUser = () => {
+        setIsOpenModalAddUser(true);
+    };
+
+    const onCloseModalAddUser = () => {
+        setIsOpenModalAddUser(false);
+    };
 
     const tableContent = [
         {
@@ -64,22 +76,28 @@ const ManageUsersSettings = () => {
     ];
 
     return (
-        <div className='p-3 flex flex-col gap-3 bg-primary-light mt-6 h-full md:px-10'>
-            <div className="w-full max-w-[1366px] mx-auto flex flex-col gap-5 md:p-5">
+        <>
+            <AddUserModal isOpen={isOpenModalAddUser} onCloseModal={onCloseModalAddUser} />
+            <div className='p-3 flex flex-col gap-3 bg-primary-light mt-6 h-full md:px-10'>
+                <div className="w-full max-w-[1366px] mx-auto flex flex-col gap-5 md:p-5">
 
-                <div className="flex justify-between">
-                    <h2 className="font-bold text-xl">Manage Users</h2>
+                    <div className="flex justify-between">
+                        <h2 className="font-bold text-xl">Manage Users</h2>
 
 
-                    <Button className="bg-primary-dark font-semibold">
-                        <IconPlusOutlinedWhite />
-                        Add User
-                    </Button>
+                        <Button
+                            className="bg-primary-dark font-semibold"
+                            onClick={onOpenModalAddUser}
+                        >
+                            <IconPlusOutlinedWhite />
+                            Add User
+                        </Button>
+                    </div>
+
+                    <TableCustomTwo tableHeadTitles={tableHeadTitles} tableContent={tableContent} customizeHeader={'bg-white'} />
                 </div>
-
-                <TableCustomTwo tableHeadTitles={tableHeadTitles} tableContent={tableContent}  customizeHeader={'bg-white'}/>
             </div>
-        </div>
+        </>
     )
 }
 
