@@ -1,7 +1,7 @@
 import { Checkbox } from "@/components/ui/checkbox"
 
 interface CheckBoxCustom {
-    id: string,
+    id?: string,
     checked: any,
     onCheckedChange: any
 };
