@@ -56,7 +56,7 @@ const MaxPriceSettings = () => {
 
         <div className="flex justify-between items-end">
           <div>
-            <h2 className="font-bold text-md">Default Max Price Settings</h2>
+            <h2 className="font-bold text-lg">Default Max Price Settings</h2>
             <p className="text-sm">When new SKU’s are added, assign a Maximum Price based on the following priority rules:</p>
           </div>
 

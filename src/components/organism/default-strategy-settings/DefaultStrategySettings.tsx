@@ -62,7 +62,7 @@ const DefaultStrategySettings = () => {
 
                 <div className="flex justify-between items-end">
                     <div>
-                        <h2 className="font-bold text-md">Default Strategy Settings</h2>
+                        <h2 className="font-bold text-lg">Default Strategy Settings</h2>
                         <p className="text-sm">When new SKU’s are added, assign a repricing strategy based on the following priority rules:</p>
                     </div>
 

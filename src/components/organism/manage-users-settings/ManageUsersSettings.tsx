@@ -32,8 +32,8 @@ const ManageUsersSettings = () => {
                     <div className="bg-primary-dark w-[2rem] h-[2rem] rounded-2xl flex justify-center items-center text-white">P</div>
                     Patricia Doe
                 </div>,
-            email: 'johndoe@gmail.com',
-            role: 'admin',
+            email: <p className="text-sm">johndoe@gmail.com</p>,
+            role: <p>admin</p>,
             lastLogin: '2 days ago',
             status: <div className="bg-primary-dark w-[5rem] text-center text-white rounded-2xl">Active</div>,
             remove: <Button className="bg-primary-light text-black border-gray-400 hover:text-white">Remove</Button>
@@ -44,8 +44,8 @@ const ManageUsersSettings = () => {
                     <div className="bg-primary-dark w-[2rem] h-[2rem] rounded-2xl flex justify-center items-center text-white">S</div>
                     Susana Doe
                 </div>,
-            email: 'susanadoe@gmail.com',
-            role: 'Super admin',
+            email: <p className="text-sm">susanadoe@gmail.com</p>,
+            role: <p className="text-sm">Super admin</p>,
             lastLogin: '2 days ago',
             status: <div className="bg-primary-dark w-[5rem] text-center text-white rounded-2xl">Active</div>,
             remove: <Button className="bg-primary-light text-black border-gray-400 hover:text-white">Remove</Button>
@@ -56,8 +56,8 @@ const ManageUsersSettings = () => {
                     <div className="bg-primary-dark w-[2rem] h-[2rem] rounded-2xl flex justify-center items-center text-white">N</div>
                     Nicolas Doe
                 </div>,
-            email: 'nicolasdoe@gmail.com',
-            role: 'viewer',
+            email: <p className="text-sm">nicolasdoe@gmail.com</p>,
+            role: <p className="text-sm">viewer</p>,
             lastLogin: '2 days ago',
             status: <div className="bg-primary-dark w-[5rem] text-center text-white rounded-2xl">Active</div>,
             remove: <Button className="bg-primary-light text-black border-gray-400 hover:text-white">Remove</Button>
@@ -67,8 +67,8 @@ const ManageUsersSettings = () => {
                 <div className="bg-primary-dark w-[2rem] h-[2rem] rounded-2xl flex justify-center items-center text-white">N</div>
                 Nathasha Doe
             </div>,
-            email: 'natadoe@gmail.com',
-            role: 'Limited',
+            email: <p className="text-sm">natadoe@gmail.com</p>,
+            role: <p className="text-sm">Limited</p>,
             lastLogin: '2 days ago',
             status: <div className="bg-primary-dark w-[5rem] text-center text-white rounded-2xl">Active</div>,
             remove: <Button className="bg-primary-light text-black border-gray-400 hover:text-white">Remove</Button>
@@ -82,7 +82,7 @@ const ManageUsersSettings = () => {
                 <div className="w-full max-w-[1366px] mx-auto flex flex-col gap-5 md:p-5">
 
                     <div className="flex justify-between">
-                        <h2 className="font-bold text-xl">Manage Users</h2>
+                        <h2 className="font-bold text-lg">Manage Users</h2>
 
 
                         <Button

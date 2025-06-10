@@ -27,18 +27,18 @@ const NotificationSettings = () => {
     return (
         <div className='p-3 flex flex-col gap-3 bg-primary-light mt-6 md:px-10'>
             <div className="w-full max-w-[1366px] mx-auto flex flex-col gap-5 md:p-5">
-                <h2 className="font-bold text-md">Notification</h2>
+                <h2 className="font-bold text-lg">Notification</h2>
 
                 <div className="md:flex md:gap-33">
                     <div>
                         <div className="w-[13.5rem]">
                             <SwitchLabel id={'receive-notifications'} label={'Receive Notifications'} switchFirst={true} />
                         </div>
-                        <p className="text-xs">Turn this on to start getting notifications.</p>
+                        <p className="text-sm">Turn this on to start getting notifications.</p>
                     </div>
 
                     <div className="mt-3 md:m-0 md:flex md:items-center md:gap-3">
-                        <p className="text-xs">Time of Day To Send Notifications</p>
+                        <p className="text-sm">Time of Day To Send Notifications</p>
 
                         <div className="flex items-center">
                             <SelectCustom selectList={timerSelect.hours} customStyle={'w-[5rem] bg-white'} />
