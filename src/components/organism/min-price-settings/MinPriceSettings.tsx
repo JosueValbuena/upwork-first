@@ -56,8 +56,8 @@ const MinPriceSettings = () => {
 
                 <div className="flex justify-between items-end">
                     <div>
-                        <h2 className="font-bold text-xl">Default Min Price Settings</h2>
-                        <p>When new SKU’s are added, assign a Minimum Price based on the following priority rules:</p>
+                        <h2 className="font-bold text-md">Default Min Price Settings</h2>
+                        <p className="text-sm">When new SKU’s are added, assign a Minimum Price based on the following priority rules:</p>
                     </div>
 
                     <Button className="bg-primary-dark font-semibold">
@@ -72,7 +72,7 @@ const MinPriceSettings = () => {
                     <div className="flex flex-col gap-5">
 
                         <div className="md:flex items-center gap-5">
-                            <p className="font-bold text-md">If</p>
+                            <p className="font-bold text-sm">If</p>
 
                             <SelectCustom selectList={selectDetault.brandName} customStyle={'bg-white w-[13rem]'} />
 
@@ -87,7 +87,7 @@ const MinPriceSettings = () => {
                         </div>
 
                         <div className="md:flex items-center gap-5">
-                            <p className="font-bold text-md">If</p>
+                            <p className="font-bold text-sm">If</p>
 
                             <SelectCustom selectList={selectDetault.brandName} customStyle={'bg-white w-[13rem]'} />
 
@@ -95,12 +95,12 @@ const MinPriceSettings = () => {
 
                             <InputCustom id={'rule-1'} name={'rule-1'} placeHolder="$" type={'text'} customizedInput={'bg-white w-[5rem]'} />
 
-                            <p className="font-bold text-lg">&</p>
+                            <p className="font-bold text-sm">&</p>
 
                             <InputCustom id={'rule-1'} name={'rule-1'} placeHolder="$" type={'text'} customizedInput={'bg-white w-[5rem]'} />
 
                             <div className="flex items-center gap-3 cursor-pointer md:ml-5">
-                                <p className="font-semibold">+  Add &/Or Rule</p>
+                                <p className="font-semibold text-sm">+  Add &/Or Rule</p>
 
                                 <IconTrashNormal />
                             </div>
@@ -111,7 +111,7 @@ const MinPriceSettings = () => {
                 </div>
 
                 <div className="">
-                    <p className="font-bold text-lg md:pl-66">Perform the Following</p>
+                    <p className="font-bold text-md md:pl-66">Perform the Following</p>
 
                     <div className="md:flex items-center gap-28 mt-3 md:ml-30">
                         <p className="font-bold text-sm">Set Min Price based on</p>
@@ -131,8 +131,8 @@ const MinPriceSettings = () => {
                 <Separator />
 
                 <div>
-                    <p className="font-bold text-lg">Multiple Based Rules</p>
-                    <p>Applies this Min Price only if at least 2 of the above rule’s are found true.</p>
+                    <p className="font-bold text-md">Multiple Based Rules</p>
+                    <p className="text-sm">Applies this Min Price only if at least 2 of the above rule’s are found true.</p>
 
                     <div className="md:flex items-center gap-28 mt-3 md:ml-30">
                         <p className="font-bold text-sm">Set Max Price based on</p>
@@ -152,8 +152,8 @@ const MinPriceSettings = () => {
                 <Separator />
 
                 <div>
-                    <p className="font-bold text-lg">Default Min Price (Fallback)</p>
-                    <p>Applies only if none of the above rule’s are found true.</p>
+                    <p className="font-bold text-md">Default Min Price (Fallback)</p>
+                    <p className="text-sm">Applies only if none of the above rule’s are found true.</p>
 
                     <div className="md:flex items-center gap-28 mt-3 md:ml-30">
                         <p className="font-bold text-sm">Set Min Price based on</p>

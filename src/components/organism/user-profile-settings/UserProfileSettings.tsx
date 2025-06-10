@@ -58,7 +58,7 @@ const UserProfileSettings = () => {
 
                     <div className="flex flex-col gap-5 items-center md:flex-row">
                         <div className="md:w-[23.5rem]">
-                            <p className="font-medium text-md">My Email:</p> <p className="font-medium text-md">example@example.com</p>
+                            <p className="font-medium text-sm">My Email:</p> <p className="font-medium text-sm">example@example.com</p>
                         </div>
                         <Button
                             className="bg-primary-dark cursor-pointer w-[10rem]"
@@ -70,7 +70,7 @@ const UserProfileSettings = () => {
 
                     <div className="flex flex-col gap-5 items-center md:flex-row">
                         <div className="md:w-[23.5rem]">
-                            <p className="font-medium text-md">Set Phone #:</p> <p className="font-medium text-md">(777) 123-4567</p>
+                            <p className="font-medium text-sm">Set Phone #:</p> <p className="font-medium text-sm">(777) 123-4567</p>
                         </div>
                         <Button
                             className="bg-primary-dark cursor-pointer w-[10rem]"
@@ -82,7 +82,7 @@ const UserProfileSettings = () => {
 
                     <div className="flex flex-col gap-5 items-center md:flex-row">
                         <div className="md:w-[23.5rem]">
-                            <p className="font-medium text-md">Password</p>
+                            <p className="font-medium text-sm">Password</p>
                         </div>
                         <Button
                             className="bg-primary-dark cursor-pointer w-[10rem]"

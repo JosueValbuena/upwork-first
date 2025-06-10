@@ -11,7 +11,7 @@ const CheckBoxLabel = ({ id, label, customizeStyles }: CheckBoxLabel) => {
         <div className={` ${customizeStyles ? customizeStyles : 'flex justify-between'}`}>
             <label
                 htmlFor={id}
-                className="text-sm font-semibold"
+                className="text-xs font-semibold"
             >
                 {label}
             </label>

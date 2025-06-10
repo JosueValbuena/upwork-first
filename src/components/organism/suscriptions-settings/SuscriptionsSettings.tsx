@@ -72,12 +72,12 @@ const SuscriptionsSettings = () => {
             <div className='p-3 flex flex-col gap-3 bg-primary-light mt-6 md:px-10'>
                 <div className="w-full max-w-[1366px] mx-auto flex flex-col gap-5 md:p-5">
 
-                    <h2 className="font-bold text-xl">Billing</h2>
+                    <h2 className="font-bold text-lg">Billing</h2>
 
                     <div className="flex">
                         <div>
-                            <p>Plan</p>
-                            <p className="font-semibold">Profesional</p>
+                            <p className="text-sm">Plan</p>
+                            <p className="font-semibold text-sm">Profesional</p>
                         </div>
 
                         <Button
@@ -94,8 +94,8 @@ const SuscriptionsSettings = () => {
 
                     <div className="flex">
                         <div>
-                            <p>Next Renewal Date</p>
-                            <p className="font-semibold">May-15-2025</p>
+                            <p className="text-sm">Next Renewal Date</p>
+                            <p className="font-semibold text-sm">May-15-2025</p>
                         </div>
                     </div>
 
@@ -103,8 +103,8 @@ const SuscriptionsSettings = () => {
 
                     <div className="flex">
                         <div>
-                            <p>Payment Method</p>
-                            <p className="font-semibold">Visa ending in 234</p>
+                            <p className="text-sm">Payment Method</p>
+                            <p className="font-semibold text-sm">Visa ending in 234</p>
                         </div>
 
                         <Button
@@ -115,7 +115,7 @@ const SuscriptionsSettings = () => {
                         </Button>
                     </div>
 
-                    <h2 className="font-bold text-xl">Billing History</h2>
+                    <h2 className="font-bold text-lg">Billing History</h2>
 
                     <TableCustomTwo tableHeadTitles={tableHeadTitles} tableContent={tableContent} />
 

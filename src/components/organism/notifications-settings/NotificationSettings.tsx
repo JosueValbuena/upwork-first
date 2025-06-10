@@ -27,18 +27,18 @@ const NotificationSettings = () => {
     return (
         <div className='p-3 flex flex-col gap-3 bg-primary-light mt-6 md:px-10'>
             <div className="w-full max-w-[1366px] mx-auto flex flex-col gap-5 md:p-5">
-                <h2 className="font-bold text-lg">Notification</h2>
+                <h2 className="font-bold text-md">Notification</h2>
 
                 <div className="md:flex md:gap-33">
                     <div>
                         <div className="w-[13.5rem]">
                             <SwitchLabel id={'receive-notifications'} label={'Receive Notifications'} switchFirst={true} />
                         </div>
-                        <p>Turn this on to start getting notifications.</p>
+                        <p className="text-xs">Turn this on to start getting notifications.</p>
                     </div>
 
                     <div className="mt-3 md:m-0 md:flex md:items-center md:gap-3">
-                        <p>Time of Day To Send Notifications</p>
+                        <p className="text-xs">Time of Day To Send Notifications</p>
 
                         <div className="flex items-center">
                             <SelectCustom selectList={timerSelect.hours} customStyle={'w-[5rem] bg-white'} />
@@ -50,8 +50,8 @@ const NotificationSettings = () => {
                 </div>
 
                 <div className="mt-3">
-                    <p className="textmd font-semibold">Method of notifications</p>
-                    <p>Choose how you’d like to recive alerts.</p>
+                    <p className="text-sm font-semibold">Method of notifications</p>
+                    <p className="text-sm">Choose how you’d like to recive alerts.</p>
 
                     <CheckBoxLabel id={'email'} label={'Email'} customizeStyles={'flex items-center flex-row-reverse justify-end mt-2 gap-3'} />
 
@@ -60,8 +60,8 @@ const NotificationSettings = () => {
 
                 <div className="flex items-center mt-3">
                     <div className="md:w-[30rem]">
-                        <p className="text-md font-semibold">Which User’s ?</p>
-                        <p>Choose which users will be sent Notifications</p>
+                        <p className="text-sm font-semibold">Which User’s ?</p>
+                        <p className="text-sm">Choose which users will be sent Notifications</p>
                     </div>
 
                     <SelectCustom selectList={defaultValues} customStyle={'w-[12rem] bg-white'} />

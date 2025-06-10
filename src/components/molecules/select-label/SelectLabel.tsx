@@ -24,7 +24,7 @@ const SelectLabel = ({ label }: SelectLabel) => {
     return (
         <div>
             <Label
-                className="text-md font-semibold mb-3"
+                className="text-xs font-semibold mb-3"
             >
                 {label}
             </Label>
