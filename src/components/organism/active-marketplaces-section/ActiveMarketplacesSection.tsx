@@ -16,41 +16,41 @@ const ActiveMarketplacesSection = () => {
 
     const tableData = [
         {
-            active_marketplaces: <div className="flex gap-3"><IconUSAFlag />  <p>Amazon US</p></div>,
-            seller_ID: 'A3Nkai85G30',
-            status: <div className="flex gap-2"><p>Connected</p> <IconEyeContainedPuprle /></div>,
+            active_marketplaces: <div className="flex gap-3"><IconUSAFlag />  <p className="text-xs">Amazon US</p></div>,
+            seller_ID: <p className="text-xs">A3Nkai85G30</p>,
+            status: <div className="flex gap-2"><p className="text-xs">Connected</p> <IconEyeContainedPuprle /></div>,
             action: <div
-                className="bg-primary-dark text-center text-white w-fit py-1 px-5 rounded-xl cursor-pointer font-semibold"
+                className="bg-primary-dark text-center text-white w-fit py-1 px-5 rounded-xl cursor-pointer font-semibold text-xs"
             >
                 Remove
             </div>
         },
         {
-            active_marketplaces: <div className="flex gap-3"><IconUKFlag />  <p>Amazon UK</p></div>,
-            seller_ID: 'A3Nkai85G31',
-            status: <div className="flex gap-2"><p>Connected</p> <IconEyeContainedPuprle /></div>,
+            active_marketplaces: <div className="flex gap-3"><IconUKFlag />  <p className="text-xs">Amazon UK</p></div>,
+            seller_ID: <p className="text-xs">A3Nkai85G31</p>,
+            status: <div className="flex gap-2"><p className="text-xs">Connected</p> <IconEyeContainedPuprle /></div>,
             action: <div
-                className="bg-primary-dark text-center text-white w-fit py-1 px-5 rounded-xl cursor-pointer font-semibold"
+                className="bg-primary-dark text-center text-white w-fit py-1 px-5 rounded-xl cursor-pointer font-semibold text-xs"
             >
                 Remove
             </div>
         },
         {
             active_marketplaces: <div className="flex gap-3"><IconCanadaFlag />  <p>Amazon CA</p></div>,
-            seller_ID: 'A3Nkai85G32',
-            status: <div className="flex gap-2"><p>Connected</p> <IconEyeContainedPuprle /></div>,
+            seller_ID: <p className="text-xs">A3Nkai85G32</p>,
+            status: <div className="flex gap-2"><p className="text-xs">Connected</p> <IconEyeContainedPuprle /></div>,
             action: <div
-                className="bg-primary-dark text-center text-white w-fit py-1 px-5 rounded-xl cursor-pointer font-semibold"
+                className="bg-primary-dark text-center text-white w-fit py-1 px-5 rounded-xl cursor-pointer font-semibold text-xs"
             >
                 Remove
             </div>
         },
         {
             active_marketplaces: <div className="flex gap-3"><IconGermanyFlag />  <p>Amazon DE</p></div>,
-            seller_ID: 'A3Nkai85G33',
-            status: <div className="flex gap-2"><p>Connected</p> <IconEyeContainedPuprle /></div>,
+            seller_ID: <p className="text-xs">A3Nkai85G33</p>,
+            status: <div className="flex gap-2"><p className="text-xs">Connected</p> <IconEyeContainedPuprle /></div>,
             action: <div
-                className="bg-primary-dark text-center text-white w-fit py-1 px-5 rounded-xl cursor-pointer font-semibold"
+                className="bg-primary-dark text-center text-white w-fit py-1 px-5 rounded-xl cursor-pointer font-semibold text-xs"
             >
                 Remove
             </div>
@@ -69,7 +69,7 @@ const ActiveMarketplacesSection = () => {
     return (
         <>
 
-            <SelectMarketplaceModal isOpen={isOpenModal} onCloseModal={onCloseModal}/>
+            <SelectMarketplaceModal isOpen={isOpenModal} onCloseModal={onCloseModal} />
 
             <div className="p-3 flex flex-col gap-3 bg-primary-light mt-6 h-full md:px-5">
                 <div className="w-full max-w-[1366px] mx-auto flex flex-col-reverse md:p-5 lg:flex-row">
@@ -80,7 +80,7 @@ const ActiveMarketplacesSection = () => {
 
                     <div className="lg:ml-10">
                         <Button
-                            className="bg-primary-dark text-md font-semibold"
+                            className="bg-primary-dark text-sm font-semibold"
                             onClick={onOpenModal}
                         >
                             <IconPlusOutlinedWhite />

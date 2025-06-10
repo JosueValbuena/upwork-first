@@ -22,7 +22,7 @@ const TableCustomTwo = ({ tableHeadTitles, tableContent, customizeHeader }: Tabl
             <TableHeader className={customizeHeader ? customizeHeader : ''}>
                 <TableRow>
                     {tableHeadTitles.map((title: string) => (
-                        <TableHead className="font-semibold text-lg">{title}</TableHead>
+                        <TableHead className="font-semibold text-md">{title}</TableHead>
                     ))}
                     {/* <TableHead className="w-[100px]">Invoice</TableHead>
                     <TableHead>Method</TableHead>
@@ -35,27 +35,9 @@ const TableCustomTwo = ({ tableHeadTitles, tableContent, customizeHeader }: Tabl
                         {Object.values(element).map((elementValue: any) => (
                             <TableCell className="font-medium">{elementValue}</TableCell>
                         ))}
-                        {/* <TableCell className="font-medium">{element?.active_marketplaces}</TableCell>
-                        <TableCell>{element?.seller_ID}</TableCell>
-                        <TableCell>{element?.status}</TableCell>
-                        <TableCell className="text-right">{element?.action}</TableCell> */}
                     </TableRow>
                 ))}
-                {/*              {invoices.map((invoice) => (
-                    <TableRow key={invoice.invoice}>
-                        <TableCell className="font-medium">{invoice.invoice}</TableCell>
-                        <TableCell>{invoice.paymentStatus}</TableCell>
-                        <TableCell>{invoice.paymentMethod}</TableCell>
-                        <TableCell className="text-right">{invoice.totalAmount}</TableCell>
-                    </TableRow>
-                ))} */}
             </TableBody>
-            {/* <TableFooter>
-                <TableRow>
-                    <TableCell colSpan={3}>Total</TableCell>
-                    <TableCell className="text-right">$2,500.00</TableCell>
-                </TableRow>
-            </TableFooter> */}
         </Table>
     )
 };

@@ -63,11 +63,11 @@ const Settings = () => {
             <div className='max-w-[1366px] w-full mx-auto'>
 
                 <div className="flex items-center justify-between pt-3 mx-10 mb-3">
-                    <h1 className='text-3xl font-semibold'>
+                    <h1 className='text-2xl font-semibold'>
                         Settings
                     </h1>
 
-                    <Button className="font-bold text-md bg-primary-dark">
+                    <Button className="font-bold text-sm bg-primary-dark">
                         Save
                     </Button>
                 </div>
@@ -76,7 +76,7 @@ const Settings = () => {
                     {buttonsTab.map(element => (
                         <Button
                             key={element.label}
-                            className={`text-sm font-semibold bg-primary-light text-foreground hover:bg-primary-dark px-6
+                            className={`text-xs font-semibold bg-primary-light text-foreground hover:bg-primary-dark px-6
                             ${activeTab === element.label ? 'bg-primary-dark text-white' : ''}
                             `}
                             onClick={() => onChangeTab(element.label)}
@@ -91,7 +91,7 @@ const Settings = () => {
                         {globalSettingsOptions.map(element => (
                             <Button
                                 key={element.label}
-                                className={`text-sm font-semibold bg-primary-light text-foreground hover:bg-primary-dark
+                                className={`text-xs font-semibold bg-primary-light text-foreground hover:bg-primary-dark
                         ${activeGeneralSettionsTab === element.label ? 'bg-primary-dark text-white' : ''}
                         `}
                                 onClick={() => onGeneralSettingsTab(element.label)}
