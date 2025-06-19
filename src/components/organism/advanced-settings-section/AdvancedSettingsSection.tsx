@@ -2,7 +2,7 @@ import { SwitchLabel } from "@/components/molecules"
 
 const AdvancedSettingsSection = () => {
     return (
-        <div className="p-3 flex flex-col gap-3 background-secondary-customizedwhite mt-1">
+        <div className="p-3 flex flex-col gap-3 bg-background-secondary-customized mt-1">
             <p className="text-xl font-semibold">Advanced Settings</p>
 
             <SwitchLabel
@@ -12,7 +12,7 @@ const AdvancedSettingsSection = () => {
 
             <SwitchLabel
                 id="dvanced-settings-2"
-                label="Enable AI-Driven Repricing"
+                label="Auto-adjust min/max based o cost"
             />
         </div>
     )

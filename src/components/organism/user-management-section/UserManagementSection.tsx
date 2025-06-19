@@ -20,8 +20,8 @@ const UserManagementSection = () => {
             />
 
             <ButtonLabel
-                buttonText="Change"
-                label="Next Billing Date"
+                buttonText="Invite"
+                label="Role"
             />
         </div>
     )
