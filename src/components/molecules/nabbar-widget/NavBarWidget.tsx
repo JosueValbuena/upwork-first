@@ -49,7 +49,7 @@ const NavBarWidget = () => {
                 className="mx-2 cursor-pointer text-foreground"
                 stroke={theme === 'dark' ? '#fff' : ''}
             />
-            <Link to={'/'}/* to={pathsRoute.settings} */>
+            <Link to={pathsRoute.settings}>
                 <IconGearpOutlinedGray
                     className="mx-2 cursor-pointer"
                     {...(theme === 'dark' ? { fill: '#fff' } : {})}

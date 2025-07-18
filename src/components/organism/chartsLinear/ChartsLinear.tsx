@@ -59,12 +59,12 @@ const ChartsLinear = () => {
                         colors: theme === 'light' ? '#000' : '#fff',
                     }
                 },
-                /* title: {
-                    text: "Income (thousand crores)",
+                title: {
+                    text: "Units",
                     style: {
-                        color: '#008FFB',
+                        color: '#9400D3',
                     }
-                }, */
+                },
                 tooltip: {
                     enabled: true
                 }
@@ -84,12 +84,12 @@ const ChartsLinear = () => {
                         colors: theme === 'light' ? '#000' : '#fff',
                     }
                 },
-                /* title: {
-                    text: "Operating Cashflow (thousand crores)",
+                title: {
+                    text: "Amount $",
                     style: {
-                        color: '#00E396',
+                        color: '#9400D3',
                     }
-                }, */
+                },
             }
         ],
         tooltip: {
@@ -104,7 +104,6 @@ const ChartsLinear = () => {
             show: false,
         }
     };
-
 
     return (
         <div>

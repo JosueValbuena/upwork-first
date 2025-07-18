@@ -31,27 +31,32 @@ export const navigationLinks: NavigationLink[] = [
   },
   {
     label: 'Listings',
-    path: '/listings',
+    path: 'listings',
     icon: 'list'
   },
   {
     label: 'Uploads',
-    path: '/uploads',
+    path: 'uploads',
     icon: 'upload'
   },
   {
     label: 'Strategies',
-    path: '/strategies',
+    path: 'strategies',
     icon: 'lightbulb'
   },
   {
     label: 'Analytics',
-    path: '/analytics',
+    path: 'analytics',
     icon: 'chart'
   },
   {
     label: 'Recommendations',
-    path: '/recommendations',
+    path: 'recommendations',
+    icon: 'star'
+  },
+  {
+    label: 'Test Page',
+    path: 'test-page',
     icon: 'star'
   },
 ];

@@ -10,6 +10,7 @@ import AccountEmailConfirm from "@/pages/account-email-confirm/AccountEmailConfi
 import ConnectAmazonAccount from "@/pages/connect-amazon-account/ConnectAmazonAccount";
 import { paths } from "@/utils/constants";
 import ConnectAmazonAccountSuccessfull from "@/pages/connect-amazon-account-successfull/ConnectAmazonAccountSuccessfull";
+import TestPage from "@/pages/test-page/TestPage";
 
 const Routers = () => {
     return (
@@ -26,6 +27,7 @@ const Routers = () => {
                 <Route index element={<Dashboard />} />
                 <Route path="settings" element={<Settings />} />
                 <Route path="account-settings" element={<AccountSettings />} />
+                <Route path="test-page" element={<TestPage />} />
             </Route>
             <Route path="*" element={<NotFoundPage />} />
         </Routes>
