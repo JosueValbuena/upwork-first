@@ -1,5 +1,20 @@
 import type { CurrencyList, DashboardMetric, NavigationLink, RiskItem, RiskStatus, TimeList } from "@/types";
-import { IconAmazonOutlinedPurple, IconArrowDownOutlinedPurple, IconArrowUpOutlinedPurple, IconBoxFstOutlinedPurple, IconBoxScndOutlinedPurple, IconCartOutlinedPurple, IconChart4OutlinedPurple, IconChartFstOutlinedPurple, IconChartScndOutlinedPurple, IconChartTrdOutlinedPurple, IconCheckListOutlinedPurple, IconClockOutlinedPurple, IconCurrencyFrstOutlinedPurple, IconCurrencyScndOutlinedPurple, IconDocumentOutlinedPurple, IconDocumentScndOutlinedPurple, IconHouseFstOutlinedPurple, IconHouseScndOutlinedPurple, IconMinusContainedGray, IconRepeatScndOutlinedGPurple, IconUserGearOutlinedPurple, IconWarningContainedRed, IconWarningContainedYellow } from "./icons";
+import {
+  IconActiveInvetoryOutlinedPurple, IconAgedInventoryOutlinedPurple, IconAmazonOutlinedPurple,
+  IconArrowDownOutlinedPurple, IconArrowUpOutlinedPurple, IconBoxFstOutlinedPurple, IconBoxScndOutlinedPurple,
+  IconCartOutlinedPurple, IconChart4OutlinedPurple, IconChartFstOutlinedPurple,
+  IconChartScndOutlinedPurple, IconChartTrdOutlinedPurple, IconCheckListOutlinedPurple, IconClockOutlinedPurple,
+  IconCurrencyFrstOutlinedPurple, IconCurrencyScndOutlinedPurple, IconDocumentOutlinedPurple,
+  IconDocumentScndOutlinedPurple, IconExcessiveInventoryOutlinedPurple, IconHouseFstOutlinedPurple,
+  IconHouseScndOutlinedPurple, IconInboundShipmentsOutlinedPurple, IconinventoryByBrandOutlinedPurple,
+  IconInventoryTurnoverOutlinedPurple, IconInventoryValuationOutlinedPurple, IconMinusContainedGray,
+  IconProfitAndLossStatementPurple, IconRefundAndReturnsOutlinedPurple, IconRepeatScndOutlinedGPurple,
+  IconRepriceChangeHistoryOutlinedPurple, IconSalesByBrandOutlinedPurple, IconSalesByCategoryOutlinedPurple,
+  IconSalesByMarketplaceOutlinedPurple, IconSalesByPerformanceByChildAsinOutlinedPurple,
+  IconSalesByPerformanceByParentAsinOutlinedPurple, IconSalesByPerformanceOutlinedPurple,
+  IconUserGearOutlinedPurple, IconWarningContainedRed, IconWarningContainedYellow
+} from "./icons";
+import type { AnalyticsItem } from "@/types/utils";
 
 export const paths = {
   dashoard: '/dashboard',
@@ -289,4 +304,103 @@ export const metrics: DashboardMetric[] = [
     icon: <IconRepeatScndOutlinedGPurple />,
     info: ''
   },
+];
+
+export const analyticsItem: AnalyticsItem[] = [
+  {
+    title: "Sales Performance",
+    text: "Shows total sales over a selected date range, grouped by week, month, or year to analyze trends.",
+    icon: <IconSalesByPerformanceOutlinedPurple />,
+    to: ''
+  },
+  {
+    title: "Sales Performance by Parent ASIN",
+    text: "Summarizes sales for each Parent ASIN within a chosen date range to track overall product family performance.",
+    icon: <IconSalesByPerformanceByParentAsinOutlinedPurple />,
+    to: ''
+  },
+  {
+    title: "Sales Performance by Child ASIN",
+    text: "Breaks down sales by individual Child ASINs over a selected period for detailed SKU-level analysis.",
+    icon: <IconSalesByPerformanceByChildAsinOutlinedPurple />,
+    to: ''
+  },
+  {
+    title: "Sales by Brand",
+    text: "Reports sales totals for each brand over a selected date range to evaluate brand-level performance.",
+    icon: <IconSalesByBrandOutlinedPurple />,
+    to: ''
+  },
+  {
+    title: "Sales by Marketplace",
+    text: "Displays sales performance broken down by marketplace/country for comparative analysis.",
+    icon: <IconSalesByMarketplaceOutlinedPurple />,
+    to: ''
+  },
+  {
+    title: "Sales by Category",
+    text: "Displays sales totals by category over a selected date range to analyze category-level trends.",
+    icon: <IconSalesByCategoryOutlinedPurple />,
+    to: ''
+  },
+  {
+    title: "Profit and Loss Statement",
+    text: "Provides a clear summary of revenue, costs, and profit over a selected date range, grouped by week, month, or year.",
+    icon: <IconProfitAndLossStatementPurple />,
+    to: ''
+  },
+  {
+    title: "Inventory Valuation",
+    text: "Calculates the current total cost value of all active inventory on a specific date.",
+    icon: <IconInventoryValuationOutlinedPurple />,
+    to: ''
+  },
+  {
+    title: "Inventory By Brand",
+    text: "Lists current inventory quantities and details grouped by brand to track stock levels per brand.",
+    icon: <IconinventoryByBrandOutlinedPurple />,
+    to: ''
+  },
+  {
+    title: "Aged Inventory",
+    text: "Displays on hand inventory at risk of long-term storage fees.",
+    icon: <IconAgedInventoryOutlinedPurple />,
+    to: ''
+  },
+  {
+    title: "Active Inventory",
+    text: "Lists all in-stock SKUs with quantities and key details for inventory tracking.",
+    icon: <IconActiveInvetoryOutlinedPurple />,
+    to: ''
+  },
+  {
+    title: "Reprice Change History",
+    text: "Displays a log of all price changes made by the repricer over time for auditing and review.",
+    icon: <IconRepriceChangeHistoryOutlinedPurple />,
+    to: ''
+  },
+  {
+    title: "Excess Inventory",
+    text: "Displays SKUs with inventory levels exceeding expected demand or sales velocity.",
+    icon: <IconExcessiveInventoryOutlinedPurple />,
+    to: ''
+  },
+  {
+    title: "Refunds & Returns",
+    text: "Displays all return and refund activity for your products.",
+    icon: <IconRefundAndReturnsOutlinedPurple />,
+    to: ''
+  },
+  {
+    title: "Inbound Shipments",
+    text: "Displays inbound shipments and their receiving status.",
+    icon: <IconInboundShipmentsOutlinedPurple />,
+    to: ''
+  },
+  {
+    title: "Inventory Turnover",
+    text: "Shows the rate at which inventory is sold and replaced over a given time period.",
+    icon: <IconInventoryTurnoverOutlinedPurple />,
+    to: ''
+  }
 ];

@@ -11,6 +11,7 @@ import ConnectAmazonAccount from "@/pages/connect-amazon-account/ConnectAmazonAc
 import { paths } from "@/utils/constants";
 import ConnectAmazonAccountSuccessfull from "@/pages/connect-amazon-account-successfull/ConnectAmazonAccountSuccessfull";
 import TestPage from "@/pages/test-page/TestPage";
+import Analytics from "@/pages/analytics/Analytics";
 
 const Routers = () => {
     return (
@@ -25,6 +26,7 @@ const Routers = () => {
             <Route path="/" element={<Navigate to={paths.dashoard} replace />} />
             <Route path="/dashboard" element={<ContentWrapper />}>
                 <Route index element={<Dashboard />} />
+                <Route path="analytics" element={<Analytics />} />
                 <Route path="settings" element={<Settings />} />
                 <Route path="account-settings" element={<AccountSettings />} />
                 <Route path="test-page" element={<TestPage />} />

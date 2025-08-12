@@ -1,3 +1,4 @@
+export { default as AnalyticsOptionCard } from "./analytics-option-card/AnalyticsOptionCard";
 export { default as ButtonLabel } from "./button-label/ButtonLabel";
 export { default as CardBusinessOverview } from "./card-business-overview/CardBusinessOverview";
 export { default as CardRiskAssessments } from "./card-risk-assessments/CardRiskAssessments";

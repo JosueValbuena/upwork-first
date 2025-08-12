@@ -25,6 +25,7 @@ const ChartsLinear = () => {
             type: 'area',
             stacked: false
         },
+        colors: ['#8e44ad', '#27ae60', '#3498db'],
         dataLabels: {
             enabled: false
         },

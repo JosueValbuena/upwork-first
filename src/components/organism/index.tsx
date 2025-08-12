@@ -1,3 +1,4 @@
+export { default as AnalyticsContainer } from "./analytics-container/AnalyticsContainer";
 export { default as AccountSettingsSection } from "./account-settings-section/AccountSettingsSection";
 export { default as ActiveMarketplacesSection } from "./active-marketplaces-section/ActiveMarketplacesSection";
 export { default as AdvancedSettingsSection } from "./advanced-settings-section/AdvancedSettingsSection";

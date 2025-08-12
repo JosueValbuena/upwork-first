@@ -23,3 +23,10 @@ export interface RiskItem {
     icon: React.ReactNode;
     info?: string;
 }
+
+export interface AnalyticsItem {
+    title: string;
+    text: string;
+    icon: React.ReactNode;
+    to: string
+}
