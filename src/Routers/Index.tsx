@@ -12,6 +12,9 @@ import { paths } from "@/utils/constants";
 import ConnectAmazonAccountSuccessfull from "@/pages/connect-amazon-account-successfull/ConnectAmazonAccountSuccessfull";
 import TestPage from "@/pages/test-page/TestPage";
 import Analytics from "@/pages/analytics/Analytics";
+import AnalyticsSalesPerformanceByDate from "@/pages/analytics-sales-performance-by-date/AnalyticsSalesPerformanceByDate";
+import AnalyticsSalesPerformanceByParentAsin from "@/pages/analytics-sales-performance-by-parent-asin/AnalyticsSalesPerformanceByParentAsin";
+import AnalyticsSalesPerformanceByChildAsin from "@/pages/analytics-sales-performance-by-child-asin/AnalyticsSalesPerformanceByChildAsin";
 
 const Routers = () => {
     return (
@@ -26,10 +29,13 @@ const Routers = () => {
             <Route path="/" element={<Navigate to={paths.dashoard} replace />} />
             <Route path="/dashboard" element={<ContentWrapper />}>
                 <Route index element={<Dashboard />} />
-                <Route path="analytics" element={<Analytics />} />
                 <Route path="settings" element={<Settings />} />
                 <Route path="account-settings" element={<AccountSettings />} />
                 <Route path="test-page" element={<TestPage />} />
+                <Route path="analytics" element={<Analytics />} />
+                <Route path="analytics/sales-performance" element={<AnalyticsSalesPerformanceByDate />} />
+                <Route path="analytics/sales-performance-by-parent-asin" element={<AnalyticsSalesPerformanceByParentAsin />} />
+                <Route path="analytics/sales-performance-by-child-asin" element={<AnalyticsSalesPerformanceByChildAsin />} />
             </Route>
             <Route path="*" element={<NotFoundPage />} />
         </Routes>

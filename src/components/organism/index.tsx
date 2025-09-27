@@ -41,4 +41,5 @@ export { default as TableCustom } from "./table-custom/TableCustom";
 export { default as TableCustomTwo } from "./table-custom-two/TableCustomTwo";
 export { default as UserManagementSection } from "./user-management-section/UserManagementSection";
 export { default as UserProfileSettings } from "./user-profile-settings/UserProfileSettings";
+export { default as TableCustomThree } from "./teble-custom-three/TableCustomThree";
 export { default as TimeZoneSection } from "./time-zone-section/TimeZoneSection";

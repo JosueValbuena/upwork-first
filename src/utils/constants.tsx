@@ -311,19 +311,19 @@ export const analyticsItem: AnalyticsItem[] = [
     title: "Sales Performance",
     text: "Shows total sales over a selected date range, grouped by week, month, or year to analyze trends.",
     icon: <IconSalesByPerformanceOutlinedPurple />,
-    to: ''
+    to: 'sales-performance'
   },
   {
     title: "Sales Performance by Parent ASIN",
     text: "Summarizes sales for each Parent ASIN within a chosen date range to track overall product family performance.",
     icon: <IconSalesByPerformanceByParentAsinOutlinedPurple />,
-    to: ''
+    to: 'sales-performance-by-parent-asin'
   },
   {
     title: "Sales Performance by Child ASIN",
     text: "Breaks down sales by individual Child ASINs over a selected period for detailed SKU-level analysis.",
     icon: <IconSalesByPerformanceByChildAsinOutlinedPurple />,
-    to: ''
+    to: 'sales-performance-by-child-asin'
   },
   {
     title: "Sales by Brand",

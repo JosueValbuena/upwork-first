@@ -14,7 +14,7 @@ export interface DashboardMetric {
 export interface RiskStatus {
     label: string,
     icon: React.ReactNode
-}
+};
 
 export interface RiskItem {
     value: string;
@@ -22,11 +22,16 @@ export interface RiskItem {
     state: RiskStatus[];
     icon: React.ReactNode;
     info?: string;
-}
+};
 
 export interface AnalyticsItem {
     title: string;
     text: string;
     icon: React.ReactNode;
     to: string
-}
+};
+
+export interface SelectListItem {
+    value: string,
+    label: string,
+};
