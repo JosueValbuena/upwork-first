@@ -14,6 +14,7 @@ export { default as InventoryStrategySection } from "./inventory-strategy-sectio
 export { default as ModalCustom } from "./modal-custom/ModalCustom";
 export { default as NavbarLinks } from "./navbar-links/NavbarLinks";
 export { default as NavBarWidget } from "./nabbar-widget/NavBarWidget";
+export { default as PickupCalendar } from "./pickup-calendar/PickUpCalendar";
 export { default as PopoverCustom } from "./pop-over-custom/PopOverCustom";
 export { default as SelectLabel } from "./select-label/SelectLabel";
 export { default as SortModeToggler } from "./sort-mode-toggler/SortModeToggler";

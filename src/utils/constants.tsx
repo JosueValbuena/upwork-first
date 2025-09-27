@@ -329,19 +329,19 @@ export const analyticsItem: AnalyticsItem[] = [
     title: "Sales by Brand",
     text: "Reports sales totals for each brand over a selected date range to evaluate brand-level performance.",
     icon: <IconSalesByBrandOutlinedPurple />,
-    to: ''
+    to: 'sales-by-brand'
   },
   {
     title: "Sales by Marketplace",
     text: "Displays sales performance broken down by marketplace/country for comparative analysis.",
     icon: <IconSalesByMarketplaceOutlinedPurple />,
-    to: ''
+    to: 'sales-by-marketplaces'
   },
   {
     title: "Sales by Category",
     text: "Displays sales totals by category over a selected date range to analyze category-level trends.",
     icon: <IconSalesByCategoryOutlinedPurple />,
-    to: ''
+    to: 'sales-by-category'
   },
   {
     title: "Profit and Loss Statement",
@@ -353,37 +353,37 @@ export const analyticsItem: AnalyticsItem[] = [
     title: "Inventory Valuation",
     text: "Calculates the current total cost value of all active inventory on a specific date.",
     icon: <IconInventoryValuationOutlinedPurple />,
-    to: ''
+    to: 'inventory-valuation'
   },
   {
     title: "Inventory By Brand",
     text: "Lists current inventory quantities and details grouped by brand to track stock levels per brand.",
     icon: <IconinventoryByBrandOutlinedPurple />,
-    to: ''
+    to: 'inventory-by-brand'
   },
   {
     title: "Aged Inventory",
     text: "Displays on hand inventory at risk of long-term storage fees.",
     icon: <IconAgedInventoryOutlinedPurple />,
-    to: ''
+    to: 'aged-inventory'
   },
   {
     title: "Active Inventory",
     text: "Lists all in-stock SKUs with quantities and key details for inventory tracking.",
     icon: <IconActiveInvetoryOutlinedPurple />,
-    to: ''
+    to: 'active-inventory-report'
   },
   {
     title: "Reprice Change History",
     text: "Displays a log of all price changes made by the repricer over time for auditing and review.",
     icon: <IconRepriceChangeHistoryOutlinedPurple />,
-    to: ''
+    to: 'reprice-change-history'
   },
   {
     title: "Excess Inventory",
     text: "Displays SKUs with inventory levels exceeding expected demand or sales velocity.",
     icon: <IconExcessiveInventoryOutlinedPurple />,
-    to: ''
+    to: 'excess-inventory'
   },
   {
     title: "Refunds & Returns",
