@@ -17,8 +17,16 @@ const selectListCategory: SelectListItem[] = [
 
 const selectListMarketplace: SelectListItem[] = [
     {
-        value: 'marketplace',
-        label: 'Marketplace'
+        value: 'us',
+        label: 'US'
+    },
+    {
+        value: 'canada',
+        label: 'Canada'
+    },
+    {
+        value: 'mexico',
+        label: 'Mexico'
     }
 ];
 

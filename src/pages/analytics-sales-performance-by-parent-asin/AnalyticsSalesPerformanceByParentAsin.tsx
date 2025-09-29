@@ -140,7 +140,9 @@ const AnalyticsSalesPerformanceByParentAsin = () => {
 
                     <FilterOptionsOne />
 
-                    <Separator orientation="vertical" />
+                    <div className="w-6 h-full rotate-90">
+                        <Separator orientation="horizontal" />
+                    </div>
 
                     <div className="flex items-center bg-white px-2 rounded-lg">
                         <p className="text-xs font-bold mr-1.5">Group By:</p>
@@ -151,7 +153,9 @@ const AnalyticsSalesPerformanceByParentAsin = () => {
                         </div>
                     </div>
 
-                    <Separator orientation="vertical" />
+                    <div className="w-6 h-full rotate-90">
+                        <Separator orientation="horizontal" />
+                    </div>
 
                     <SelectCustom id="days" selectList={selectListTime} customStyle={'w-[10rem] font-semibold'} placeholder={'Days'} />
                 </div>

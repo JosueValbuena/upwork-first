@@ -24,6 +24,10 @@ import AnalyticsActiveInventoryReport from "@/pages/analytics-active-inventory-r
 import AnalyticsRepricingHistoryLog from "@/pages/analytics-repricing-history-log/AnalyticsRepricingHistoryLog";
 import AnalyticsInventoryByBrand from "@/pages/analytics-inventory-by-brand/AnalyticsInventoryByBrand";
 import AnalyticsExcessInventory from "@/pages/analytics-excess-inventory/AnalyticsExcessInventory";
+import AnalyticsRefundsAndReturns from "@/pages/analytics-refunds-and-returns/AnalitycsRefundsAndReturn";
+import AnalyticsInboundShipments from "@/pages/analytics-inbound-shipments/AnalyticsInboundShipments";
+import AnalitycsInventoryTurnOver from "@/pages/analitycs-inventory-turnover/AnalitycsInventoryTurnOver";
+import AnalitycsProfitAndLossStatementforGivenDateRange from "@/pages/analitycs-profit-and-loss-statement-for-given-date-range/AnalitycsProfitAndLossStatementforGivenDateRange";
 
 const Routers = () => {
     return (
@@ -54,6 +58,10 @@ const Routers = () => {
                 <Route path="analytics/reprice-change-history" element={<AnalyticsRepricingHistoryLog />} />
                 <Route path="analytics/inventory-by-brand" element={<AnalyticsInventoryByBrand />} />
                 <Route path="analytics/excess-inventory" element={<AnalyticsExcessInventory />} />
+                <Route path="analytics/refunds-and-return" element={<AnalyticsRefundsAndReturns />} />
+                <Route path="analytics/inbound-shipments" element={<AnalyticsInboundShipments />} />
+                <Route path="analytics/inventory-turnover" element={<AnalitycsInventoryTurnOver />} />
+                <Route path="analytics/profit-and-loss-statement-for-given-date-range" element={<AnalitycsProfitAndLossStatementforGivenDateRange />} />
             </Route>
             <Route path="*" element={<NotFoundPage />} />
         </Routes>

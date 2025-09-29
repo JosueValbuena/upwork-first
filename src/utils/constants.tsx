@@ -347,7 +347,7 @@ export const analyticsItem: AnalyticsItem[] = [
     title: "Profit and Loss Statement",
     text: "Provides a clear summary of revenue, costs, and profit over a selected date range, grouped by week, month, or year.",
     icon: <IconProfitAndLossStatementPurple />,
-    to: ''
+    to: 'profit-and-loss-statement-for-given-date-range'
   },
   {
     title: "Inventory Valuation",
@@ -389,18 +389,18 @@ export const analyticsItem: AnalyticsItem[] = [
     title: "Refunds & Returns",
     text: "Displays all return and refund activity for your products.",
     icon: <IconRefundAndReturnsOutlinedPurple />,
-    to: ''
+    to: 'refunds-and-return'
   },
   {
     title: "Inbound Shipments",
     text: "Displays inbound shipments and their receiving status.",
     icon: <IconInboundShipmentsOutlinedPurple />,
-    to: ''
+    to: 'inbound-shipments'
   },
   {
     title: "Inventory Turnover",
     text: "Shows the rate at which inventory is sold and replaced over a given time period.",
     icon: <IconInventoryTurnoverOutlinedPurple />,
-    to: ''
+    to: 'inventory-turnover'
   }
 ];
